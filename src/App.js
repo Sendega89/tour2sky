@@ -8,11 +8,6 @@ import TestCode from "./TestingVerstca/TestCode";
 function App() {
     return <TestCode/>
 
-
-
-
-
-
         /*<div>
         <header>
             <Header/>
@@ -24,7 +19,6 @@ function App() {
             <Footer />
         </footer>
     </div>*/
-
 
 }
 

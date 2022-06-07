@@ -1,12 +1,14 @@
-import "./owl.carousel.min.css";
+//import "./owl.carousel.min.css";
 import "./main.css";
 import "./style.css";
 import "./rating.css";
 import "./font-awesome.css";
 import "./jquery-ui.css";
 import "./responsice.css";
-
+import OwlCarousel from "react-owl-carousel2";
 import React from "react";
+import logo from "../assets/img/logo.png";
+import footerLogo from "../assets/img/footer_logo.png";
 
 const TestCode =() => {
     return <>
@@ -19,7 +21,7 @@ const TestCode =() => {
                             <div className="row">
             {/* LOGO start */}
                                 <div className="logo">
-                                    <a href="/"><img className="lozad" src="" alt="Tour2Sky"/></a>
+                                    <a href="/"><img className="lozad" src={logo} alt="Tour2Sky"/></a>
                                 </div>
             {/*LOGO end */}
 
@@ -27,10 +29,11 @@ const TestCode =() => {
                                 <div className="menu">
                                     <nav>
                                         <ul >
-                                            <li><a href="#">Air</a></li>
+                                            <li><a href="#">Catalog</a></li>
                                             <li><a href="#">Balloning</a></li>
-                                            <li><a href="#">Helicopter tours</a></li>
-                                            <li><a href="#">Skydiving</a></li>
+                                            <li><a href="#">Search</a></li>
+                                            <li><a href="#">My account</a></li>
+                                            <li><a href="#">Checkout</a></li>
                                             <li className="drop-item" ><a href="#">Other</a>
                                                 <ul className="drop-menu">
                                                     <li className="drop-menu__item"><a className="drop-menu__link" href="#">Paragliding</a></li>
@@ -679,7 +682,7 @@ const TestCode =() => {
                     <div className="footer_l">
             {/* Start footer_logo */}
                         <a href="/" className="footer_logo">
-                            <img className="lozad" data-src="img/footer_logo.png" alt="Tour2Sky" />
+                            <img className="lozad" src={footerLogo} alt="Tour2Sky" />
                         </a>
             {/* End footer_logo */}
 
