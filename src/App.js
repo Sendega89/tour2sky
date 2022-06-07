@@ -1,11 +1,19 @@
-import './App.css';
+//import './App.css';
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
 import Footer from "./Components/Footer/Footer";
+import TestCode from "./TestingVerstca/TestCode";
 
 
 function App() {
-    return <div className="wrapper">
+    return <TestCode/>
+
+
+
+
+
+
+        /*<div>
         <header>
             <Header/>
         </header>
@@ -15,7 +23,7 @@ function App() {
         <footer>
             <Footer />
         </footer>
-    </div>
+    </div>*/
 
 
 }
