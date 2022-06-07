@@ -6,12 +6,15 @@ import "./font-awesome.css";
 import "./jquery-ui.css";
 import "./responsice.css";
 import OwlCarousel from "react-owl-carousel2";
+import "react-owl-carousel2/lib/styles.css";
+import "react-owl-carousel2/src/owl.theme.default.css"
 import React from "react";
 import logo from "../assets/img/logo.png";
 import footerLogo from "../assets/img/footer_logo.png";
 
+
 const TestCode =() => {
-    return <>
+    return (
     <div className="wrapper">
             {/* HEADER start */}
                 <header id="myHeader" className="">
@@ -38,6 +41,7 @@ const TestCode =() => {
                                                 <ul className="drop-menu">
                                                     <li className="drop-menu__item"><a className="drop-menu__link" href="#">Paragliding</a></li>
                                                     <li className="drop-menu__item"><a className="drop-menu__link" href="#">Hand Giding</a></li>
+                                                    <li className="drop-menu__item"><a className="drop-menu__link" href="#">Product</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -45,28 +49,8 @@ const TestCode =() => {
                                 </div>
             {/* NAVIGATION end */}
 
-            {/* languages and currencies */}
-                               {/* <div className="header_drop">
-                                    <div className="row">
-                                        <div className="drop_l drop">
-                                            <span>Eng</span>
-                                            <ul>
-                                                <li><a href="#">Ru</a></li>
-                                                <li><a href="#">Ua</a></li>
-                                            </ul>
-                                        </div>
-                                        <div className="drop_r drop">
-                                            <span>USD</span>
-                                            <ul>
-                                                <li><a href="#">RUB</a></li>
-                                                <li><a href="#">UAN</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>*/}
-            {/* languages and currencies */}
 
-            {/* acaunt not login */}
+            {/* account not login */}
                                 <div className="header_login no_login">
                                     <div className="login_drop popup">
                                         <a href="#authorization" className="authorization" data-effect="mfp-zoom-in">
@@ -74,9 +58,9 @@ const TestCode =() => {
                                         </a>
                                     </div>
                                 </div>
-            {/* acaunt not login */}
+            {/* account not login */}
 
-            {/* acaunt logged in
+            {/* account logged in
                                 <div className="header_login">
                                     <div className="login_drop">
                                         <span><i className="fa fa-user" aria-hidden="true"></i>Personal account</span>
@@ -88,8 +72,7 @@ const TestCode =() => {
                                         </ul>
                                     </div>
                                 </div>
-                                acaunt logged in */}
-
+                                account logged in */}
 
             {/* Mobile Menu start */}
                                 <nav className="nav" id="menu_right_sidebar">
@@ -673,7 +656,7 @@ const TestCode =() => {
             {/* Wrapper End */}
 
 
-        </div>
+
             {/* content end */}
             {/* Footer start */}
         <footer>
@@ -685,7 +668,6 @@ const TestCode =() => {
                             <img className="lozad" src={footerLogo} alt="Tour2Sky" />
                         </a>
             {/* End footer_logo */}
-
                         <div className="soc">
                             <span>Socials:</span>
                             <div className="row">
@@ -782,57 +764,8 @@ const TestCode =() => {
                 </div>
             </div>
         </footer>
-            {/* Footer end */}
-
-            {/* Popup authorization */}
-        <div id="authorization" className="white-popup mfp-with-anim mfp-hide order_popup">
-            <div className="popup_content">
-                <div className="h3 center">Authorization</div>
-                <p>Hi and welcome to the Tour2Sky personal account area.<br /> Please, enter your mobile phone number in order to verify you. </p>
-                <div className="popup_form">
-                    <form className="fofm">
-                        <div className="login_wrap">
-                            <input type="text" placeholder="Your name" />
-                                <input type="password" placeholder="Password"/>
-                                    <button type="button">Log In</button>
-                        </div>
-                    </form>
-                    <div className="row authorization_link">
-                        New her? <a href="#create" className="create">Create an account</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-            {/* Popup authorization */}
-
-
-            {/* Popup Create an account */}
-        <div id="create" className="white-popup mfp-with-anim mfp-hide order_popup">
-            <div className="popup_content">
-                <div className="h3 center">Create an account</div>
-                <div className="popup_form">
-
-                    <form className="fofm">
-                        <div className="login_wrap">
-                            <input type="text" placeholder="First name" />
-                                <input type="text" placeholder="Last name" />
-                                    <input type="text" placeholder="E-mail" />
-                                        <input type="password" placeholder="Password"/>
-                                            <button type="button">Create an account</button>
-                        </div>
-                    </form>
-
-                    <div className="row authorization_link">
-                        Or <a href="#authorization" className="authorization">log in</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-            {/* Popup Create an account */}
-            {/* Back to top */}
-        <div id="back-to-top" title="Back to top"><i className="fa fa-angle-up" aria-hidden="true"></i><span>Back To Top</span></div>
-
-</>
+    </div>
+)
 }
 
 export default TestCode
