@@ -1,4 +1,3 @@
-//import "./owl.carousel.min.css";
 import "./main.css";
 import "./style.css";
 import "./rating.css";
@@ -11,6 +10,10 @@ import "react-owl-carousel2/src/owl.theme.default.css"
 import React from "react";
 import logo from "../assets/img/logo.png";
 import footerLogo from "../assets/img/footer_logo.png";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 
 const TestCode =() => {
@@ -31,7 +34,7 @@ const TestCode =() => {
             {/* NAVIGATION start */}
                                 <div className="menu">
                                     <nav>
-                                        <ul >
+                                        <ul>
                                             <li><a href="#">Catalog</a></li>
                                             <li><a href="#">Balloning</a></li>
                                             <li><a href="#">Search</a></li>
@@ -54,7 +57,7 @@ const TestCode =() => {
                                 <div className="header_login no_login">
                                     <div className="login_drop popup">
                                         <a href="#authorization" className="authorization" data-effect="mfp-zoom-in">
-                                            <span><i className="fa fa-unlock-alt" aria-hidden="true"></i>Authorization</span>
+                                            <span><FontAwesomeIcon icon="fa fa-unlock-alt" aria-hidden="true"></FontAwesomeIcon>Authorization</span>
                                         </a>
                                     </div>
                                 </div>
@@ -76,13 +79,13 @@ const TestCode =() => {
 
             {/* Mobile Menu start */}
                                 <nav className="nav" id="menu_right_sidebar">
-                                    <div className="menu-right-button open-button"><i className="fa fa-bars"></i></div>
+                                    <div className="menu-right-button open-button"><FontAwesomeIcon icon="fa fa-bars"></FontAwesomeIcon></div>
                                     <div className="container_right_menu">
-                                        <span className="close-button"><i className="fa fa-times"></i></span>
+                                        <span className="close-button"><FontAwesomeIcon icon="fa fa-times"></FontAwesomeIcon></span>
                                         <div className="row footer_menu">
 
                                             <div className="row logotype_light">
-                                                <img className="lozad is-loaded" src="" alt="Tour2Sky" src="" loaded="true"/>
+                                                <img className="lozad is-loaded" src={logo} alt="Tour2Sky" src={logo} loaded="true"/>
                                             </div>
                                             <div id="dl-menu" className="dl-menuwrapper">
                                                 <ul className="dl-menu dl-menuopen">
@@ -124,20 +127,20 @@ const TestCode =() => {
                                             </div>
                                         </div>
                                         <div className="row footer_item_social">
-                                            <a href="#"><i className="fa fa-facebook"></i></a>
-                                            <a href="#"><i className="fa fa-twitter"></i></a>
-                                            <a href="#"><i className="fa fa-google-plus"></i></a>
-                                            <a href="#"><i className="fa fa-youtube"></i></a>
-                                            <a href="#"><i className="fa fa-vk"></i></a>
-                                            <a href="#"><i className="fa fa-yelp"></i></a>
+                                            <a href="#"><FontAwesomeIcon icon="fa fa-facebook"></FontAwesomeIcon></a>
+                                            <a href="#"><FontAwesomeIcon icon="fa fa-twitter"></FontAwesomeIcon></a>
+                                            <a href="#"><FontAwesomeIcon icon="fa fa-google-plus"></FontAwesomeIcon></a>
+                                            <a href="#"><FontAwesomeIcon icon="fa fa-youtube"></FontAwesomeIcon></a>
+                                            <a href="#"><FontAwesomeIcon icon="fa fa-vk"></FontAwesomeIcon></a>
+                                            <a href="#"><FontAwesomeIcon icon="fa fa-yelp"></FontAwesomeIcon></a>
                                         </div>
                                         <div className="row menu_contact">
                                             <ul>
-                                                <li><i className="fa fa-map-marker"></i> <address>27 Castro St, Mountain View, CA 94043</address></li>
-                                                <li><i className="fa fa-phone"></i> Phone: + 1 650 123-4000</li>
-                                                <li><i className="fa fa-envelope-o"></i>owlthemesnet@gmail.com</li>
-                                                <li><i className="fa fa-clock-o"></i> Mon–Fri 10:00 am–6:00 pm</li>
-                                                <li><i className="fa fa-clock-o"></i> Sat–Sun 11:00 am– 4:00 pm</li>
+                                                <li><FontAwesomeIcon icon="fa fa-map-marker"></FontAwesomeIcon> <address>27 Castro St, Mountain View, CA 94043</address></li>
+                                                <li><FontAwesomeIcon icon="fa fa-phone"></FontAwesomeIcon> Phone: + 1 650 123-4000</li>
+                                                <li><FontAwesomeIcon icon="fa fa-envelope-o"></FontAwesomeIcon>owlthemesnet@gmail.com</li>
+                                                <li><FontAwesomeIcon icon="fa fa-clock-o"></FontAwesomeIcon> Mon–Fri 10:00 am–6:00 pm</li>
+                                                <li><FontAwesomeIcon icon="fa fa-clock-o"></FontAwesomeIcon> Sat–Sun 11:00 am– 4:00 pm</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -221,7 +224,7 @@ const TestCode =() => {
                     </div>
             {/*  Header title end */}
 
-            {/*  Main start */}
+            {/*  Content start */}
                     <main>
             {/* Service start */}
                         <div className="row services section">
@@ -311,7 +314,7 @@ const TestCode =() => {
             {/* Start tab1 content */}
                                     <div className="tab_content" id="tab1">
                                         <div className="row">
-                                            <div className="owl_best owl-carousel owl-theme">
+                                            <OwlCarousel className="owl_best owl-carousel owl-theme">
                                                 <div className="item">
                                                     <a href="#">
                                                         <img src="../assets/img/rectangle.png" />
@@ -432,7 +435,7 @@ const TestCode =() => {
                                                         <span>San Diego</span>
                                                     </a>
                                                 </div>
-                                            </div>
+                                            </OwlCarousel>
                                         </div>
                                     </div>
             {/* End tab1 content */}
@@ -651,12 +654,9 @@ const TestCode =() => {
                         </div>
             {/* rectangle end */}
                     </main>
-            {/*  Main end */}
+            {/*  Content end */}
                 </div>
             {/* Wrapper End */}
-
-
-
             {/* content end */}
             {/* Footer start */}
         <footer>

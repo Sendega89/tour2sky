@@ -1,3 +1,4 @@
+/*
 .ui-draggable-handle {
     -ms-touch-action: none;
     touch-action: none;
@@ -238,7 +239,7 @@
 }
 
 .ui-menu .ui-state-focus,
-.ui-menu .ui-state-active { /* margin:-1px; */
+.ui-menu .ui-state-active { !* margin:-1px; *!
 }
 
 .ui-menu-icons {
@@ -436,7 +437,7 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-datepicker .ui-datepicker-prev-hover,
-.ui-datepicker .ui-datepicker-next-hover { /* top:1px; */
+.ui-datepicker .ui-datepicker-next-hover { !* top:1px; *!
 }
 
 .ui-datepicker .ui-datepicker-prev {
@@ -449,10 +450,10 @@ button.ui-button::-moz-focus-inner {
     border-radius: 50%;
 }
 
-.ui-datepicker .ui-datepicker-prev-hover { /* left:1px; */
+.ui-datepicker .ui-datepicker-prev-hover { !* left:1px; *!
 }
 
-.ui-datepicker .ui-datepicker-next-hover { /* right:1px; */
+.ui-datepicker .ui-datepicker-next-hover { !* right:1px; *!
 }
 
 .ui-datepicker .ui-datepicker-prev span,
@@ -1240,4 +1241,4 @@ body .ui-corner-top .ui-icon-triangle-1-s:before {
     display: block;
     color: var(--bluish);
     font-size: 45px;
-}
+}*/

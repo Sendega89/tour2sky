@@ -1,8 +1,9 @@
-/**
+/*
+!**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
  * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
- */
+ *!
 .owl-carousel,.owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
     position: relative
@@ -260,3 +261,4 @@
 .owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span {
     background: #869791
 }
+*/
