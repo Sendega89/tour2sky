@@ -1,8 +1,8 @@
-import OwlCarousel from "react-owl-carousel2";
+
 import "../../../../../TestingVerstca/owl.carousel.min.css"
 
 const Carousel = () => {
-    return <div className="tab_content" id="tab1">
+    return /*<div className="tab_content" id="tab1">
         <div className="row">
             <OwlCarousel className="owl_best owl-carousel owl-theme">
                 <div className="item">
@@ -128,6 +128,6 @@ const Carousel = () => {
             </OwlCarousel>
         </div>
 
-    </div>
+    </div>*/
 }
 export default Carousel

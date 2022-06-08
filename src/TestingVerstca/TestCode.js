@@ -4,9 +4,6 @@ import "./rating.css";
 import "./font-awesome.css";
 import "./jquery-ui.css";
 import "./responsice.css";
-import OwlCarousel from "react-owl-carousel2";
-import "react-owl-carousel2/lib/styles.css";
-import "react-owl-carousel2/src/owl.theme.default.css"
 import React from "react";
 import logo from "../assets/img/logo.png";
 import footerLogo from "../assets/img/footer_logo.png";

@@ -36,7 +36,9 @@ header {
     padding: 47px 0 0 0;
     text-align: center;
 }
-
+.menu li a {
+    text-decoration: none;
+}
 .header_drop {
     float: left;
     width: 15%;
@@ -2273,6 +2275,7 @@ img.mfp-img {
 
 
 /* Footer Block */
+/*
 footer {
     background: url('../assets/img/footer_fon.jpg') no-repeat;
     background-size: cover;
@@ -2396,6 +2399,7 @@ footer .footer_r ul li a {
     display: block;
     padding: 3px 0 7px 0;
 }
+*/
 
 /* account */
 .account main {
@@ -2859,6 +2863,7 @@ footer .footer_r ul li a {
 .authorization {
     display: inline-block;
     height: auto;
+    text-decoration: none;
 }
 
 .popupContainer {
@@ -2891,6 +2896,7 @@ footer .footer_r ul li a {
 .authorization_link {
     margin-top: 30px;
 }
+
 
 .authorization_link div {
     color: #33cccc;

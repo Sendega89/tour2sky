@@ -19,7 +19,6 @@ body {
     font-weight: 400;
     color: #2f3337;
     margin: 0 auto;
-    font-weight: 400;
     background: white;
     position: relative;
     min-height: 100%;
@@ -257,7 +256,7 @@ ol li:before {
     counter-increment: myCounter;
     content: counter(myCounter);
     display: inline-block;
-    margin: 0px 10px 0px 0px;
+    margin: 0 10px 0 0;
     color: #2980b9;
 }
 
@@ -302,7 +301,6 @@ article ol li {
 
 article ul li:before {
     content: "";
-    position: relative;
     top: 42%;
     background: #2980b9;
     width: 5px;
@@ -311,7 +309,6 @@ article ul li:before {
     left: 0;
     border-radius: 50%;
 }
-
 article ul, article ol {
     margin: 15px;
 }
@@ -402,7 +399,8 @@ main {
     transform: translateX(0) /*translateZ(0)*/;
     transition: -webkit-transform 0.3s ease;
     transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease,
+    -webkit-transform 0.3s ease;
     content: "\f105";
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;

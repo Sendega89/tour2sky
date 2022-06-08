@@ -1,4 +1,4 @@
-import OwlCarousel from "react-owl-carousel2";
+
 import HeaderTitle from "./ContentComponents/HeaderTitle/HeaderTitle";
 import "../../TestingVerstca/style.css";
 import Main from "./ContentComponents/Main/Main";

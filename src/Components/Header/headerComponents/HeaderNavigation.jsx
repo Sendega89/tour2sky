@@ -1,7 +1,7 @@
-
+import s from "../Header.module.css";
 
 const HeaderNavigation = () => {
-    return  <div className="menu">
+    return  <div className={"menu"}>
         <nav>
             <ul>
                 <li><a href="#">Catalog</a></li>

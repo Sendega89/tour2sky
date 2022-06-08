@@ -2,7 +2,7 @@ import "../../TestingVerstca/style.css"
 import Logo from "./headerComponents/Logo";
 import HeaderNavigation from "./headerComponents/HeaderNavigation";
 import HeaderAuthorization from "./headerComponents/HeaderAuthorization";
-
+import s from "./Header.module.css";
 //import MobileMenu from "./headerComponents/MobileMenu";
 
 
@@ -11,7 +11,7 @@ const Header = () => {
         {/* Header bottom start */}
         <div className="row header">
             <div className="container">
-                <div className="row">
+                <div className={s.row}>
                     {/* LOGO start */}
                    <Logo />
                     {/*LOGO end */}
