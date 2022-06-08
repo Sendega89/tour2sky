@@ -2,6 +2,7 @@ import ServiceStart from "./MainComponents/ServiceStart";
 import Rectangle from "./MainComponents/Rectangle";
 import About from "./MainComponents/About";
 import Carousel from "./MainComponents/Сarousel";
+import MyOwlCarousel from "../../../../MyOwlCarousel";
 
 const Main = () => {
     return <main className={"main"}>
@@ -16,6 +17,7 @@ const Main = () => {
                 </div>
                 {/* End Tabs Title */}
                 <Carousel />
+
             </div>
         </div>
         {/* End Tabs Container */}
