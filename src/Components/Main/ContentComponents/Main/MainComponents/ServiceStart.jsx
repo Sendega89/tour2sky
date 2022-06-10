@@ -1,12 +1,14 @@
+import s from "./ServiceStart.module.css";
+
 
 const ServiceStart = () => {
     return <div className="row services section">
         <div className="container">
-            <div className="row_title">
+            <div className="row_title" >
                 <h3>How Tour2Sky works</h3>
                 <p>Tour2Sky searches any city, town, landmark, attraction or address across the globe with thousands of multi-modal routes to easily get you from A to B.</p>
             </div>
-            <div className="row row-15">
+            <div className={s.serviceContainer}>
                 {/* Service item start */}
                 <div className="services_item">
                     <div className="services_item_vn">

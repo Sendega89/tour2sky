@@ -97,7 +97,14 @@ const Footer = () => {
                         <li><a href="#">Link to information</a></li>
                         <li><a href="#">Usefull short link</a></li>
                     </ul>
-
+                </div>
+                <div className={s.footer_r}>
+                    <ul>
+                        <li><a href="#">Link to information</a></li>
+                        <li><a href="#">Usefull short link</a></li>
+                        <li><a href="#">Link to information</a></li>
+                        <li><a href="#">Usefull short link</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

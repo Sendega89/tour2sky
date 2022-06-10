@@ -2,7 +2,7 @@ import ServiceStart from "./MainComponents/ServiceStart";
 import Rectangle from "./MainComponents/Rectangle";
 import About from "./MainComponents/About";
 import Carousel from "./MainComponents/Сarousel";
-import MyOwlCarousel from "../../../../MyOwlCarousel";
+
 
 const Main = () => {
     return <main className={"main"}>
@@ -12,7 +12,7 @@ const Main = () => {
         <div className="container">
             <div className="row tabs">
                 {/* Start Tabs Title */}
-                <div className="tabs_l row">
+                <div className="tabs_l">
                     <h3>Top sights for balloing</h3>
                 </div>
                 {/* End Tabs Title */}

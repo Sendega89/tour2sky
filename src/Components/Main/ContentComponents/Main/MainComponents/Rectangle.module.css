@@ -1,0 +1,11 @@
+/*.row {
+    --bs-gutter-x: 0;
+}*/
+.header_search {
+    padding: 20px 5px;
+}
+.header_search form button {
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

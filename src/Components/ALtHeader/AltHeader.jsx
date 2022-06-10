@@ -1,10 +1,7 @@
-import Logo from "./headerComponents/Logo";
-import HeaderNavigation from "./headerComponents/HeaderNavigation";
-import HeaderAuthorization from "./headerComponents/HeaderAuthorization";
-import s from "./Header.module.css"
-import MobileMenu from "../MobileMenu/MobileMenu";
-
-
+import Logo from "../Header/headerComponents/Logo";
+import s from "../Header/Header.module.css";
+import HeaderAuthorization from "../Header/headerComponents/HeaderAuthorization";
+import HeaderNavbar from "../Header/headerComponents/HeaderNavbar";
 
 
 const Header = () => {
@@ -14,19 +11,19 @@ const Header = () => {
             <div className="container">
                 <div className={`${s.myHeader}`}>
                     {/* LOGO start */}
-                   <Logo />
+                    {/*<Logo/>*/}
                     {/*LOGO end */}
 
                     {/* NAVIGATION start */}
-                   <HeaderNavigation/>
+                    <HeaderNavbar/>
                     {/* NAVIGATION end */}
 
                     {/* account not login */}
-                   <HeaderAuthorization />
+                   {/* <HeaderAuthorization/>*/}
                     {/* account not login */}
 
                     {/* Mobile Menu start */}
-                    <MobileMenu/>
+
                     {/*<MobileMenu />*/}
                     {/* Mobile Menu end */}
                 </div>

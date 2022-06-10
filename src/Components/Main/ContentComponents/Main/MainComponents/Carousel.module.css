@@ -1,0 +1,30 @@
+.item img{
+    max-width: 100%;
+}
+.item img:hover {
+    transition: 1s; /* Время эффекта */
+}
+.item  img:hover  {
+    max-width: 100%;
+    transform: scale(1.1); /* Увеличиваем масштаб */
+}
+.item span {
+
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+
+}
+.item  {
+
+}
+.theme .owl-dots .owl-dot.active span {
+border: 1px solid black;
+    background: #33cccc;
+}

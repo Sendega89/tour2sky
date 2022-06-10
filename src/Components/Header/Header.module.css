@@ -1,8 +1,9 @@
-.row {
+/*.myHeader {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}*/
+.myLoginBlock a{
     text-decoration: none;
 }
-.menu nav ul li {
 
-}

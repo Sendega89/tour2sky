@@ -1,7 +1,7 @@
-import "./headerTitle.css"
+import s from "./HeaderTitle.module.css"
 
 const  HeaderTitle = () => {
-    return  <div className="header_title">
+    return  <div className={`header_title ${s.header_title}`}>
         <div className="container">
             <div className="row">
                 <h1>Discover your <br />perfect tour now!</h1>

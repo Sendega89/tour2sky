@@ -1,5 +1,5 @@
 import logo from "../../../assets/img/logo.png";
-
+import "./logo.css";
 
 const Logo = () => {
     return <div className="logo">

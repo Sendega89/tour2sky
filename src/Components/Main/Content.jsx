@@ -1,6 +1,4 @@
-
 import HeaderTitle from "./ContentComponents/HeaderTitle/HeaderTitle";
-import "../../TestingVerstca/style.css";
 import Main from "./ContentComponents/Main/Main";
 
 

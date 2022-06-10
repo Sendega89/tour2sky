@@ -1,4 +1,4 @@
-import s from "../Header.module.css";
+import "./headerNavigation.css"
 
 const HeaderNavigation = () => {
     return  <div className={"menu"}>
@@ -19,6 +19,7 @@ const HeaderNavigation = () => {
             </ul>
         </nav>
     </div>
+
 
 }
 export default HeaderNavigation

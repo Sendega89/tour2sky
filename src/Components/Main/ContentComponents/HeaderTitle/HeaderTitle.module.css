@@ -1,0 +1,7 @@
+.header_title h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 58px;
+    display: flex;
+    margin-bottom: 31px;
+}
