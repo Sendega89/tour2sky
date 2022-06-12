@@ -1,8 +1,8 @@
-/*.myHeader {
+.myHeader {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-}*/
+}
 .myLoginBlock a{
     text-decoration: none;
 }

@@ -1,20 +1,22 @@
 import './App.css';
 import "./font-awesome.css"
-//import Header from "./Components/Header/Header";
 import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
-import AltHeader from "./Components/ALtHeader/AltHeader";
 import Header from "./Components/Header/Header";
-
+import HeaderNavbar from "./Components/Header/headerComponents/HeaderMobileMenu";
 
 
 function App() {
-    return <div className="wrapper">
-        <AltHeader />
-        {/*<Header/>*/}
-        <Content/>
-        <Footer/>
-    </div>
+    return (
+        <div className="wrapper" id="App">
+            <HeaderNavbar pageWrapId={"page-wrap"} outerContainerId={"App"}/>
+            <div id="page-wrap" className={"headerMenu"}>
+                <Header/>
+                <Content/>
+                <Footer/>
+            </div>
+        </div>
+    );
 }
 
 export default App;

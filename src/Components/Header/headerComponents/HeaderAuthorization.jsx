@@ -12,7 +12,8 @@ const HeaderAuthorization = () => {
                 <span>
                     <i>
                         <FontAwesomeIcon icon="fa fa-unlock-alt" aria-hidden="true" pull="left"></FontAwesomeIcon>
-                    </i>Authorization
+                    </i>
+                    Authorization
                 </span>
             </a>
         </div>

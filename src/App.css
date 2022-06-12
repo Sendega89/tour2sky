@@ -709,8 +709,8 @@ header {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
-    right: -340px;
-    width: 340px;
+    /*right: -340px;*/
+    width: 100%;
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -745,12 +745,14 @@ header {
 
 .container_right_menu.open {
     right: 0px;
-    z-index: 999;
+
 }
 
 .container_right_menu .footer_item_social {
+    display: flex;
     margin: 40px 0;
     text-align: center;
+
 }
 
 .container_right_menu .footer_item_social a:first-child {
@@ -764,10 +766,11 @@ header {
 .container_right_menu .footer_item_social a {
     display: inline-block;
     line-height: 1;
-    float: left;
     text-align: center;
     padding: 5px 13px;
     font-size: 20px;
+    color: black;
+
 }
 
 .container_right_menu .footer_item_social a:hover {
@@ -785,6 +788,7 @@ header {
     display: block;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     text-align: left;
+    text-decoration: none;
 }
 
 .container_right_menu .footer_menu ul li a:hover {
