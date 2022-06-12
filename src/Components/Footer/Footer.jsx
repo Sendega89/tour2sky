@@ -1,20 +1,20 @@
 import footerLogo from "../../assets/img/footer_logo.png";
-import s from "./Footer.module.css";
+
 
 
 const Footer = () => {
-    return <footer className={s.footer}>
+    return <footer className={"footer"}>
         <div className={"container"}>
-            <div className={s.row}>
-                <div className={s.footer_l}>
+            <div className={"row mainFooter"}>
+                <div className={"footer_l"}>
                     {/* Start footer_logo */}
-                    <a href="/" className={s. footer_logo}>
-                        <img className={s.lozad} src={footerLogo} alt="Tour2Sky" />
+                    <a href="/" className={"footer_logo"}>
+                        <img className={"lozad"} src={footerLogo} alt="Tour2Sky" />
                     </a>
                     {/* End footer_logo */}
-                    <div className={s.soc}>
+                   {/* <div className={"soc"}>
                         <span>Socials:</span>
-                        <div className={s.row}>
+                        <div className={"row"}>
                             <a href="https://www.facebook.com/" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                                     <g fill="none" fillRule="evenodd">
@@ -50,12 +50,52 @@ const Footer = () => {
                                 </svg>
                             </a>
                         </div>
+                    </div>*/}
+                </div>
+                <div className={"soc"}>
+                    <span>Socials:</span>
+                    <div className={"row"}>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                                <g fill="none" fillRule="evenodd">
+                                    <rect width="40" height="40" fill="#295DB9" rx="8"/>
+                                    <path fill="#FFF"
+                                          fillRule="nonzero"
+                                          d="M24.586 9.004L21.947 9c-2.964 0-4.88 2.028-4.88 5.168v2.383h-2.652a.422.422 0 0 0-.415.428v3.453c0 .236.186.428.415.428h2.653v8.712c0 .236.185.428.415.428h3.46c.23 0 .416-.192.416-.428V20.86h3.101c.23 0 .415-.192.415-.428l.001-3.453a.436.436 0 0 0-.121-.302.408.408 0 0 0-.294-.126H21.36v-2.02c0-.97.224-1.464 1.449-1.464h1.777a.422.422 0 0 0 .415-.429V9.433a.422.422 0 0 0-.414-.429z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                                <g fill="none" fillRule="evenodd">
+                                    <rect width="40" height="40" fill="#C82424" rx="8"/>
+                                    <path fill="#FFF" fillRule="nonzero" d="M33.83 11.717C32.749 10.497 30.749 10 26.93 10H13.07c-3.906 0-5.94.53-7.018 1.828C5 13.094 5 14.958 5 17.54v4.92c0 5 1.248 7.54 8.07 7.54h13.86c3.311 0 5.146-.439 6.333-1.515C34.481 27.38 35 25.58 35 22.46v-4.92c0-2.722-.081-4.598-1.17-5.823zm-9.57 8.962l-6.294 3.116a1.01 1.01 0 0 1-.95-.028.908.908 0 0 1-.466-.784V16.77c0-.32.176-.617.465-.784.29-.166.649-.177.949-.03l6.294 3.096c.32.158.521.47.522.813 0 .341-.2.655-.52.813z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                                <g fill="none" fillRule="evenodd">
+                                    <rect width="40" height="40" fill="#F57749" rx="8"/>
+                                    <path fill="#FFF" fillRule="nonzero" d="M28 10H12c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V12c0-1.1-.9-2-2-2zm-8 6c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm-7.5 12c-.3 0-.5-.2-.5-.5V19h2.1c-.1.3-.1.7-.1 1 0 3.3 2.7 6 6 6s6-2.7 6-6c0-.3 0-.7-.1-1H28v8.5c0 .3-.2.5-.5.5h-15zM28 14.5c0 .3-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5v-2c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5v2z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/?lang=ru" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                                <g fill="none" fillRule="evenodd">
+                                    <rect width="40" height="40" fill="#33A2CC" rx="8"/>
+                                    <path fill="#FFF" fillRule="nonzero" d="M31.916 12.366a9.64 9.64 0 0 1-2.827.796 5.051 5.051 0 0 0 2.164-2.793 9.775 9.775 0 0 1-3.129 1.227A4.853 4.853 0 0 0 24.531 10c-2.719 0-4.924 2.262-4.924 5.05 0 .395.044.781.128 1.15-4.091-.21-7.72-2.221-10.147-5.277a5.112 5.112 0 0 0-.666 2.539c0 1.752.87 3.299 2.19 4.203a4.83 4.83 0 0 1-2.23-.634v.063c0 2.447 1.697 4.488 3.948 4.953a4.869 4.869 0 0 1-1.297.177 4.61 4.61 0 0 1-.927-.094c.627 2.008 2.445 3.468 4.598 3.508a9.72 9.72 0 0 1-6.114 2.159c-.397 0-.789-.025-1.174-.07A13.663 13.663 0 0 0 15.462 30c9.057 0 14.008-7.696 14.008-14.37l-.017-.654a9.975 9.975 0 0 0 2.463-2.61z"/>
+                                </g>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div className={s.footer_c}>
-                    <div className={s.f_mail}>Email us: <a href="mailto:info@tour2sky.com">info@tour2sky.com</a></div>
-                    <div className={s.row}>
-                        <div className={s.f_pay}>
+                <div className={"footer_c"}>
+
+                    <div className={"f_mail"}>Email us: <a href="mailto:info@tour2sky.com">info@tour2sky.com</a></div>
+                    <div className={"row"}>
+                        <div className={"f_pay"}>
                             <a href="#" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="34" viewBox="0 0 56 34">
                                     <g fill="none" fillRule="evenodd">
@@ -85,12 +125,12 @@ const Footer = () => {
                                 </svg>
                             </a>
                         </div>
-                        <div className={s.f_link}>
+                        <div className={"f_link"}>
                             <a href="#">Terms & Conditions</a>
                         </div>
                     </div>
                 </div>
-                <div className={s.footer_r}>
+                <div className={"footer_r"}>
                     <ul>
                         <li><a href="#">Link to information</a></li>
                         <li><a href="#">Usefull short link</a></li>
@@ -98,7 +138,7 @@ const Footer = () => {
                         <li><a href="#">Usefull short link</a></li>
                     </ul>
                 </div>
-                <div className={s.footer_r}>
+                <div className={"footer_r"}>
                     <ul>
                         <li><a href="#">Link to information</a></li>
                         <li><a href="#">Usefull short link</a></li>

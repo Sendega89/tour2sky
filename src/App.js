@@ -4,7 +4,7 @@ import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import HeaderNavbar from "./Components/Header/headerComponents/HeaderMobileMenu";
-import {Redirect, Route,withRouter,Routes} from "react-router-dom";
+import {Route,Routes} from "react-router-dom";
 import Catalog from "./Pages/Catalog/Catalog";
 import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";

@@ -6,6 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { slide as Menu } from 'react-burger-menu';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../../assets/img/logo.png";
+import {NavLink} from "react-router-dom";
 library.add(fab);
 
 
@@ -27,10 +28,12 @@ export default props => {
                             <div id="dl-menu" className="dl-menuwrapper">
                                 <ul className="dl-menu dl-menuopen">
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="/">Catalog</a></li>
-                                    <li><a href="#">Balloning</a></li>
-                                    <li><a href="#">Search</a></li>
-                                    <li><a href="#">My account</a></li>
+                                    <ul>
+                                        <li><NavLink to="/Catalog">Catalog</NavLink></li>
+                                        <li><NavLink to="/Balloning">Balloning</NavLink></li>
+                                        <li><NavLink to="/Search">Search</NavLink></li>
+                                        <li><NavLink to="/MyAccount">My account</NavLink></li>
+                                    </ul>
                                 </ul>
                             </div>
                         </div>

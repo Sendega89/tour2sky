@@ -2706,6 +2706,7 @@ footer {
     color: white;
     bottom: 0;
     width: 100%;
+
 }
 
 footer a {
@@ -2719,30 +2720,30 @@ footer a:hover {
 }
 
 footer .footer_l {
-    float: left;
-    width: 33.3%;
+   /* float: left;*/
+   /* width: 15%;*/
 }
 
 footer .footer_r {
-    float: left;
-    width: 33.3%;
+    /*float: left;*/
+    width: 20%;
 }
 
 footer .footer_c {
-    float: left;
-    width: 33.3%;
+    /*float: left;*/
+    width: 25%;
     line-height: 1;
     padding-left: 9px;
 }
 
 footer .footer_logo {
-    float: left;
-    width: 33%;
+   /* float: left;*/
+    width: 10%;
 }
 
 footer .soc {
-    float: left;
-    width: 67%;
+   /* float: left;*/
+    /*width: 20%;*/
     padding-left: 24px;
     padding-top: 24px;
 }
@@ -3874,4 +3875,11 @@ footer .white-popup {
 
 .row {
     --bs-gutter-x: 0 !important;
+}
+.mainFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
 }
