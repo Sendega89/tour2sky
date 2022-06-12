@@ -459,26 +459,27 @@ header {
 }
 
 .menu {
-    float: left;
-    width: 62%;
+    font-family: 'Open Sans', sans-serif;
+    /*float: left;*/
+    /*width: 62%;*/
     padding: 47px 0 0 0;
     text-align: center;
 }
 
 .header_drop {
-    float: left;
-    width: 15%;
+    /*float: left;*/
+    /*width: 15%;*/
     padding-top: 42px;
 }
 
 .header_login {
-    float: right;
-    width: 12%;
-    padding-top: 31px;
+    /*float: right;*/
+    /*width: 12%;*/
+    padding-top: 35px;
 }
 .no_login .login_drop span::before {
     display: none;
-    /*border: 1px solid black;*/
+    border: 1px solid black;
 }
 
 .no_login .login_drop {

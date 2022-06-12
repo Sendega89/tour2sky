@@ -1,15 +1,16 @@
 import "./headerNavigation.css"
+import {NavLink} from "react-router-dom";
 
 
 const HeaderNavigation = () => {
     return  <div className={"menu"}>
         <nav>
             <ul>
-                <li><a href="#">Catalog</a></li>
-                <li><a href="#">Balloning</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">My account</a></li>
-                <li><a href="#">Checkout</a></li>
+                <li><NavLink to="/Catalog">Catalog</NavLink></li>
+                <li><NavLink to="/Balloning">Balloning</NavLink></li>
+                <li><NavLink to="/Search">Search</NavLink></li>
+                <li><NavLink to="/MyAccount">My account</NavLink></li>
+                <li><NavLink to="/Checkout" href="#">Checkout</NavLink></li>
                 <li className="drop-item" ><a href="#">Other</a>
                     <ul className="drop-menu">
                         <li className="drop-menu__item"><a className="drop-menu__link" href="#">Paragliding</a></li>

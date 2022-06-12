@@ -3,7 +3,7 @@ import Main from "./ContentComponents/Main/Main";
 
 
 const Content = () => {
-    return <div className="content">
+    return <div className="contentHome">
             {/* Header title start */}
    <HeaderTitle />
     {/*  Header title end */}
