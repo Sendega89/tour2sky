@@ -10,6 +10,8 @@ import Catalog from "./Pages/Catalog/Catalog";
 import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";
 import Page404 from "./Pages/Page404/Page404";
+import MyAccount from "./Pages/MyAccount/MyAccount";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
     return (
@@ -24,9 +26,14 @@ function App() {
                 <Route path="/Catalog"
                        element={ <Catalog isOpen={false}/>}/>
                     <Route path="/Balloning"
-                           element={ <Balloning/>}/>
+                           element={ <Balloning isOpen={true}/>}/>
                 <Route path="/Search"
                        element={ <Search/>}/>
+                    <Route path="/MyAccount"
+                       element={ <MyAccount/>}/>
+                    <Route path="/Checkout"
+                       element={ <Checkout/>}/>
+
                 <Route path="/404"
                        element={<Page404/>}/>
                 </Routes>

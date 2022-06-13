@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {fab} from "@fortawesome/free-brands-svg-icons";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import itemImage from "../../assets/img/p1.jpg";
+import Card from "../../assets/common/Cards/Card";
 
 library.add(fab,fas);
 
@@ -162,7 +163,7 @@ const Catalog = (props) => {
 
                         <div className="row row-15">
                             {/* cat item */}
-                            <div className="cat_item">
+                            {/*<div className="cat_item">
                                 <div className="cat_item_vn row">
                                     <div className="cat_item_img"><a href="#"><img src={itemImage} alt={"item"} /></a></div>
                                     <div className="cat_item_center">
@@ -188,9 +189,10 @@ const Catalog = (props) => {
                                         <a href="#">Buy</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
+                            <Card />
                             {/* cat item*/}
-
+                        </div>
 
 
 
@@ -210,7 +212,7 @@ const Catalog = (props) => {
                             <p>Tourism can bring damage to the local area, and/or the tourists. Litter, scuba-diving and deforestation are problems for popular places such as St. Lucia, Hawaii and others. Scuba-diving can damage coral reefs which are home to hundreds of species of sea animals. Tourism means people traveling for fun. It includes activities such as sightseeing and camping. People who travel for fun are called "tourists". </p>
                         </article>
 
-                    </div>
+
                      {/*cat right */}
 
                 </div>

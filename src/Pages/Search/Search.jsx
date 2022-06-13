@@ -2,9 +2,13 @@ import React from "react";
 import Rectangle from "../../Components/Main/ContentComponents/Main/MainComponents/Rectangle";
 import "./Search.css";
 import "../../App.css";
-import "../../responsice.css"
+import "../../responsice.css";
 import itemImage from "../../assets/img/p1.jpg";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Card from "../../assets/common/Cards/Card";
+
+
 const Search = () => {
     return  <>
     <div className="error200">
@@ -33,22 +37,22 @@ const Search = () => {
                     <h3>Popular helicopter tours</h3>
                     <div className="row row-15">
                         {/*cat item */}
-                        <div className="cat_item">
+                        {/*<div className="cat_item">
                             <div className="cat_item_vn row">
                                 <div className="cat_item_img"><a href="#"><img src={itemImage} /></a></div>
                                 <div className="cat_item_center">
                                     <div className="cat_item_title row">
-                                        <i className="fa fa-bookmark" aria-hidden="true"></i>
+                                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true"></FontAwesomeIcon></i>
                                         <a href="#">Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</a>
                                     </div>
                                     <div className="cat_item_price row">
                                         <div className="item_price">$ 420</div>
                                         <div className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star deactivate"></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star deactivate"></FontAwesomeIcon></i>
                                         </div>
                                     </div>
                                     <div className="cat_item_desk">
@@ -59,26 +63,27 @@ const Search = () => {
                                     <a href="#">Buy</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>*/}
+                        <Card />
                          {/*cat item*/}
 
                          {/*cat item */}
-                        <div className="cat_item">
+                        {/*<div className="cat_item">
                             <div className="cat_item_vn row">
                                 <div className="cat_item_img"><a href="#"><img src={itemImage} /></a></div>
                                 <div className="cat_item_center">
                                     <div className="cat_item_title row">
-                                        <i className="fa fa-bookmark-o" aria-hidden="true"></i>
+                                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark-o" aria-hidden="true"></FontAwesomeIcon></i>
                                         <a href="#">Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</a>
                                     </div>
                                     <div className="cat_item_price row">
                                         <div className="item_price">$ 420</div>
                                         <div className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star deactivate"></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-star deactivate"></FontAwesomeIcon></i>
                                         </div>
                                     </div>
                                     <div className="cat_item_desk">
@@ -89,7 +94,8 @@ const Search = () => {
                                     <a href="#">Buy</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>*/}
+                        <Card />
                         {/* cat item*/}
                     </div>
                 </div>
@@ -99,41 +105,6 @@ const Search = () => {
 
             {/* best cities  start*/}
             <BestCities/>
-            {/*<div className="row best_cities section">
-                <div className="container">
-                    <h3>The best cities for balloning</h3>
-                    <div className="myBestCities">
-                        <ul>
-                            <li><a href="#">Accra</a></li>
-                            <li><a href="#">Cali</a></li>
-                            <li><a href="#">Hangzhou</a></li>
-                            <li><a href="#">Mumbai</a></li>
-                            <li><a href="#">San Jose</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Amsterdam</a></li>
-                            <li><a href="#">Brussels</a></li>
-                            <li><a href="#">Cape Town</a></li>
-                            <li><a href="#">Lagos</a></li>
-                            <li><a href="#">Orlando</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Auckland</a></li>
-                            <li><a href="#">Barcelona</a></li>
-                            <li><a href="#">Busan</a></li>
-                            <li><a href="#">Charlotte</a></li>
-                            <li><a href="#">Greenville</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Jackson</a></li>
-                            <li><a href="#">Los Angeles</a></li>
-                            <li><a href="#">Rotterdam</a></li>
-                            <li><a href="#">Sydney</a></li>
-                            <li><a href="#">Winnipeg</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>*/}
             {/* best cities end*/}
 
 

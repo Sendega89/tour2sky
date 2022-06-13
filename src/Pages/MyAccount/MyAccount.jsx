@@ -1,8 +1,13 @@
 import React from "react";
-
+import Authorization from "../../assets/common/Auth/Authorization/Authorization";
+import CreateAccount from "../../assets/common/Auth/CreateAccount/CreateAccount";
+import "./MyAccount.css";
 const MyAccount = () => {
-    return <div className="balloningWrapper">
-        <h1>MyAccount Page</h1>
+    return <div className={"myAccount container"}>
+    <Authorization />
+        <CreateAccount/>
     </div>
+
+
 }
 export default MyAccount
