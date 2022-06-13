@@ -1,4 +1,4 @@
-import s from "./ServiceStart.module.css";
+
 
 
 const ServiceStart = () => {
@@ -8,7 +8,7 @@ const ServiceStart = () => {
                 <h3>How Tour2Sky works</h3>
                 <p>Tour2Sky searches any city, town, landmark, attraction or address across the globe with thousands of multi-modal routes to easily get you from A to B.</p>
             </div>
-            <div className={s.serviceContainer}>
+            <div className={"service container"}>
                 {/* Service item start */}
                 <div className="services_item">
                     <div className="services_item_vn">

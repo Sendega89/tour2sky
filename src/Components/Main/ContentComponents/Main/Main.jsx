@@ -1,7 +1,7 @@
 import ServiceStart from "./MainComponents/ServiceStart";
 import Rectangle from "./MainComponents/Rectangle";
 import About from "./MainComponents/About";
-import Carousel from "./MainComponents/Сarousel";
+import Carousel from "../../../../assets/common/Carousel/Сarousel";
 
 
 const Main = () => {

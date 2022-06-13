@@ -16,12 +16,12 @@ library.add(fab);
 export default props => {
         return (
             // Pass on our props
-            <Menu  width={'100%'} right >
+            <Menu  width={'100%'} right isOpen={ false } >
                 <nav className="nav" >
 
                     <div className="container_right_menu">
 
-                        <div className=" footer_menu">
+                        <div className="footer_menu">
                             <div className="logotype_light">
                                 <img className="lozad is-loaded" src={logo} alt="Tour2Sky" src={logo} loaded="true"/>
                             </div>

@@ -2,15 +2,12 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
-import img1 from  "../../../../../assets/img/rectangle.png";
-import img2 from  "../../../../../assets/img/rectangle-copy-5.png";
-import img3 from  "../../../../../assets/img/rectangle-copy-6.png";
-import img4 from  "../../../../../assets/img/rectangle-copy-7.png";
+
 import s from "./Carousel.module.css"
-import "../../../../../App.css";
+import "../../../App.css";
 
 
-const Carousel = () => {
+const Carousel = (props) => {
      const options = {
         loop: true,
         margin: 10,
@@ -21,29 +18,29 @@ const Carousel = () => {
         <OwlCarousel className={`owl-theme ${s.theme}`} {...options}>
             <div className={`item ${s.item}`}>
                 <img
-                    src={img1}
-                    alt="city1"
+                    src={props.img1}
+                    alt="item1"
                 />
                 <span>Boston</span>
             </div>
             <div className={`item ${s.item}`}>
                 <img
-                    src={img2}
-                    alt="city2"
+                    src={props.img2}
+                    alt="item2"
                 />
                 <span>Dublin</span>
             </div>
             <div className={`item ${s.item}`}>
                 <img
-                    src={img3}
-                    alt="city3"
+                    src={props.img3}
+                    alt="item3"
                 />
                 <span>Edinburgh</span>
             </div>
             <div className={`item ${s.item}`}>
                 <img
-                    src={img4}
-                    alt="city4"
+                    src={props.img4}
+                    alt="item4"
                 />
                 <span>San Diego</span>
             </div>

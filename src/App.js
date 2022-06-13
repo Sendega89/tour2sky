@@ -1,5 +1,6 @@
 import './App.css';
-import "./font-awesome.css"
+import "./font-awesome.css";
+import "./responsice.css";
 import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
@@ -8,6 +9,7 @@ import {Route,Routes} from "react-router-dom";
 import Catalog from "./Pages/Catalog/Catalog";
 import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";
+import Page404 from "./Pages/Page404/Page404";
 
 function App() {
     return (
@@ -20,11 +22,13 @@ function App() {
                 <Route path="/"
                        element={ <Content/>}/>
                 <Route path="/Catalog"
-                       element={ <Catalog/>}/>
+                       element={ <Catalog isOpen={false}/>}/>
+                    <Route path="/Balloning"
+                           element={ <Balloning/>}/>
                 <Route path="/Search"
                        element={ <Search/>}/>
-                <Route path="/Balloning"
-                       element={ <Balloning/>}/>
+                <Route path="/404"
+                       element={<Page404/>}/>
                 </Routes>
             </div>
                 <Footer/>

@@ -4,9 +4,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {fab} from "@fortawesome/free-brands-svg-icons";
 import {fas} from "@fortawesome/free-solid-svg-icons";
+import itemImage from "../../assets/img/p1.jpg";
+
 library.add(fab,fas);
 
-const Catalog = () => {
+const Catalog = (props) => {
+
     return <div className="balloningWrapper">
         <div className="catalog">
             <div className="row header_title">
@@ -21,15 +24,24 @@ const Catalog = () => {
             <div className="container">
                 {/* breadcrumbs */}
                 <div className="row breadcrumbs">
-                    <a href="#">Home page</a>
-                    <a href="#">Balloning</a>
-                    <span>Sierra Nevada</span>
+                    <a href="/">Home page</a>
+                    <span>Catalog</span>
                 </div>
+
+
+                {/*<nav aria-label="breadcrumb">
+                    <ol className="breadcrumbs">
+                        <li className="breadcrumb-item"><a href="#">Home</a></li>
+                        <li className="breadcrumb-item active" aria-current="page">Catalog</li>
+                    </ol>
+                </nav>*/}
+
+
                  {/*breadcrumbs
 
                  catalog row */}
                 <div className="row catalog_row">
-                     Sidebar
+                     {/*Sidebar*/}
                     <div className="sidebar">
 
                         <a className="pp-credit-block-button" href="#" onclick="return false">
@@ -37,7 +49,7 @@ const Catalog = () => {
                             Filter</a>
                         <div className="popup-credit">
                             <div className="credit_block">
-                                <a className="cancelComment" title=""><i><FontAwesomeIcon className="fa-solid fa-times" aria-hidden="true"></FontAwesomeIcon></i></a>
+                                <a className="cancelComment" title=""><i><FontAwesomeIcon icon="fa-solid fa-times" aria-hidden="true"></FontAwesomeIcon></i></a>
 
                                 {/* price slider */}
                                 <div className="row wighet">
@@ -132,13 +144,13 @@ const Catalog = () => {
                             </div>
                         </div>
                     </div>
-                 {/*    Sidebar
+                 {/*
 
                      cat right */}
                     <div className="catalog_r">
 
                         <div className="row cat_top">
-                            <h4>96 helicopter tours found</h4>
+                            <h4>1 helicopter tours found</h4>
                             <div className="short">
                                 <select>
                                     <option>Sort by price</option>
@@ -152,20 +164,20 @@ const Catalog = () => {
                             {/* cat item */}
                             <div className="cat_item">
                                 <div className="cat_item_vn row">
-                                    <div className="cat_item_img"><a href="#"><i><FontAwesomeIcon><img src="../../assets/img/p1.jpg" alt={"item"} /></FontAwesomeIcon></i></a></div>
+                                    <div className="cat_item_img"><a href="#"><img src={itemImage} alt={"item"} /></a></div>
                                     <div className="cat_item_center">
                                         <div className="cat_item_title row">
-                                            <i><FontAwesomeIcon className="fa-solid fa-bookmark" aria-hidden="true"></FontAwesomeIcon></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true"></FontAwesomeIcon></i>
                                             <a href="#">Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</a>
                                         </div>
                                         <div className="cat_item_price row">
                                             <div className="item_price">$ 420</div>
                                             <div className="rating">
-                                                <i><FontAwesomeIcon> className="fa fa-star"></FontAwesomeIcon></i>
-                                                <i><FontAwesomeIcon> className="fa fa-star"></FontAwesomeIcon></i>
-                                                <i><FontAwesomeIcon> className="fa fa-star"></FontAwesomeIcon></i>
-                                                <i><FontAwesomeIcon> className="fa fa-star"></FontAwesomeIcon></i>
-                                                <i><FontAwesomeIcon> className="fa fa-star deactivate"></FontAwesomeIcon></i>
+                                                <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                                <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                                <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                                <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
+                                                <i><FontAwesomeIcon icon="fa-solid fa-star deactivate"></FontAwesomeIcon></i>
                                             </div>
                                         </div>
                                         <div className="cat_item_desk">
@@ -185,13 +197,10 @@ const Catalog = () => {
 
                         {/* pagination */}
                         <div className="row pagination">
-                            <ul>
-                                <li><a href="#">1</a></li>
-                                <li><span className="active">2</span></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">6</a></li>
+                            <ul className={"pagination"}>
+                                <li className={"previos disabled"}><a href="#">1</a></li>
+                                <li className={"page-item "}><span className="active">2</span></li>
+
                             </ul>
                         </div>
                          {/*pagination*/}

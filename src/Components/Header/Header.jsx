@@ -12,6 +12,7 @@ const Header = () => {
         {/* Header bottom start */}
         <div className="row header">
             <div className="container">
+                <div className="row">
                 <div className={`${s.myHeader}`}>
                     {/* LOGO start */}
                    <Logo />
@@ -22,7 +23,9 @@ const Header = () => {
                     {/* account not login */}
                    <HeaderAuthorization />
                     {/* account not login */}
+
                 </div>
+            </div>
             </div>
         </div>
         {/* Header bottom end */}

@@ -4,12 +4,8 @@
 .item img:hover {
     transition: 1s; /* Время эффекта */
 }
-.item  img:hover  {
-    max-width: 100%;
-    transform: scale(1.1); /* Увеличиваем масштаб */
-}
-.item span {
 
+.item span {
     width: 100%;
     text-align: center;
     position: absolute;

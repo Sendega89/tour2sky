@@ -1,0 +1,9 @@
+.myBestCities {
+display: flex;
+    padding: 0 25px;
+
+}
+.myBestCities ul {
+    min-width: 25%;
+    flex-direction: column;
+}
