@@ -15,7 +15,7 @@ const HeaderNavigation = () => {
                     <ul className="drop-menu">
                         <li className="drop-menu__item"><NavLink to="/404" className="drop-menu__link" >Paragliding</NavLink></li>
                         <li className="drop-menu__item"><NavLink to="/404" className="drop-menu__link" >Hand Giding</NavLink></li>
-                        <li className="drop-menu__item"><NavLink to="/404" className="drop-menu__link" >Product</NavLink></li>
+                        <li className="drop-menu__item"><NavLink to="/product/1" className="drop-menu__link" >Product</NavLink></li>
                     </ul>
                 </li>
             </ul>

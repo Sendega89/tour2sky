@@ -1,3 +1,7 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Ubuntu:wght@300;400;700&display=swap');
+
 /* Default Color Skins */
 :root {
     --charcoal-grey: #2f3337;
@@ -30,7 +34,7 @@ body {
     font-weight: 400;
     color: #2f3337;
     margin: 0 auto;
-    font-weight: 400;
+    /*font-weight: 600;*/
     background: white;
     position: relative;
     min-height: 100%;
@@ -222,7 +226,7 @@ select {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\f107";
+    content: "\142F";
     color: #265878;
 }
 
@@ -1890,17 +1894,17 @@ img.mfp-img {
     outline: none;
 }
 
-.owl-theme .owl-dots .owl-dot span {
+.owl-theme .owl-dots button.owl-dot span {
     border-radius: 4px;
     width: 30px;
     height: 6px;
 }
 
-.owl-theme .owl-dots .owl-dot.active span {
-    background: #33cccc;
+.owl-theme .owl-dots button.owl-dot.active span {
+    background: #33cccc ;
 }
 
-.owl-theme .owl-dots .owl-dot:hover span {
+.owl-theme .owl-dots button.owl-dot:hover span {
     background: #33cccc;
 }
 
@@ -2250,6 +2254,7 @@ img.mfp-img {
 }
 
 .cat_item {
+    font-family: "Open Sans", sans-serif;
     float: left;
     padding: 12px 10px;
     width: 25%;
@@ -2310,6 +2315,7 @@ img.mfp-img {
 
 .cat_item_title a {
     font-size: 22px;
+    font-weight: 400;
     padding-left: 30px;
     max-height: 33px;
     display: inline-block;
@@ -2326,6 +2332,7 @@ img.mfp-img {
 }
 
 .cat_item_desk {
+    font-weight:400;
     font-size: 14px;
     line-height: 1.21;
     color: #2f3337;
@@ -2461,7 +2468,7 @@ img.mfp-img {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\f105";
+    content: ">";
 }
 
 .breadcrumbs span {
@@ -3228,7 +3235,7 @@ footer .footer_r ul li a {
 
 .pick {
     font-size: 14px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     padding: 16px 9px 30px 39px;

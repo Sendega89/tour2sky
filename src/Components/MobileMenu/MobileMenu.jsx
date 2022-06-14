@@ -15,7 +15,7 @@ const MobileMenu = () => {
                 <div className="row logotype_light">
                     <img className="lozad is-loaded" src={logo} alt="Tour2Sky" src={logo} loaded="true"/>
                 </div>
-                <div id="dl-menu" className="dl-menuwrapper">
+                {/*<div id="dl-menu" className="dl-menuwrapper">
                     <ul className="dl-menu dl-menuopen">
                         <li><a href="/">Home</a></li>
                         <li>
@@ -52,7 +52,7 @@ const MobileMenu = () => {
                         <li><a href="/elements.php">Elements</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
-                </div>
+                </div>*/}
             </div>
             <div className="row footer_item_social">
                 <a href="#"><i><FontAwesomeIcon icon="fa fa-facebook"></FontAwesomeIcon></i></a>

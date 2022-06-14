@@ -3,6 +3,7 @@
 }
 .item img:hover {
     transition: 1s; /* Время эффекта */
+
 }
 
 .item span {

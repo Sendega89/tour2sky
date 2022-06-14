@@ -12,6 +12,8 @@ import Balloning from "./Pages/Balloning/Balloning";
 import Page404 from "./Pages/Page404/Page404";
 import MyAccount from "./Pages/MyAccount/MyAccount";
 import Checkout from "./Pages/Checkout/Checkout";
+import Authorization from "./assets/common/Auth/Authorization/Authorization";
+import Product from "./Pages/Product/Product";
 
 function App() {
     return (
@@ -33,9 +35,12 @@ function App() {
                        element={ <MyAccount/>}/>
                     <Route path="/Checkout"
                        element={ <Checkout/>}/>
-
+                    <Route path="/authorization"
+                           element={ <Authorization/>}/>
                 <Route path="/404"
                        element={<Page404/>}/>
+                    <Route path="/product/1"
+                           element={<Product/>}/>
                 </Routes>
             </div>
                 <Footer/>

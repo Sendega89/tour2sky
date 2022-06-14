@@ -4,7 +4,7 @@ import CreateAccount from "../../assets/common/Auth/CreateAccount/CreateAccount"
 import "./MyAccount.css";
 const MyAccount = () => {
     return <div className={"myAccount container"}>
-    <Authorization />
+        <Authorization />
         <CreateAccount/>
     </div>
 
