@@ -3,7 +3,7 @@ import "../../App.css"
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fab} from "@fortawesome/free-brands-svg-icons";
 import {fas} from "@fortawesome/free-solid-svg-icons";
-import Card from "../../assets/common/Cards/Card";
+import ProductCard from "../../assets/common/Cards/ProductCard";
 import SearchFilter from "../../assets/common/SideBar/SearchFilter";
 import '../../font-awesome.css';
 library.add(fab, fas);
@@ -174,8 +174,8 @@ const Catalog = (props) => {
                                 <div className="cat_item_details"><a href="/product/2">Buy</a></div>
                             </div>
                         </div>*/}
-                        <Card />
-                        <Card />
+                        <ProductCard />
+                        <ProductCard />
                     </div>
                     <div className="row">
                         <ul className="pagination">

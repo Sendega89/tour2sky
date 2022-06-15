@@ -6,7 +6,7 @@ import "../../responsice.css";
 import itemImage from "../../assets/img/p1.jpg";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Card from "../../assets/common/Cards/Card";
+import ProductCard from "../../assets/common/Cards/ProductCard";
 
 
 const Search = () => {
@@ -64,7 +64,7 @@ const Search = () => {
                                 </div>
                             </div>
                         </div>*/}
-                        <Card />
+                        <ProductCard />
                          {/*cat item*/}
 
                          {/*cat item */}
@@ -95,7 +95,7 @@ const Search = () => {
                                 </div>
                             </div>
                         </div>*/}
-                        <Card />
+                        <ProductCard />
                         {/* cat item*/}
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import React from "react";
 import '../../../App.css';
 
 
-const Card = () => {
+const ProductCard = () => {
     return <div className="cat_item">
         <div className="cat_item_vn row">
             <div className="cat_item_img"><a product="[object Object]" href="/product/1"><img
@@ -38,4 +38,4 @@ const Card = () => {
         </div>
     </div>
 }
-export default Card
+export default ProductCard
