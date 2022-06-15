@@ -10,6 +10,13 @@ import img1 from "../../assets/img/rectangle.png";
 import img2 from "../../assets/img/rectangle-copy-5.png";
 import img3 from "../../assets/img/rectangle-copy-6.png";
 import img4 from "../../assets/img/rectangle-copy-7.png";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+import "owl.carousel/dist/assets/owl.carousel.min.css";
+import ChatCarousel from "./ChatCarousel";
+
+
 const Balloning = () => {
     return <>
         <div className="section">
@@ -42,10 +49,12 @@ const Balloning = () => {
 
         {/* Start top */}
         <div className="container">
-        <Carousel img1={img1}
-                  img2={img2}
-                  img3={img3}
-                  img4={img4}/>
+            <Carousel img1={img1}
+                      img2={img2}
+                      img3={img3}
+                      img4={img4}
+                      item={3}
+                      margin={10}/>
         </div>
         {/* End top*/}
 
@@ -179,17 +188,15 @@ const Balloning = () => {
                     </div>
 
                 </div>
-
                 <div className="center">
                     <a href="#" id="loadMore" className="btn">Load more</a>{/*for mobile*/}
                     <a href="#" id="loadMoredesc" className="btn">Load more</a>
                 </div>
-
             </div>
         </div>
-        {/* post end
+        {/*post end*/}
 
-     Faq start*/}
+        {/*Faq start*/}
         <div className="row faq section">
             <div className="container">
                 <div className="row_title row_title_white">
@@ -207,9 +214,9 @@ const Balloning = () => {
                             </li>
                         </ul>
                     </div>
-
                     <div className="faq_r">
-                        <div className="owl_faq owl-carousel owl-theme">
+<ChatCarousel/>
+                        {/* <div className="owl_faq owl-carousel owl-theme">
                             <div className="item">
                                 <div className="row review">
                                     <div className="row review_top">
@@ -226,25 +233,6 @@ const Balloning = () => {
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="item">
-                                <div className="row review">
-                                    <div className="row review_top">
-                                        <div className="review_top_l"><img src={oval}/></div>
-                                        <div className="review_top_r">How to be ready?</div>
-                                    </div>
-                                    <div className="row review_niz">
-                                        <div className="review_niz_l">Just prepare all your warm clothes and be ready to
-                                            film your «best ever» flight. Althow please, double check your flight time
-                                            and
-                                            come a bit earlier to have possibility to listen for our short instructions
-                                        </div>
-                                        <div className="review_niz_r"><img src="../../assets/img/review_icon.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div className="item">
                                 <div className="row review">
                                     <div className="row review_top">
@@ -261,48 +249,13 @@ const Balloning = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
 
-                            <div className="item">
-                                <div className="row review">
-                                    <div className="row review_top">
-                                        <div className="review_top_l"><img src={oval}/></div>
-                                        <div className="review_top_r">How to be ready?</div>
-                                    </div>
-                                    <div className="row review_niz">
-                                        <div className="review_niz_l">Just prepare all your warm clothes and be ready to
-                                            film your «best ever» flight. Althow please, double check your flight time
-                                            and
-                                            come a bit earlier to have possibility to listen for our short instructions
-                                        </div>
-                                        <div className="review_niz_r"><img src={rewiev}/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="item">
-                                <div className="row review">
-                                    <div className="row review_top">
-                                        <div className="review_top_l"><img src={oval}/></div>
-                                        <div className="review_top_r">How to be ready?</div>
-                                    </div>
-                                    <div className="row review_niz">
-                                        <div className="review_niz_l">Just prepare all your warm clothes and be ready to
-                                            film your «best ever» flight. Althow please, double check your flight time
-                                            and
-                                            come a bit earlier to have possibility to listen for our short instructions
-                                        </div>
-                                        <div className="review_niz_r"><img src={rewiev}/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         <About/>
     </>
 }

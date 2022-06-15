@@ -2,9 +2,8 @@ import "../../App.css";
 import "../../rating.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
-import {Accordion} from "react-bootstrap";
 import ProductCard from "../../assets/common/Cards/ProductCard";
-import ProductAccordion from "../../assets/common/Accordion/ProductAccordion";
+
 
 
 const Product = () => {

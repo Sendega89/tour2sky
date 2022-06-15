@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClockFour} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import '../../../App.css';
+import Rating from "../Rating/Rating";
 
 
 const ProductCard = () => {
@@ -18,12 +19,7 @@ const ProductCard = () => {
                 <div className="cat_item_price">
                     <div className="item_price"><span>from</span> $ 420</div>
                     <div className="rating-container">
-                        <div className="rating"><i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                            <i><FontAwesomeIcon icon="fa-solid fa-star deactivate"></FontAwesomeIcon></i>
-                        </div>
+                        <Rating/>
                         <div className="item_date">
                             <i><FontAwesomeIcon icon={faClockFour} /></i>
                             <span>30 minutes</span>

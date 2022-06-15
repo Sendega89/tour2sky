@@ -22,8 +22,9 @@ const Main = () => {
                 <Carousel img1={img1}
                           img2={img2}
                           img3={img3}
-                          img4={img4}/>
-
+                          img4={img4}
+                          item={3}
+                          margin={10}/>
             </div>
         </div>
         {/* End Tabs Container */}
