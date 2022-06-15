@@ -3,6 +3,8 @@ import "../../rating.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../../assets/common/Cards/ProductCard";
+import ImageGallery from "./Gelery/ImageGallery";
+import Rating from "../../assets/common/Rating/Rating";
 
 
 
@@ -26,9 +28,10 @@ const Product = () => {
                 {/*product top row */}
                 <div className="row product_top">
                     {/*product left block */}
-                    <div className="col-2 product_l">
-                        <div className="slider-for gallery slick-initialized slick-slider">
-                            {/*<div className="slick-list draggable">
+                    <div className=" product_l">
+
+                        {/*<div className="slider-for gallery slick-initialized slick-slider">
+                            <div className="slick-list draggable">
                                 <div className="slick-track"
                                      style="opacity: 1; width: 1808px;">
                                     <div className="slick-slide slick-current slick-active"
@@ -74,10 +77,10 @@ const Product = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>*/}
+                            </div>
                         </div>
                         <div className="row slider_nav_block">
-                            {/*<div className="slider-nav">
+                            <div className="slider-nav">
                                 <div>
                                     <div className="slider_nav_block_vn"><img src={product}/></div>
                                 </div>
@@ -90,11 +93,11 @@ const Product = () => {
                                 <div>
                                     <div className="slider_nav_block_vn"><img src={product4}/></div>
                                 </div>
-                            </div>*/}
+                            </div>
                             <div className="slider-nav slick-initialized slick-slider">
                                 <div className="angle_left slick-arrow">
                                     <i><FontAwesomeIcon icon="fa-solid fa-angle-left" aria-hidden="true"/></i></div>
-                                {/*<div className="slick-list draggable" style="padding: 0px;">
+                                <div className="slick-list draggable" style="padding: 0px;">
                                     <div className="slick-track"
                                          style="opacity: 1; width: 1524px; transform: translate3d(-381px, 0px, 0px);">
                                         <div className="slick-slide slick-cloned" data-slick-index="-4"
@@ -206,16 +209,16 @@ const Product = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>*/}
+                                </div>
                                 <div className="angle_right slick-arrow">
                                     <i><FontAwesomeIcon icon="fa-solid fa-angle-right" aria-hidden="true"/></i></div>
                             </div>
-                        </div>
+                        </div>*/}
 
                     </div>
                     {/*product left block*/}
                     {/*product right block*/}
-                    <div className="col-2 product_r">
+                    <div className=" product_r">
                         <div className="product_r_vn">
                             <div className="row product_r_top">
                                 <div className="row">
@@ -223,14 +226,7 @@ const Product = () => {
                                         <i><FontAwesomeIcon icon="fa-solid fa-clock" aria-hidden="true"/></i>
                                         <span>4h of flight</span>
                                     </div>
-                                    <div className="rating">
-                                        <i><FontAwesomeIcon icon="fa-solid fa-star"/></i>
-                                        <i><FontAwesomeIcon icon="fa-solid fa-star"/></i>
-                                        <i><FontAwesomeIcon icon="fa-solid fa-star"/></i>
-                                        <i><FontAwesomeIcon icon="fa-solid fa-star"/></i>
-                                        <i><FontAwesomeIcon icon="fa-solid fa-star" className="deactivate"/></i>
-
-                                    </div>
+                                   <Rating/>
                                 </div>
                                 <div className="row options">
                                     <div className="row options_item">

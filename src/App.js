@@ -21,7 +21,6 @@ function App() {
             <HeaderNavbar pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <div id="page-wrap" className={"headerMenu"}>
                 <Header/>
-            <div className="content">
                 <Routes>
                 <Route path="/"
                        element={ <Content/>}/>
@@ -42,7 +41,7 @@ function App() {
                     <Route path="/product/1"
                            element={<Product/>}/>
                 </Routes>
-            </div>
+
                 <Footer/>
             </div>
         </div>
