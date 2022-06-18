@@ -5,8 +5,6 @@ import s from "./Header.module.css"
 
 
 
-
-
 const Header = () => {
     return <header id="myHeader" className="">
         {/* Header bottom start */}

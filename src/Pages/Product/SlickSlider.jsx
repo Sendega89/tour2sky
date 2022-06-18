@@ -14,7 +14,7 @@ const sliderRef = useRef()
     return (
         <div>
             <Slider asNavFor={nav2} arrows={false}  ref={(slider1) => setNav1(slider1)} >
-                <div className={"slickSlide"}>
+                <div className={"slickSlideImageBox"}>
                     <a href={product}><img src={product}/></a>
                 </div>
                 <div>

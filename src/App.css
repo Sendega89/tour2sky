@@ -3036,6 +3036,7 @@ footer .footer_r ul li a {
     float: left;
     height: 100%;
     min-height: 1px;
+    border-radius: 16px;
 }
 
 [dir='rtl'] .slick-slide {
@@ -3044,6 +3045,7 @@ footer .footer_r ul li a {
 
 .slick-slide img {
     display: block;
+    border-radius: 16px;
 }
 
 .slick-slide.slick-loading img {
@@ -3839,7 +3841,7 @@ footer .white-popup {
 }
 
 .article-bottom {
-    /*padding-top: 100px;*/
+    padding-top: 100px;
 }
 
 .edit-title {

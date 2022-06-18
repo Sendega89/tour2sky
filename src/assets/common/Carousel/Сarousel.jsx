@@ -4,41 +4,44 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
 import s from "./Carousel.module.css"
 import "../../../App.css";
+import img1 from "../../img/rectangle.png";
+import img2 from "../../img/rectangle-copy-5.png";
+import img3 from "../../img/rectangle-copy-6.png";
+import img4 from "../../img/rectangle-copy-7.png";
 
-
-const Carousel = (props) => {
+const Carousel = () => {
      const options = {
         loop: true,
-        margin: props.margin,
-        items: props.items,
+        margin: 10,
+        items: 3,
         autoplay: false,
     };
     return (
         <OwlCarousel className={`owl-theme ${s.theme}`} {...options}>
             <div className={`item ${s.item}`}>
                 <img
-                    src={props.img1}
+                    src={img1}
                     alt="item1"
                 />
                 <span>Boston</span>
             </div>
             <div className={`item ${s.item}`}>
                 <img
-                    src={props.img2}
+                    src={img2}
                     alt="item2"
                 />
                 <span>Dublin</span>
             </div>
             <div className={`item ${s.item}`}>
                 <img
-                    src={props.img3}
+                    src={img3}
                     alt="item3"
                 />
                 <span>Edinburgh</span>
             </div>
             <div className={`item ${s.item}`}>
                 <img
-                    src={props.img4}
+                    src={img4}
                     alt="item4"
                 />
                 <span>San Diego</span>

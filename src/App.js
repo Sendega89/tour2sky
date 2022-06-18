@@ -10,10 +10,14 @@ import Catalog from "./Pages/Catalog/Catalog";
 import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";
 import Page404 from "./Pages/Page404/Page404";
-import MyAccount from "./Pages/MyAccount/MyAccount";
 import Checkout from "./Pages/Checkout/Checkout";
 import Authorization from "./assets/common/Auth/Authorization/Authorization";
 import Product from "./Pages/Product/Product";
+import MyWishlist from "./Pages/MyAccount/MyWishlist/MyWishlist";
+import MyBookings from "./Pages/MyAccount/MyBookings/MyBookings";
+import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
+import {compose} from "redux";
+import {connect} from "react-redux";
 
 function App() {
 
@@ -34,7 +38,11 @@ function App() {
                 <Route path="/Search"
                        element={ <Search/>}/>
                     <Route path="/MyAccount"
-                       element={ <MyAccount/>}/>
+                       element={ <MyAccountContainer/>}/>
+                    <Route path="/wishlist"
+                           element={<MyWishlist/>}/>
+                    <Route path="/bookings"
+                           element={<MyBookings/>}/>
                     <Route path="/Checkout"
                        element={ <Checkout/>}/>
                     <Route path="/authorization"
@@ -51,4 +59,5 @@ function App() {
     );
 }
 
-export default App;
+export default compose (
+    connect ())(App);

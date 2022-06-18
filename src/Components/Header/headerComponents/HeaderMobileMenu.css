@@ -41,7 +41,6 @@ body {
     height: 25px;
     right: 36px;
     top: 25px;
-
 }
 
 /* Color/shape of burger icon bars */
@@ -90,4 +89,8 @@ body {
     .menu nav {
         display: none;
     }
+}
+.headerMobileMenuLogo {
+    width: 50%;
+    text-align: center;
 }

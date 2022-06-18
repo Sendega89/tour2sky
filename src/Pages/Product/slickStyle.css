@@ -6,12 +6,13 @@
 
 .slideNavCarousel {
     width: 80%;
+    margin-top: 20px;
+    height: 100px;
     align-content: center;
 }
 
 .slideNavCarousel  img {
-    padding: 5px;
-    border-radius: 16px;
+    border-radius: 14px;
 }
 
 .slickArrow {
@@ -44,8 +45,6 @@
     font-size: 27px;
     color: #b6c2cc;
 }
-.slickSlide img {
-    border-radius:4px;
-
-
+.slickSlide a {
+    border-radius:16px;
 }
