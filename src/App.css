@@ -9,7 +9,7 @@
     --tealish: #33cccc;
     --cloudy-blue: #b6c2cc;
     --white: #ffffff;
-    --pale-grey: #f0f6f8;
+    --pale-grey: #eef4f7;
     --dark-grey-blue: #2c3e50;
 }
 
@@ -2960,13 +2960,13 @@ footer .footer_r ul li a {
 
 /* Product Page*/
 /* Product slick Slider */
-/* .slider-for.gallery, .slider_nav_block {
+ .slider-for.gallery, .slider_nav_block {
     display: none !important;
 }
 .slider-for.gallery.slick-initialized,
-.slider-for.gallery.slick-initialized +  .slider_nav_block{
+.slider-for.gallery.slick-initialized +.slider_nav_block{
     display: block !important;
-} */
+}
 .slick-slider {
     position: relative;
     display: block;
@@ -2981,7 +2981,6 @@ footer .footer_r ul li a {
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
-
 .slick-list {
     position: relative;
     display: block;
@@ -3073,7 +3072,9 @@ footer .footer_r ul li a {
     display: none;
 }
 
-/*.slick-loading .slick-list{background: #fff url('../src/assets/img/ajax-loader.gif') center center no-repeat;}*/
+.slick-loading .slick-list{background: #fff url('../src/assets/img/ajax-loader.gif') center center no-repeat;}
+
+
 .product main {
     padding-top: 21px;
 }
@@ -3102,6 +3103,8 @@ footer .footer_r ul li a {
 }
 
 .product_top {
+    /*display: flex;*/
+    /*flex-wrap: nowrap;*/
     margin-bottom: 40px;
 }
 
@@ -3118,15 +3121,17 @@ footer .footer_r ul li a {
 }
 
 .product_l {
+
     float: left;
-    width: 40%;
-    padding-right: 15px;
+    width: 47%;
+
 }
 
 .product_r {
     float: right;
-    width: 60%;
-    padding-left: 15px;
+width: 53%;
+
+
 }
 
 .product .catalog_item {
@@ -3375,14 +3380,14 @@ footer .footer_r ul li a {
 
 .product_r_top .rating {
     float: right;
-    width: 23%;
+    width: 25%;
     padding-top: 9px;
 }
 
 .time {
     float: left;
-    width: 77%;
-    font-size: 24px;
+    width: 75%;
+    font-size: 22px;
 }
 
 .time i {
@@ -3399,9 +3404,9 @@ footer .footer_r ul li a {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 15px;
+    font-size: 10px;
     position: absolute;
-    left: 11px;
+    left: 10px;
 }
 
 .options {

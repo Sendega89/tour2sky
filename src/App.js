@@ -5,7 +5,7 @@ import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import HeaderNavbar from "./Components/Header/headerComponents/HeaderMobileMenu";
-import {Route,Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Catalog from "./Pages/Catalog/Catalog";
 import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";
@@ -16,6 +16,9 @@ import Authorization from "./assets/common/Auth/Authorization/Authorization";
 import Product from "./Pages/Product/Product";
 
 function App() {
+
+
+
     return (
         <div className="wrapper" id="App">
             <HeaderNavbar pageWrapId={"page-wrap"} outerContainerId={"App"}/>
@@ -25,9 +28,9 @@ function App() {
                 <Route path="/"
                        element={ <Content/>}/>
                 <Route path="/Catalog"
-                       element={ <Catalog isOpen={false}/>}/>
+                       element={ <Catalog />}/>
                     <Route path="/Balloning"
-                           element={ <Balloning isOpen={true}/>}/>
+                           element={ <Balloning />}/>
                 <Route path="/Search"
                        element={ <Search/>}/>
                     <Route path="/MyAccount"
