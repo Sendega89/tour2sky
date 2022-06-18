@@ -1,6 +1,7 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import "../../../App.css";
+import {Slider} from "@mui/material";
 const SearchFilter = () => {
     const slideRangeStyleOll = {
         left: "20%",
@@ -26,14 +27,14 @@ const SearchFilter = () => {
                 <i><FontAwesomeIcon icon="fa-solid fa-times" aria-hidden="true"></FontAwesomeIcon></i></a>
                 <div className="row wighet"><h4>Filter by price</h4>
                     <div className="row wighet_row">
-                        <div id="slider-range"className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                        <Slider id="slider-range"className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                             <div className="ui-slider-range ui-corner-all ui-widget-header" style={slideRangeStyleOll}>
                             </div>
                             <span tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={slideRangeStyleLeft1}>
                                               </span>
                             <span tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={slideRangeStyleLeft2}>
                                              </span>
-                        </div>
+                        </Slider>
                         <div className="row price_slider"><input type="text" id="amount" readOnly=""/></div>
                     </div>
                 </div>

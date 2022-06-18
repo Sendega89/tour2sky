@@ -6,6 +6,7 @@ import ProductCard from "../../assets/common/Cards/ProductCard";
 import Rating from "../../assets/common/Rating/Rating";
 import ProductAccordion from "../../assets/common/Accordion/ProductAccordion";
 import SlickSlider from "./SlickSlider";
+import {TextField} from "@mui/material";
 
 const Product = () => {
     const settings = {
@@ -52,10 +53,20 @@ const Product = () => {
                                     </div>
                                     <div className="row options">
                                         <div className="row options_item">
-                                        <span className="sel_icon">
+                                        {/*<span className="sel_icon">
                                             <i><FontAwesomeIcon icon="fa-solid fa-calendar" aria-hidden="true"/></i>
-                                        </span>
-                                            <input type="text" id="datepicker" placeholder="Select date"/>
+                                        </span>*/}
+                                            <TextField sx={{borderRadius: "26px"}}
+                                                id="date"
+                                                label="Select date"
+                                                type="date"
+                                                defaultValue="2022-05-24"
+                                                className={"textFieldSelectDate"}
+                                                InputLabelProps={{
+                                                    shrink: true,
+                                                }}
+                                            />
+                                            {/*<input type="date" id="datepicker" placeholder="Select date"/>*/}
                                         </div>
                                         <div className="row options_item">
                                             <div className="options_select row">
@@ -68,16 +79,6 @@ const Product = () => {
                                                     <option>4 adults</option>
                                                     <option>5 adults</option>
                                                 </select>
-                                                <span tabIndex="0" id="ui-id-1-button" role="combobox"
-                                                      aria-expanded="false"
-                                                      aria-autocomplete="list" aria-owns="ui-id-1-menu"
-                                                      aria-haspopup="true"
-                                                      className="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
-                                                      aria-activedescendant="ui-id-8" aria-labelledby="ui-id-8"
-                                                      aria-disabled="false">
-                                                <span className="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s">
-                                                </span>
-                                                <span className="ui-selectmenu-text">2 adults</span></span>
                                             </div>
                                         </div>
                                         <div className="row price">$ 420</div>

@@ -3446,7 +3446,6 @@ width: 53%;
 .options_item {
     position: relative;
 }
-
 .options_item:before {
     position: absolute;
     content: '';
@@ -3459,7 +3458,6 @@ width: 53%;
     top: calc(50% - 5px / 2);
     pointer-events: none;
 }
-
 .ui-datepicker {
     padding: 10px;
     background: white;
@@ -3897,6 +3895,8 @@ footer .white-popup {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-
+.textFieldSelectDate {
+    width: 99%;
 }
