@@ -32,9 +32,10 @@ const profile_Reducer = (state=initialState,action) => {
 export const setClientProfile = (profile) =>({SET_CLIENT_PROFILE,profile});//this is Action Creator
 
 /*This is Thunk*/
-export const getClientProfile = () => async (dispatch) => {
-
-    let response = await clientProfileAPI.getProfileInfo();
-    dispatch(setClientProfile(response.data));
+export const getClientProfile = ()=> async (dispatch) => {
+     console.log('click')
+   let response = await clientProfileAPI.getProfileInfo();
+    console.log(response);
+    /*dispatch(setClientProfile(response.data));*/
 }
 export default profile_Reducer

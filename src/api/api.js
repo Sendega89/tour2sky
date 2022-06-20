@@ -11,7 +11,7 @@ export const clientProfileAPI = {
     getProfileInfo() {
         return instance.get(`cabinet/profile/me`)
     },
-    updateProfileInfo() {
+    registrationNewClient() {
         return instance.post(``)
     },
 }

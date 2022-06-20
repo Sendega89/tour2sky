@@ -1,7 +1,10 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import "../../../App.css";
-import {Slider} from "@mui/material";
+
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
+
 const SearchFilter = () => {
     const slideRangeStyleOll = {
         left: "20%",
@@ -30,10 +33,10 @@ const SearchFilter = () => {
                         <Slider id="slider-range"className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                             <div className="ui-slider-range ui-corner-all ui-widget-header" style={slideRangeStyleOll}>
                             </div>
-                            <span tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={slideRangeStyleLeft1}>
-                                              </span>
-                            <span tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={slideRangeStyleLeft2}>
-                                             </span>
+                            <Slider tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={slideRangeStyleLeft1}>
+                                              </Slider>
+                            <Slider tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={slideRangeStyleLeft2}>
+                                             </Slider>
                         </Slider>
                         <div className="row price_slider"><input type="text" id="amount" readOnly=""/></div>
                     </div>

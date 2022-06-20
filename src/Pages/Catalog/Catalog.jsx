@@ -1,17 +1,19 @@
 import React from "react";
-import "../../App.css"
+import "../../App.css";
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {library} from '@fortawesome/fontawesome-svg-core';
-import {fab} from "@fortawesome/free-brands-svg-icons";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../../assets/common/Cards/ProductCard";
-import SearchFilter from "../../assets/common/SideBar/SearchFilter";
-import '../../font-awesome.css';
-library.add(fab, fas);
+library.add(fas);
+
+
 
 const Catalog = (props) => {
 
-    return <div className="catalog">
 
+    return <div className="catalog">
         <div className="header_title">
             <div className="container">
                 <div className="row">
@@ -23,14 +25,124 @@ const Catalog = (props) => {
         </div>
         <div className="catalog_item row">
             <div className="container">
-                 {/*breadcrumbs*/}
+                {/*breadcrumbs*/}
                 <div className="row breadcrumbs">
                     <a className="" href="/">Home</a>
                     <span>Catalog</span></div>
-               {/* breadcrumbs*/}
+                {/* breadcrumbs*/}
                 {/*Sidebar*/}
                 <div className="sidebar">
-                    <SearchFilter/>
+                    {/*<SearchFilter/>*/}
+                    <div className="popup-credit">
+                        <div className="credit_block">
+                            <a className="cancelComment" title="">
+                                <FontAwesomeIcon icon="fa-solid fa-times" aria-hidden="true"/></a>
+                            <div className="row wighet">
+                                <h4>Filter by price</h4>
+                                <div className="row wighet_row">
+                                    <div id="slider-range"
+                                         className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                        <div className="ui-slider-range ui-corner-all ui-widget-header"
+                                             style={{left: "27%", width: "30.4%"}}>
+                                        </div>
+                                        <span tabIndex="0"
+                                              className="ui-slider-handle ui-corner-all ui-state-default"
+                                              style={{left: "27%"}}>
+
+                                    </span>
+                                        <span tabIndex="0"
+                                              className="ui-slider-handle ui-corner-all ui-state-default"
+                                              style={{left: "57.4%"}}>
+                                    </span>
+                                    </div>
+                                    <div className="row price_slider">
+                                        <input type="text" id="amount" readOnly=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row wighet"><h4>Flight lenth</h4>
+                                <div className="row wighet_row">
+                                    <div id="slider_lenth"
+                                         className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                        <div className="ui-slider-range ui-corner-all ui-widget-header"
+                                             style={{left: "25%", width: "50%}"}}>
+                                        </div>
+                                        <span tabIndex="0"
+                                              className="ui-slider-handle ui-corner-all ui-state-default"
+                                              style={{left: "25%"}}>
+                                    </span>
+                                        <span tabIndex="0"
+                                              className="ui-slider-handle ui-corner-all ui-state-default"
+                                              style={{left: "75%"}}/>
+                                    </div>
+                                    <div className="row price_slider">
+                                        <input type="text" id="amount_lenth" readOnly=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row wighet">
+                                <h4>Filter by Rating</h4>
+                                <div className="row wighet_row">
+                                    <div className="row checkbox_row">
+                                        <div className="row checkbox_item">
+                                            <label className="custom-big-checkbox">
+                                                <input type="checkbox"
+                                                       name="1" id="otkritka1"
+                                                       className="align-self-center"/>
+                                                <span className="custom-big-checkbox__checkbox">
+                                        </span>
+                                            </label>
+                                            <span className="labeltext">5 star</span></div>
+                                        <div className="row checkbox_item">
+                                            <label className="custom-big-checkbox">
+                                                <input type="checkbox" name="2" id="otkritka2"
+                                                       className="align-self-center"/>
+                                                <span className="custom-big-checkbox__checkbox">
+                                        </span>
+                                            </label>
+                                            <span className="labeltext">4 star</span>
+                                        </div>
+                                        <div className="row checkbox_item"><label className="custom-big-checkbox"><input
+                                            type="checkbox" name="3" id="otkritka3" className="align-self-center"/>
+                                            <span className="custom-big-checkbox__checkbox">
+
+                                            </span>
+                                        </label>
+                                            <span className="labeltext">3 star</span>
+                                        </div>
+                                        <div className="row checkbox_item">
+                                            <label className="custom-big-checkbox">
+                                            <input type="checkbox" name="4" id="otkritka4" className="align-self-center"/>
+                                            <span className="custom-big-checkbox__checkbox">
+
+                                            </span>
+                                        </label>
+                                            <span
+                                                className="labeltext">2 star</span>
+                                        </div>
+                                        <div className="row checkbox_item"><label className="custom-big-checkbox">
+                                            <input
+                                                type="checkbox" name="5" id="otkritka5" className="align-self-center"/>
+                                            <span
+                                                className="custom-big-checkbox__checkbox">
+
+                                        </span></label>
+                                            <span className="labeltext">1 star</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row wighet"><h4>Top cities</h4>
+                                <div className="row wighet_row">
+                                    <div className="filter_links"><a href="#">Accra</a><a href="#">Addis Ababa</a><a
+                                        href="#">Boston</a><a href="#">Cali</a><a href="#">Dallas</a><a
+                                        href="#">Hangzhou</a><a href="#">Kuala Lumpur</a><a href="#">Mumbai</a><a
+                                        href="#">San Jose</a><a href="#">Taipei</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/*<SliderRangeRC/>*/}
                 </div>
 
                 <div className="catalog_r">
@@ -43,62 +155,8 @@ const Catalog = (props) => {
                         </select></div>
                     </div>
                     <div className="row row-15">
-                        {/*<div className="cat_item">
-                            <div className="cat_item_vn row">
-                                <div className="cat_item_img"><a product="[object Object]" href="/product/1"><img
-                                    src="img/p1.jpg"/></a></div>
-                                <div className="cat_item_center">
-                                    <div className="cat_item_title row"><i className="fa fa-bookmark"
-                                                                           aria-hidden="true"></i><a
-                                        product="[object Object]" href="/product/1">Tour2Sky VIP: NYC Helicopter Flight
-                                        and Statue of Liberty Cruise</a></div>
-                                    <div className="cat_item_price">
-                                        <div className="item_price"><span>from</span> $ 420</div>
-                                        <div className="rating-container">
-                                            <div className="rating"><i className="fa fa-star"></i><i
-                                                className="fa fa-star"></i><i className="fa fa-star"></i><i
-                                                className="fa fa-star"></i><i className="fa fa-star deactivate"></i>
-                                            </div>
-                                            <div className="item_date"><i
-                                                className="fa fa-clock-o"></i><span>30 minutes</span></div>
-                                        </div>
-                                    </div>
-                                    <div className="cat_item_desk">This is short tour description, can be few rows of
-                                        text
-                                    </div>
-                                </div>
-                                <div className="cat_item_details"><a href="/product/1">Buy</a></div>
-                            </div>
-                        </div>
-                        <div className="cat_item">
-                            <div className="cat_item_vn row">
-                                <div className="cat_item_img"><a product="[object Object]" href="/product/2"><img
-                                    src="img/p1.jpg"/></a></div>
-                                <div className="cat_item_center">
-                                    <div className="cat_item_title row"><i className="fa fa-bookmark-o"
-                                                                           aria-hidden="true"></i><a
-                                        product="[object Object]" href="/product/2">Orlando</a></div>
-                                    <div className="cat_item_price">
-                                        <div className="item_price"><span>from</span> $ 120</div>
-                                        <div className="rating-container">
-                                            <div className="rating"><i className="fa fa-star"></i><i
-                                                className="fa fa-star deactivate"></i><i
-                                                className="fa fa-star deactivate"></i><i
-                                                className="fa fa-star deactivate"></i><i
-                                                className="fa fa-star deactivate"></i></div>
-                                            <div className="item_date"><i
-                                                className="fa fa-clock-o"></i><span>30 minutes</span></div>
-                                        </div>
-                                    </div>
-                                    <div className="cat_item_desk">This is short tour description, can be few rows of
-                                        text
-                                    </div>
-                                </div>
-                                <div className="cat_item_details"><a href="/product/2">Buy</a></div>
-                            </div>
-                        </div>*/}
-                        <ProductCard />
-                        <ProductCard />
+                        <ProductCard/>
+                        <ProductCard/>
                     </div>
                     <div className="row">
                         <ul className="pagination">

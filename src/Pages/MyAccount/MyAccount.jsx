@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Authorization from "../../assets/common/Auth/Authorization/Authorization";
-import CreateAccount from "../../assets/common/Auth/CreateAccount/CreateAccount";
+import Authorization from "../../Profiles/Authorization";
+import CreateAccount from "../../Profiles/CreateAccount";
 import "./MyAccount.css";
 import {NavLink} from "react-router-dom";
 
@@ -65,7 +65,7 @@ const MyAccount = (props) => {
                                                 </form>
                                             </div>
                                         </div>
-                                        <div className={"profileInfo"}>
+                                        {/*<div className={"profileInfo"}>
                                             <h6>Hello User</h6>
                                             <div className="description">
 
@@ -98,8 +98,8 @@ const MyAccount = (props) => {
                                                     <span>{props.created_at}</span>
                                                 </div>
                                             </div>
-<button className={"reloadUserInfo"} onClick={()=> props.getClientProfile}>Reload Client info</button>
-                                        </div>
+<button className={"reloadUserInfo"} onClick={()=>props.getClientProfile()}>Reload Client info</button>
+                                        </div>*/}
 
                                     </div>
                                     {/*cat right*/}
