@@ -112,9 +112,7 @@ const Product = () => {
                     </div>
                     {/*product top row*/}
                     {/* accordion*/}
-                    <div className="row accordion">
                         <ProductAccordion/>
-                    </div>
                     {/*accordion*/}
 
                 </article>

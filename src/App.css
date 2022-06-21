@@ -3903,3 +3903,9 @@ footer .white-popup {
 /*.textFieldSelectDate {
     width: 99%;
 }*/
+.productAccordionArrow{
+    color:#2db7f5;
+}
+.productAccordionArrow:focus {
+    color: #6c6c6c;
+}

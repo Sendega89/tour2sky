@@ -15,17 +15,17 @@ const Accordion = styled((props) => (
 }));
 
 const AccordionSummary = styled((props) => (
-    <MuiAccordionSummary  expandIcon={<FontAwesomeIcon  icon="fa-solid fa-chevron-right" />}
+    <MuiAccordionSummary  expandIcon={<FontAwesomeIcon className="productAccordionArrow" icon="fa-solid fa-chevron-right" />}
 
         {...props}
     />
 ))(({theme}) => ({
     backgroundColor:"#f0f6f8",
-    fontSize:"28px",
+    fontSize:"26px",
     borderRadius:"16px",
     padding:"15px 45px 15px 20px",
     margin:" 0 0 15px 0",
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
         transform: 'rotate(90deg)',
     },
@@ -38,7 +38,7 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({theme}) => ({
     padding: theme.spacing(2),
     border:"none",
-    fontSize:"28px",
+    fontSize:"26px",
 }));
 
 export default function CustomizedAccordions() {
@@ -49,13 +49,13 @@ export default function CustomizedAccordions() {
     };
 
     return (
-        <div>
+        <div className="row accordion">
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography sx={{fontSize:"26px"}} >Tour overview</Typography>
+                    <Typography sx={{fontSize:"24px"}} >Tour overview</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography >
+                    <Typography sx={{fontSize:"14px"}}>
                         Join a pilot on a unique flight and share the cost with them, a nice way to discover the city
                         skyline aboard a private plane. Your pilot will happily share their passion for flying and take
                         you on a memorable trip around London's area, providing stunning views of the capital's suburbs.
@@ -76,12 +76,12 @@ export default function CustomizedAccordions() {
                 <AccordionSummary sx={{
                     border:"white"
                 }} aria-controls="panel2d-content" id="panel2d-header">
-                    <Typography sx={{fontSize:"26px"}}>What included</Typography>
+                    <Typography sx={{fontSize:"24px"}}>What included</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{
                     border:"none"
                 }}>
-                    <Typography>
+                    <Typography sx={{fontSize:"14px"}}>
                         Join a pilot on a unique flight and share the cost with them, a nice way to discover the city
                         skyline aboard a private plane. Your pilot will happily share their passion for flying and take
                         you on a memorable trip around London's area, providing stunning views of the capital's suburbs.
