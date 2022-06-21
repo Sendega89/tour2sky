@@ -2,15 +2,13 @@ import React from "react";
 import Carousel from "../../assets/common/Carousel/Сarousel";
 import About from "../../Components/Main/ContentComponents/Main/MainComponents/About";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
-import oval from "../../assets/img/oval.png";
-import rewiev from "../../assets/img/review_icon.png";
 import post from "../../assets/img/post.jpg";
 import post2 from "../../assets/img/post2.jpg"
 import img1 from "../../assets/img/rectangle.png";
 import img2 from "../../assets/img/rectangle-copy-5.png";
 import img3 from "../../assets/img/rectangle-copy-6.png";
 import img4 from "../../assets/img/rectangle-copy-7.png";
-import OwlCarousel from "react-owl-carousel";
+
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
@@ -35,26 +33,20 @@ const Balloning = () => {
                         </div>
                     </div>
                 </div>
-                <main>
-                    <div className="row best_cities section">
-                        <div className="container">
-                            <BestCities/>
-                        </div>
-                    </div>
-                </main>
             </div>
         </div>
+                <main>
+                        <div className="row best_cities section">
+                            <BestCities/>
+                        </div>
+
+
 
         { /*best cities end */}
 
         {/* Start top */}
         <div className="container">
-            <Carousel img1={img1}
-                      img2={img2}
-                      img3={img3}
-                      img4={img4}
-                      item={3}
-                      margin={10}/>
+            <Carousel />
         </div>
         {/* End top*/}
 
@@ -195,7 +187,6 @@ const Balloning = () => {
             </div>
         </div>
         {/*post end*/}
-
         {/*Faq start*/}
         <div className="row faq section">
             <div className="container">
@@ -220,7 +211,7 @@ const Balloning = () => {
                 </div>
             </div>
         </div>
-        <About/>
+        <About/></main>
     </>
 }
 export default Balloning

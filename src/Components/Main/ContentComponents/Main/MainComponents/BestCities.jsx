@@ -2,10 +2,10 @@ import React from "react";
 import "../../../../../App.css";
 
 const BestCities = () => {
-    return <div className="row best_cities section">
-        <div className="container">
+    return <div className="container">
+<div className="row best_cities section">
             <h3>The best cities for balloning</h3>
-            <div className="myBestCities">
+            <div className="myBestCities row">
                 <ul>
                     <li><a href="#">Accra</a></li>
                     <li><a href="#">Cali</a></li>
@@ -34,8 +34,8 @@ const BestCities = () => {
                     <li><a href="#">Sydney</a></li>
                     <li><a href="#">Winnipeg</a></li>
                 </ul>
-            </div>
+            </div></div>
         </div>
-    </div>
+
 }
 export default BestCities

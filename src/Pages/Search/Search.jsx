@@ -3,9 +3,7 @@ import Rectangle from "../../Components/Main/ContentComponents/Main/MainComponen
 import "./Search.css";
 import "../../App.css";
 import "../../responsice.css";
-import itemImage from "../../assets/img/p1.jpg";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import ProductCard from "../../assets/common/Cards/ProductCard";
 
 

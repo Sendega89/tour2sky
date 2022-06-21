@@ -5,7 +5,7 @@ import Carousel from "../../../../assets/common/Carousel/Сarousel";
 
 
 const Main = () => {
-    return <main className={"main"}>
+    return <main>
         {/* Service start */}
         <ServiceStart/>
         {/* Service end */}

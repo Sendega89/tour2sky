@@ -5,7 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { slide as Menu } from 'react-burger-menu';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../../assets/img/logo.png";
-import {NavLink} from "react-router-dom";
+//import {NavLink} from "react-router-dom";
 library.add(fab);
 
 
@@ -13,9 +13,8 @@ library.add(fab);
 export default props => {
         return (
             // Pass on our props
-            <Menu  width={'50%'} right>
+            <Menu  width={'100%'} right noOverlay>
                 <nav className="nav" >
-
                     <div className="container_right_menu">
 
                         <div className="footer_menu">
@@ -26,10 +25,10 @@ export default props => {
                                 <ul className="dl-menu dl-menuopen">
                                     <li><a href="/">Home</a></li>
                                     <ul>
-                                        <li><NavLink to="/Catalog">Catalog</NavLink></li>
-                                        <li><NavLink to="/Balloning">Balloning</NavLink></li>
-                                        <li><NavLink to="/Search">Search</NavLink></li>
-                                        <li><NavLink to="/MyAccount">My account</NavLink></li>
+                                        <li><a href="/Catalog" >Catalog</a></li>
+                                        <li><a href="/Balloning">Balloning</a></li>
+                                        <li><a href="/Search">Search</a></li>
+                                        <li><a href="/MyAccount">My account</a></li>
                                     </ul>
                                 </ul>
                             </div>

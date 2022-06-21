@@ -52,10 +52,10 @@ export default function CustomizedAccordions() {
         <div className="row accordion">
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography sx={{fontSize:"24px"}} >Tour overview</Typography>
+                    <Typography sx={{fontSize:"24px",fontFamily:"Open Sans"}} >Tour overview</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography sx={{fontSize:"14px"}}>
+                    <Typography sx={{fontSize:"14px", fontFamily:"Open Sans"}}>
                         Join a pilot on a unique flight and share the cost with them, a nice way to discover the city
                         skyline aboard a private plane. Your pilot will happily share their passion for flying and take
                         you on a memorable trip around London's area, providing stunning views of the capital's suburbs.
@@ -76,7 +76,7 @@ export default function CustomizedAccordions() {
                 <AccordionSummary sx={{
                     border:"white"
                 }} aria-controls="panel2d-content" id="panel2d-header">
-                    <Typography sx={{fontSize:"24px"}}>What included</Typography>
+                    <Typography sx={{fontSize:"24px",fontFamily:"Open Sans"}}>What included</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{
                     border:"none"
@@ -98,7 +98,7 @@ export default function CustomizedAccordions() {
             </Accordion>
             <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                 <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                    <Typography sx={{fontSize:"26px"}}>Cancelation info</Typography>
+                    <Typography sx={{fontSize:"24px",fontFamily:"Open Sans"}}>Cancelation info</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{
                     border:"white"
