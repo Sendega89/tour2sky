@@ -12,8 +12,8 @@ const ProductCard = () => {
             <div className="cat_item_img"><a product="[object Object]" href="/product/1"><img
                 src={itemImage}/></a></div>
             <div className="cat_item_center">
-                <div className="cat_item_title row"><i><FontAwesomeIcon icon="fa-solid fa-bookmark"
-                                                                        aria-hidden="true"></FontAwesomeIcon></i><a
+                <div className="cat_item_title row"><i>
+                    <FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden={true}></FontAwesomeIcon></i><a
                     product="[object Object]" href="/product/1">Tour2Sky VIP: NYC Helicopter Flight
                     and Statue of Liberty Cruise</a></div>
                 <div className="cat_item_price">

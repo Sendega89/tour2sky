@@ -28,20 +28,19 @@ const Product = () => {
                 {/*breadcrumbs*/}
                 <article>
                     <div className="product_title row">
-                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true"/></i>
+                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden={true}/></i>
                         <h1>Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</h1>
                     </div>
                     {/*product top row */}
                     <div className="row product_top">
                         {/*product left block */}
-                        <div className="row product_l">
+                        <div className="col-2 product_l">
                           <SlickSlider />
-
                         </div>
                         {/*product left block*/}
 
                         {/*product right block*/}
-                        <div className="row product_r">
+                        <div className="col-2 product_r">
                             <div className="product_r_vn">
                                 <div className="row product_r_top">
                                     <div className="row">
@@ -53,10 +52,11 @@ const Product = () => {
                                     </div>
                                     <div className="row options">
                                         <div className="row options_item">
-                                        {/*<span className="sel_icon">
+                                        <span className="sel_icon">
                                             <i><FontAwesomeIcon icon="fa-solid fa-calendar" aria-hidden="true"/></i>
-                                        </span>*/}
-                                            <TextField sx={{borderRadius: "26px"}}
+                                        </span>
+                                            <input type="text" id="datepicker" placeholder="Select date" className="hasDatepicker"/>
+                                            {/*<TextField sx={{borderRadius: "26px"}}
                                                 id="date"
                                                 label="Select date"
                                                 type="date"
@@ -65,23 +65,33 @@ const Product = () => {
                                                 InputLabelProps={{
                                                     shrink: true,
                                                 }}
-                                            />
-                                            {/*<input type="date" id="datepicker" placeholder="Select date"/>*/}
+                                            />*/}
                                         </div>
                                         <div className="row options_item">
-                                            <div className="options_select row">
+                                            <div className="row options_select">
                                             <span className="sel_icon">
                                                 <i><FontAwesomeIcon icon="fa-solid fa-user" aria-hidden="true"/></i>
                                             </span>
-                                                <select id="ui-id-1">
+                                            <select id="ui-id-1">
                                                     <option>2 adults</option>
                                                     <option>3 adults</option>
                                                     <option>4 adults</option>
                                                     <option>5 adults</option>
                                                 </select>
-                                            </div>
+                                                {/*  <span tabIndex="0" id="ui-id-1-button" role="combobox"
+                                                      aria-expanded="false" aria-autocomplete="list"
+                                                      aria-owns="ui-id-1-menu" aria-haspopup={true}
+                                                      className="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
+                                                      aria-activedescendant="ui-id-8" aria-labelledby="ui-id-8"
+                                                      aria-disabled={false}>
+                                                  <span className="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
+                                                </span>*/}
+
+                                              </div>
                                         </div>
-                                        <div className="row price">$ 420</div>
+                                        <div className="row price">
+                                            $ 420
+                                        </div>
                                     </div>
                                     <div className="add">
                                         <a href="" className="btn">Book tour</a>
@@ -97,8 +107,7 @@ const Product = () => {
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
+                    </div>
                         {/*product right block */}
                     </div>
                     {/*product top row*/}

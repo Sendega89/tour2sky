@@ -3125,16 +3125,11 @@ footer .footer_r ul li a {
 }
 
 .product_l {
-
-    float: left;
-    width: 47%;
-
+    padding-right: 15px;
 }
 
 .product_r {
-    float: right;
-width: 53%;
-
+padding-left: 15px;
 
 }
 

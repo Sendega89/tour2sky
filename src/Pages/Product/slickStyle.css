@@ -3,48 +3,59 @@
     justify-content: center;
     align-items: center;
 }
+.slickSlideItem {
+    padding: 0 5px;
+    display: inline-block;
+    overflow: hidden;
+}
 
 .slideNavCarousel {
     width: 80%;
-    margin-top: 20px;
-    height: 100px;
-    align-content: center;
+    padding: 10px 0;
+    align-content: space-between;
 }
 
 .slideNavCarousel  img {
-    border-radius: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+    height: auto;
+    vertical-align: middle;
+    border: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
-
 .slickArrow {
-    font-size: 28px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+    font-size: 20px;
+    background-color: #ecf0f1;
+    color: #b6c2cc;
+
+    padding-top: 10px;
 
 }
-
 .slickArrow:hover {
-    color: #33cccc;
+    color:#2980b9;
 }
 
 .slickLeft {
-    width: 40px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding-left: 10px;
-    height: 40px;
-    background-color: #ecf0f1;
-    font-size: 27px;
-    color: #b6c2cc;
+    position: relative;
+    left:5px;
 }
 
 .slickRight {
-    width: 40px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding-left: 14px;
-    height: 40px;
-    background-color: #ecf0f1;
-    font-size: 27px;
-    color: #b6c2cc;
+    position: relative;
+    right: 4px;
 }
 .slickSlide a {
     border-radius:16px;
+    padding: 10px;
 }
