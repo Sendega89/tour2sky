@@ -1,10 +1,12 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunkMeddleWare from "redux-thunk";
 import profile_Reducer from "./profile_Reducer";
+import auth_Reducer from "./auth_Reducer";
 
 
 let reducers = combineReducers({
-    profilePage: profile_Reducer
+    profilePage: profile_Reducer,
+    autorization:auth_Reducer,
 });
 
 

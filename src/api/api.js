@@ -16,11 +16,11 @@ export const clientProfileAPI = {
     },
 }
 export const authAPI = {
-    me() {
+    auth() {
         return instance.get(``)
     },
-    login(email, password) {
-        return instance.post(``, {email, password})
+    login(email, password,type) {
+        return instance.post(`auth/login`, {email, password,type})
     },
     logout() {
         return instance.delete(``)

@@ -2,7 +2,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
-import s from "./Carousel.module.css"
+
 import "../../../App.css";
 import img1 from "../../img/rectangle.png";
 import img2 from "../../img/rectangle-copy-5.png";
@@ -17,36 +17,40 @@ const Carousel = () => {
         autoplay: false,
     };
     return (
-        <OwlCarousel className={`owl-theme ${s.theme}`} {...options}>
-            <div className={`item ${s.item}`}>
-                <img
-                    src={img1}
-                    alt="item1"
-                />
+        <div className="the_best">
+        <div className="row">
+        <OwlCarousel className="owl-theme" {...options}>
+            <div className="item">
+                <a href="#">
+                    <img src={img1}
+                         alt="item1"/>
                 <span>Boston</span>
+                </a>
             </div>
-            <div className={`item ${s.item}`}>
-                <img
-                    src={img2}
-                    alt="item2"
-                />
+            <div>
+                <a href="#">
+                    <img src={img2}
+                         alt="item2"/>
                 <span>Dublin</span>
+                </a>
             </div>
-            <div className={`item ${s.item}`}>
-                <img
-                    src={img3}
-                    alt="item3"
-                />
-                <span>Edinburgh</span>
+            <div>
+                <a href="">
+                    <img src={img3}
+                    alt="item3"/>
+                <span>Edinburgh</span></a>
             </div>
-            <div className={`item ${s.item}`}>
-                <img
+            <div>
+                <a href=""> <img
                     src={img4}
                     alt="item4"
                 />
-                <span>San Diego</span>
+                <span>San Diego</span></a>
             </div>
         </OwlCarousel>
+        </div>
+        </div>
+
     )
 }
 export default Carousel

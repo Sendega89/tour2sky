@@ -2,7 +2,10 @@ import {NavLink} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
 
 
-const Authorization = () => {
+
+
+
+const Authorization = (props) => {
     return <div id="authorization"
                 className="white-popup mfp-with-anim mfp-hide order_popup">
         <div className="popup_content">
@@ -12,12 +15,13 @@ const Authorization = () => {
             <div className="popup_form">
 
                     <div className="login_wrap">
-                        <Formik initialValues={{
-                            email: "",
-                            password: "",
+                        <Formik  initialValues={{
+                            email: "client@gmail.com",
+                            password: "111111",
+                            type:1
                         }}
                         onSubmit={(values,submitProps) => {
-                            console.log(values)
+                           props.getAuthUser(values.email,values.password,values.type);
                         }}>
                             {({values, status}) => (
                                 <Form>
@@ -45,4 +49,5 @@ const Authorization = () => {
         </div>
     </div>
 }
-export default Authorization
+
+export default  Authorization

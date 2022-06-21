@@ -338,7 +338,7 @@ main {
 
 /* Custom Styles */
 .container {
-    max-width: 1040px;
+    max-width: 1140px;
     margin: 0 auto;
     position: relative;
 }
@@ -477,9 +477,9 @@ header {
 }
 
 .header_login {
-    /*float: right;*/
-    /*width: 12%;*/
-    padding-top: 35px;
+    float: right;
+    width: 12%;
+    padding-top: 31px;
 }
 .no_login .login_drop span::before {
     display: none;
@@ -596,7 +596,7 @@ header {
 }
 
 .login_drop span i {
-    font-size: 21px;
+    font-size: 17px;
     position: absolute;
     left: 11px;
     top: 15px;
@@ -2714,9 +2714,10 @@ footer {
     color: white;
     bottom: 0;
     width: 100%;
+}
+footer img {
 
 }
-
 footer a {
     color: white;
     font-size: 12px;
@@ -2728,30 +2729,31 @@ footer a:hover {
 }
 
 footer .footer_l {
-   /* float: left;*/
-   /* width: 15%;*/
+
+    float: left;
+    width: 15%;
 }
 
 footer .footer_r {
-    /*float: left;*/
+    float: left;
     width: 20%;
 }
 
 footer .footer_c {
-    /*float: left;*/
+    float: left;
     width: 25%;
     line-height: 1;
     padding-left: 9px;
 }
 
 footer .footer_logo {
-   /* float: left;*/
+    float: left;
     width: 10%;
 }
 
 footer .soc {
-   /* float: left;*/
-    /*width: 20%;*/
+    float: left;
+    width: 20%;
     padding-left: 24px;
     padding-top: 24px;
 }
@@ -3161,7 +3163,8 @@ width: 53%;
     right: 16px;
     top: 16px;
     width: 25px;
-    height: 26px; /*background: url('../img/lupa.svg') no-repeat center top;*/
+    height: 26px;
+    background: url('../src/assets/img/lupa.svg') no-repeat center top;
     z-index: 9999;
     display: block;
 }
@@ -3301,7 +3304,10 @@ width: 53%;
     display: inline-block;
     height: auto;
 }
-
+.authorization span i {
+    width: 50%;
+    margin-right: 10px;
+}
 .popupContainer {
     position: fixed;
     left: 0;
@@ -3899,6 +3905,6 @@ footer .white-popup {
     align-items: center;
 }
 
-.textFieldSelectDate {
+/*.textFieldSelectDate {
     width: 99%;
-}
+}*/

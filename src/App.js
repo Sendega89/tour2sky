@@ -19,6 +19,7 @@ import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import CreateAccount from "./Profiles/CreateAccount";
+import AuthContainer from "./Profiles/AuthContainer";
 
 function App() {
 
@@ -46,7 +47,7 @@ function App() {
                     <Route path="/Checkout"
                            element={<Checkout/>}/>
                     <Route path="/authorization"
-                           element={<Authorization/>}/>
+                           element={<AuthContainer/>}/>
                     <Route path="/create"
                            element={<CreateAccount/>}/>
                     <Route path="/404"

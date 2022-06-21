@@ -1,8 +1,9 @@
+/*
 .item img{
     max-width: 100%;
 }
 .item img:hover {
-    transition: 1s; /* Время эффекта */
+    transition: 1s; !* Время эффекта *!
 
 }
 
@@ -25,3 +26,4 @@
 border: 1px solid black;
     background: #33cccc;
 }
+*/
