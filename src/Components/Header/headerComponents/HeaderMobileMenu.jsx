@@ -24,7 +24,7 @@ export default props => {
                             </div>
                             <div id="dl-menu" className="dl-menuwrapper">
                                 <ul className="dl-menu dl-menuopen">
-                                    <li><NavLink to="/">Home</NavLink></li>
+                                    <li><NavLink onClick={()=> props.isOpen(false)} to="/">Home</NavLink></li>
                                     <ul>
                                         <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Catalog"}>Catalog</NavLink></li>
                                         <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Balloning"}>Balloning</NavLink></li>
