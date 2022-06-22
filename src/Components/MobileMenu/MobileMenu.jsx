@@ -8,16 +8,15 @@ library.add(fas)
 const MobileMenu = () => {
     return <nav className="nav" id="menu_right_sidebar">
         <div className="menu-right-button open-button">
-            <i><FontAwesomeIcon icon="fa fa-bars"/></i>
+            <i><FontAwesomeIcon icon="fa fa-bars" aria-hidden={true}/></i>
         </div>
         <div className="container_right_menu">
             <span className="close-button">
-                <i><FontAwesomeIcon icon="fa fa-times"/></i>
+                <i><FontAwesomeIcon icon="fa fa-times" aria-hidden={true}/></i>
             </span>
             <div className="row footer_menu">
-
                 <div className="row logotype_light">
-                    <img className="lozad is-loaded" src={logo} alt="Tour2Sky" src={logo} loaded={true}/>
+                    <img className="lozad is-loaded" data-src={logo} alt="Tour2Sky" src={logo} data-loaded={true}/>
                 </div>
                 <div id="dl-menu" className="dl-menuwrapper">
                     <ul className="dl-menu dl-menuopen">

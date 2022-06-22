@@ -5,7 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { slide as Menu } from 'react-burger-menu';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../../assets/img/logo.png";
-//import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+
 library.add(fab);
 
 
@@ -13,7 +14,7 @@ library.add(fab);
 export default props => {
         return (
             // Pass on our props
-            <Menu  width={'100%'} right noOverlay>
+            <Menu width={"100%"} right >
                 <nav className="nav" >
                     <div className="container_right_menu">
 
@@ -23,12 +24,12 @@ export default props => {
                             </div>
                             <div id="dl-menu" className="dl-menuwrapper">
                                 <ul className="dl-menu dl-menuopen">
-                                    <li><a href="/">Home</a></li>
+                                    <li><NavLink to="/">Home</NavLink></li>
                                     <ul>
-                                        <li><a href="/Catalog" >Catalog</a></li>
-                                        <li><a href="/Balloning">Balloning</a></li>
-                                        <li><a href="/Search">Search</a></li>
-                                        <li><a href="/MyAccount">My account</a></li>
+                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Catalog"}>Catalog</NavLink></li>
+                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Balloning"}>Balloning</NavLink></li>
+                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Search"}>Search</NavLink></li>
+                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/MyAccount"}>My account</NavLink></li>
                                     </ul>
                                 </ul>
                             </div>

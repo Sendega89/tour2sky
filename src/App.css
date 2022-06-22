@@ -708,18 +708,24 @@ header {
     background: #ffffff;
     overflow-y: auto;
     padding: 40px 40px 30px 40px;
-    position: fixed;
-    top: 0;
+    /*position: fixed;*/
+    /*top: 0;*/
     height: 100%;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
-    /*right: -340px;*/
-    width: 100%;
-    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
+    /*left: 0;*/
+    /*width: 100%;*/
+  /*  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);*/
 }
 
-.menu-right-button { /* padding: 5px 10px; *//* cursor: pointer; *//* line-height: 1; *//* font-size: 28px; *//* background: transparent; *//* position: fixed; *//* right: 20px; */
+.menu-right-button {
+     padding: 5px 10px;
+     cursor: pointer;
+    line-height: 1;
+     font-size: 28px;
+    background: transparent;
+    position: fixed;  right: 20px;
 }
 
 .menu-right-button:hover, .container_right_menu .close-button:hover {
@@ -739,7 +745,7 @@ header {
 }
 
 .container_right_menu .close-button {
-    font-size: 20px;
+    font-size: 40px;
     cursor: pointer;
     display: inline-block;
     position: absolute;

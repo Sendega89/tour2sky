@@ -21,12 +21,13 @@ import {connect} from "react-redux";
 import CreateAccount from "./Profiles/CreateAccount";
 import AuthContainer from "./Profiles/AuthContainer";
 
+
 function App() {
 
 
     return (
         <div className="wrapper" id="App">
-            <HeaderNavbar pageWrapId={"page-wrap"} outerContainerId={"App"}/>
+            <HeaderNavbar isOpen={true}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <div id="page-wrap" className={"headerMenu"}>
                 <Header/>
                 <Routes>
