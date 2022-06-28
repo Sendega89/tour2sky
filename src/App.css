@@ -220,13 +220,15 @@ select {
     pointer-events: none;
     position: absolute;
     right: 9px;
-    top: 7px;
+    top: -42px;
     display: inline-block;
-    font: normal normal normal 15px/1 FontAwesome;
+    font-size: 50px;
+    font-weight: lighter;
+    /*font: normal normal normal 15px/1 FontAwesome;*/
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\142F";
+    content: "\02EF";
     color: #265878;
 }
 
@@ -3900,15 +3902,8 @@ footer .white-popup {
 .row {
     --bs-gutter-x: 0 !important;
 }
-.mainFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-/*.textFieldSelectDate {
-    width: 99%;
-}*/
+
 .productAccordionArrow{
     color:#2db7f5;
 }

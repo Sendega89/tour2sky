@@ -1,37 +1,58 @@
+import React from "react";
 import {authAPI} from "../api/api";
 
 
-const SET_USER_AUTH = "SET_USER_AUTH";
 
 
-const initialState = {
-    email: "",
-    password: "",
-    type: 1,
+const SET_USER_DATA = "tour2sky-project/auth/SET_USER_DATA";
 
+
+/*const initialState = {
+    id: null,
+    email: null,
+    name: null,
+    surname: null,
+    phone: null,
+    type: null,
+    status: null,
+    created_at: null,
+    statusObject: {
+        id: null,
+        name: null
+    },
+    typeObject: {
+        id: null,
+        name: null
+    }
+}*/
+let initialState = {
+    isAuth:false
 }
-
-const auth_Reducer = (state=initialState,action) => {
+const auth_Reducer = (state=initialState,action)=>{
 
     switch (action.type) {
 
-        case SET_USER_AUTH:{
-            console.log('buttonAuthClick')
-            return {...state,
-            ...action.payload,}
+        case SET_USER_DATA:{
+
+            return {
+                ...state,
+            ...action.data,
+            isAuth: false,}
         }
         default:
             return state
     }
 }
 
-export const setAuthUser = (email,password,type) =>({SET_USER_AUTH,email,password});//this is Action Creator
+export const setUserData = (data) =>({SET_USER_DATA,data});//this is Action Creator
 
 /*This is Thunk*/
-export const getAuthUser = (email,password,type) => async (dispatch) => {
+export const getAuthUserData = () => async (dispatch) => {
+    let response = await authAPI.me();
+        dispatch(setUserData(response.data))
 
-    debugger
-   let response = await authAPI.login(email,password,type);
-    dispatch(setAuthUser(response.data));
 }
+
+
+
 export default auth_Reducer

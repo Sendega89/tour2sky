@@ -2,7 +2,7 @@ import React from "react";
 import MyAccount from "./MyAccount";
 import {connect} from "react-redux";
 import {compose} from "redux";
-import {getClientProfile} from "../../redux/profile_Reducer";
+//import {getClientProfile} from "../../redux/profile_Reducer";
 
 
 const MyAccountContainer = (props) => {
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
     created_at:state.profilePage.created_at,
 })
 export default compose(
-    connect(mapStateToProps,{getClientProfile}))(MyAccountContainer)
+    connect(mapStateToProps,/*{getClientProfile}*/))(MyAccountContainer)

@@ -7,14 +7,16 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../../assets/img/logo.png";
 import {NavLink} from "react-router-dom";
 
+
 library.add(fab);
 
 
 
 export default props => {
+
         return (
             // Pass on our props
-            <Menu width={"100%"} right >
+            <Menu width={"100%"} right {...props}  >
                 <nav className="nav" >
                     <div className="container_right_menu">
 
@@ -24,12 +26,12 @@ export default props => {
                             </div>
                             <div id="dl-menu" className="dl-menuwrapper">
                                 <ul className="dl-menu dl-menuopen">
-                                    <li><NavLink onClick={()=> props.isOpen(false)} to="/">Home</NavLink></li>
+                                    <li><NavLink to="/">Home</NavLink></li>
                                     <ul>
-                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Catalog"}>Catalog</NavLink></li>
-                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Balloning"}>Balloning</NavLink></li>
-                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/Search"}>Search</NavLink></li>
-                                        <li><NavLink onClick={()=> props.isOpen(false)} to={ "/MyAccount"}>My account</NavLink></li>
+                                        <li><NavLink to="/catalog">Catalog</NavLink></li>
+                                        <li><NavLink to="/balloning">Balloning</NavLink></li>
+                                        <li><NavLink to="/search" >Search</NavLink></li>
+                                        <li><NavLink to="/myAccount">My account</NavLink></li>
                                     </ul>
                                 </ul>
                             </div>

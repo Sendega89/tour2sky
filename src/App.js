@@ -5,41 +5,50 @@ import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import HeaderNavbar from "./Components/Header/headerComponents/HeaderMobileMenu";
-import {Route, Routes} from "react-router-dom";
+import {Route} from "react-router-dom";
+import {Routes} from "react-router";
 import Catalog from "./Pages/Catalog/Catalog";
 import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";
 import Page404 from "./Pages/Page404/Page404";
 import Checkout from "./Pages/Checkout/Checkout";
-import Authorization from "./Profiles/Authorization";
 import Product from "./Pages/Product/Product";
 import MyWishlist from "./Pages/MyAccount/MyWishlist/MyWishlist";
 import MyBookings from "./Pages/MyAccount/MyBookings/MyBookings";
 import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
-import {compose} from "redux";
-import {connect} from "react-redux";
+//import {compose} from "redux";
+//import {connect} from "react-redux";
 import CreateAccount from "./Profiles/CreateAccount";
 import AuthContainer from "./Profiles/AuthContainer";
+import {useRef, useState} from "react";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 
 function App() {
+    const [isHamburgerOpened, setIsHamburgerOpened] = useState(false);
 
+    const toggleHamburger = () => {
+        setIsHamburgerOpened((prev) => !prev);
+    };
 
+    const closeHamburger = () => {
+        setIsHamburgerOpened(false);
+    };
     return (
         <div className="wrapper" id="App">
-            <HeaderNavbar isOpen={true}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
+            <HeaderNavbar closeHamburger={closeHamburger} isHamburgerOpened={isHamburgerOpened}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <div id="page-wrap" className={"headerMenu"}>
-                <Header/>
+                <HeaderContainer />
                 <Routes>
-                    <Route path="/"
+                    <Route exact path="/"
                            element={<Content/>}/>
-                    <Route path="/Catalog"
+                    <Route path="/catalog"
                            element={<Catalog/>}/>
-                    <Route path="/Balloning"
-                           element={<Balloning/>}/>
-                    <Route path="/Search"
+                    <Route path="/balloning"
+                           element={ <Balloning/>}/>
+                    <Route path="/search"
                            element={<Search/>}/>
-                    <Route path="/MyAccount"
+                    <Route path="/myAccount"
                            element={<MyAccountContainer/>}/>
                     <Route path="/wishlist"
                            element={<MyWishlist/>}/>
@@ -63,5 +72,4 @@ function App() {
     );
 }
 
-export default compose(
-    connect())(App);
+export default App

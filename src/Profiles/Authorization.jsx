@@ -3,9 +3,8 @@ import {Field, Form, Formik} from "formik";
 
 
 
-
-
 const Authorization = (props) => {
+
     return <div id="authorization"
                 className="white-popup mfp-with-anim mfp-hide order_popup">
         <div className="popup_content">
@@ -14,33 +13,33 @@ const Authorization = (props) => {
                 order to verify you. </p>
             <div className="popup_form">
 
-                    <div className="login_wrap">
-                        <Formik  initialValues={{
-                            email: "client@gmail.com",
-                            password: "111111",
-                            type:1
-                        }}
-                        onSubmit={(values,submitProps) => {
-                           props.getAuthUser(values.email,values.password,values.type);
-                        }}>
-                            {({values, status}) => (
-                                <Form>
-                                    <div><Field
-                                        placeholder={"Your email"}
-                                        type={"email"}
-                                        name={"email"}
-                                        value={values.firstName}/></div>
+                <div className="login_wrap">
+                    <Formik initialValues={{
+                        email: "client@gmail.com",
+                        password: "111111",
+                        type: 1
+                    }}
+                            onSubmit={(values, submitProps) => {
+                                props.login(values.email,values.password,values.type)
+                            }}>
+                        {({values, status}) => (
+                            <Form>
+                                <div><Field
+                                    placeholder={"Your email"}
+                                    type={"email"}
+                                    name={"email"}
+                                    value={values.firstName}/></div>
 
-                                    <div><Field type="password"
-                                                placeholder={"Password"}
-                                                name={"password"}
-                                                value={values.password}
-                                    /></div>
-                                    <button type="submit">Log In</button>
-                                </Form>)}
-                        </Formik>
+                                <div><Field type="password"
+                                            placeholder={"Password"}
+                                            name={"password"}
+                                            value={values.password}
+                                /></div>
+                                <button type="submit">Log In</button>
+                            </Form>)}
+                    </Formik>
 
-                    </div>
+                </div>
 
                 <div className="row authorization_link">
                     New her? <NavLink to="/create" className="create">Create an account</NavLink>

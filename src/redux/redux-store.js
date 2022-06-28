@@ -6,7 +6,7 @@ import auth_Reducer from "./auth_Reducer";
 
 let reducers = combineReducers({
     profilePage: profile_Reducer,
-    autorization:auth_Reducer,
+    auth:auth_Reducer,
 });
 
 

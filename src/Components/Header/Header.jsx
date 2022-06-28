@@ -2,10 +2,11 @@ import Logo from "./headerComponents/Logo";
 import HeaderNavigation from "./headerComponents/HeaderNavigation";
 import HeaderAuthorization from "./headerComponents/HeaderAuthorization";
 import s from "./Header.module.css"
+import HeaderAutorized from "./headerComponents/HeaderAutorized";
 
 
 
-const Header = () => {
+const Header = (props) => {
     return <header id="myHeader" className="">
         {/* Header bottom start */}
         <div className="row header">
@@ -19,7 +20,8 @@ const Header = () => {
                    <HeaderNavigation/>
                     {/* NAVIGATION end */}
                     {/* account not login */}
-                   <HeaderAuthorization />
+                    {props.isAuth ? <HeaderAutorized/> :
+                   <HeaderAuthorization />}
                     {/* account not login */}
 
                 </div>

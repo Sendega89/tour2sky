@@ -1,12 +1,17 @@
 import React from "react";
 import "../../App.css";
-import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../../assets/common/Cards/ProductCard";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+
 library.add(fas);
+
+
+
 
 
 
@@ -32,6 +37,16 @@ const Catalog = (props) => {
                 {/* breadcrumbs*/}
                 {/*Sidebar*/}
                 <div className="sidebar">
+                    <a className="pp-credit-block-button" href="#" onClick="return false">
+                        <svg className="button-icon fill-secondary"
+                             width="17"
+                             height="17"
+                             aria-hidden="true"
+                             role="img"
+                             viewBox="0 0 24 24">
+                            <path d="M9.6 5.2c-.4-1.3-1.7-2-3-1.6-.8.2-1.5.9-1.7 1.6H3v1.5h1.9C5.3 8.1 6.7 8.8 8 8.4c.8-.2 1.4-.9 1.7-1.7H21V5.2H9.6zM12 15.5c-1.1 0-2 .7-2.4 1.8H3v1.5h6.7c.4 1.3 1.8 2.1 3.1 1.7.8-.2 1.4-.9 1.7-1.7H21v-1.5h-6.6c-.3-1.1-1.3-1.8-2.4-1.8zM16.8 9.5c-1.1 0-2 .7-2.4 1.8H3v1.5h11.4c.4 1.3 1.8 2.1 3.1 1.7.8-.2 1.4-.9 1.7-1.7H21v-1.5h-1.9c-.3-1.1-1.3-1.8-2.3-1.8z"></path>
+                        </svg>
+                        Filter</a>
                     {/*<SearchFilter/>*/}
                     <div className="popup-credit">
                         <div className="credit_block">
@@ -39,7 +54,21 @@ const Catalog = (props) => {
                                 <FontAwesomeIcon icon="fa-solid fa-times" aria-hidden="true"/></a>
                             <div className="row wighet">
                                 <h4>Filter by price</h4>
-                                <div className="row wighet_row">
+                                <Slider
+                                    range
+                                    marks={{
+                                    100: `$ 100`,
+                                    500: `$ 500`
+                                }}
+                                       min={100}
+                                       max={500}
+                                       defaultValue={[200, 300]}
+                                       tipFormatter={value => `$ ${value}`}
+                                       tipProps={{
+                                           placement: "top",
+                                           visible: true
+                                       }}/>
+                                {/*<div className="row wighet_row">
                                     <div id="slider-range"
                                          className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                                         <div className="ui-slider-range ui-corner-all ui-widget-header"
@@ -58,11 +87,36 @@ const Catalog = (props) => {
                                     <div className="row price_slider">
                                         <input type="text" id="amount" readOnly=""/>
                                     </div>
-                                </div>
+                                </div>*/}
                             </div>
-                            <div className="row wighet"><h4>Flight lenth</h4>
+                            <div className="row wighet">
+                                <h4>Flight lenth</h4>
                                 <div className="row wighet_row">
-                                    <div id="slider_lenth"
+                                    <Slider handleStyle={{
+                                        position: "absolute",
+                                        width: "16px",
+                                        height: "16px",
+                                        boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
+                                        backgroundColor: "#ffffff",
+                                        cursor: "pointer"
+                                    }}
+                                        range
+                                        marks={{
+                                            100: `$ 100`,
+                                            500: `$ 500`
+                                        }}
+
+                                        min={100}
+                                        max={500}
+                                        defaultValue={[200, 300]}
+                                        tipFormatter={value => `$ ${value}`}
+
+                                        tipProps={{
+                                            placement: "bottom",
+                                            visible: true
+                                        }}/>
+
+                                    {/*<div id="slider_lenth"
                                          className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                                         <div className="ui-slider-range ui-corner-all ui-widget-header"
                                              style={{left: "25%", width: "50%}"}}>
@@ -77,7 +131,7 @@ const Catalog = (props) => {
                                     </div>
                                     <div className="row price_slider">
                                         <input type="text" id="amount_lenth" readOnly=""/>
-                                    </div>
+                                    </div>*/}
                                 </div>
                             </div>
                             <div className="row wighet">
@@ -132,7 +186,8 @@ const Catalog = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row wighet"><h4>Top cities</h4>
+                            <div className="row wighet">
+                                <h4>Top cities</h4>
                                 <div className="row wighet_row">
                                     <div className="filter_links"><a href="#">Accra</a><a href="#">Addis Ababa</a><a
                                         href="#">Boston</a><a href="#">Cali</a><a href="#">Dallas</a><a
@@ -144,15 +199,16 @@ const Catalog = (props) => {
                     </div>
                     {/*<SliderRangeRC/>*/}
                 </div>
-
                 <div className="catalog_r">
                     <div className="row cat_top"><h4>2 helicopter tours found</h4>
-                        <div className="short"><select>
+                        <div className="short">
+                            <select >
                             <option value="by_price">Sort by price</option>
                             <option value="by_rating">Sort by rating</option>
                             <option value="by_popular">Sort by popular</option>
                             <option value="by_name">Sort by name</option>
-                        </select></div>
+                        </select>
+                        </div>
                     </div>
                     <div className="row row-15">
                         <ProductCard/>
