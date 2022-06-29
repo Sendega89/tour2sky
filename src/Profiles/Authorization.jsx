@@ -1,10 +1,13 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, Navigate} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
 
 
 
 const Authorization = (props) => {
 
+    if(props.isAuth){
+      return  <Navigate to='/myAccount'/>
+    }
     return <div id="authorization"
                 className="white-popup mfp-with-anim mfp-hide order_popup">
         <div className="popup_content">

@@ -16,12 +16,11 @@ import Product from "./Pages/Product/Product";
 import MyWishlist from "./Pages/MyAccount/MyWishlist/MyWishlist";
 import MyBookings from "./Pages/MyAccount/MyBookings/MyBookings";
 import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
-//import {compose} from "redux";
-//import {connect} from "react-redux";
 import CreateAccount from "./Profiles/CreateAccount";
 import AuthContainer from "./Profiles/AuthContainer";
 import {useRef, useState} from "react";
 import HeaderContainer from "./Components/Header/HeaderContainer";
+import CatalogContainer from "./Pages/Catalog/CatalogContainer";
 
 
 function App() {
@@ -43,7 +42,7 @@ function App() {
                     <Route exact path="/"
                            element={<Content/>}/>
                     <Route path="/catalog"
-                           element={<Catalog/>}/>
+                           element={<CatalogContainer/>}/>
                     <Route path="/balloning"
                            element={ <Balloning/>}/>
                     <Route path="/search"

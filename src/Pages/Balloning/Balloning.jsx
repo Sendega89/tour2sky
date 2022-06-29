@@ -4,11 +4,6 @@ import About from "../../Components/Main/ContentComponents/Main/MainComponents/A
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
 import post from "../../assets/img/post.jpg";
 import post2 from "../../assets/img/post2.jpg"
-import img1 from "../../assets/img/rectangle.png";
-import img2 from "../../assets/img/rectangle-copy-5.png";
-import img3 from "../../assets/img/rectangle-copy-6.png";
-import img4 from "../../assets/img/rectangle-copy-7.png";
-
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
@@ -85,8 +80,6 @@ const Balloning = () => {
                                 </div>
                             </div>
                         </div>
-
-
                         <div className="col-2 blogBox blog_item">
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">

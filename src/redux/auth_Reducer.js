@@ -26,7 +26,7 @@ const SET_USER_DATA = "tour2sky-project/auth/SET_USER_DATA";
     }
 }*/
 let initialState = {
-    isAuth:false
+
 }
 const auth_Reducer = (state=initialState,action)=>{
 
@@ -37,7 +37,7 @@ const auth_Reducer = (state=initialState,action)=>{
             return {
                 ...state,
             ...action.data,
-            isAuth: false,}
+            }
         }
         default:
             return state

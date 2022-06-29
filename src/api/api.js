@@ -7,7 +7,7 @@ partner@gmail.com
 
 const instance = axios.create(
     {
-        withCredentials: true,
+        /*withCredentials: true,*/
         baseURL: 'https://tour2sky.silvito.com.ua/api/',
     }
 );
@@ -31,7 +31,10 @@ export const authAPI = {
     }
 }*/
 export const productAPI = {
-    getServiceList (page,per_page,category_id,category_link,city_id,
+    getServiceList (){
+        return instance.get(`service/list`)
+    },
+    /*getServiceList (page,per_page,category_id,category_link,city_id,
     city_link,activity_location_id,activity_location_link,
                     min_price,max_price,min_duration,max_duration,
                     popular_cities,sort){
@@ -42,7 +45,7 @@ export const productAPI = {
         min_price=${min_price}&max_price=${max_price}&
         min_duration=${min_duration}&max_duration=${max_duration}&
         sort=${sort}`)
-    },
+    },*/
 }
 
 

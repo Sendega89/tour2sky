@@ -9,7 +9,7 @@ import {login} from "../redux/profile_Reducer";
 class AuthContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getAuthUserData();
+        /*this.props.getAuthUserData();*/
 
     }
 
@@ -18,7 +18,9 @@ class AuthContainer extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+    isAuth:state.profilePage.isAuth
+});
 
 
 export default connect(mapStateToProps, {getAuthUserData,login})(AuthContainer);

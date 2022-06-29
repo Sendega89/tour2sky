@@ -9,7 +9,7 @@ const HeaderContainer = (props) => {
     return <Header {...props} />
 }
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth,
+    isAuth: state.profilePage.isAuth,
 
 
 });

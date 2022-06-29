@@ -4,7 +4,7 @@ import "./Search.css";
 import "../../App.css";
 import "../../responsice.css";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
-import ProductCard from "../../assets/common/Cards/ProductCard";
+import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 
 
 const Search = () => {
@@ -34,66 +34,8 @@ const Search = () => {
                 <div className="container">
                     <h3>Popular helicopter tours</h3>
                     <div className="row row-15">
-                        {/*cat item */}
-                        {/*<div className="cat_item">
-                            <div className="cat_item_vn row">
-                                <div className="cat_item_img"><a href="#"><img src={itemImage} /></a></div>
-                                <div className="cat_item_center">
-                                    <div className="cat_item_title row">
-                                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true"></FontAwesomeIcon></i>
-                                        <a href="#">Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</a>
-                                    </div>
-                                    <div className="cat_item_price row">
-                                        <div className="item_price">$ 420</div>
-                                        <div className="rating">
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star deactivate"></FontAwesomeIcon></i>
-                                        </div>
-                                    </div>
-                                    <div className="cat_item_desk">
-                                        This is short tour description, can be few rows of text
-                                    </div>
-                                </div>
-                                <div className="cat_item_details">
-                                    <a href="#">Buy</a>
-                                </div>
-                            </div>
-                        </div>*/}
-                        <ProductCard />
-                         {/*cat item*/}
-
-                         {/*cat item */}
-                        {/*<div className="cat_item">
-                            <div className="cat_item_vn row">
-                                <div className="cat_item_img"><a href="#"><img src={itemImage} /></a></div>
-                                <div className="cat_item_center">
-                                    <div className="cat_item_title row">
-                                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark-o" aria-hidden="true"></FontAwesomeIcon></i>
-                                        <a href="#">Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</a>
-                                    </div>
-                                    <div className="cat_item_price row">
-                                        <div className="item_price">$ 420</div>
-                                        <div className="rating">
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star"></FontAwesomeIcon></i>
-                                            <i><FontAwesomeIcon icon="fa-solid fa-star deactivate"></FontAwesomeIcon></i>
-                                        </div>
-                                    </div>
-                                    <div className="cat_item_desk">
-                                        This is short tour description, can be few rows of text
-                                    </div>
-                                </div>
-                                <div className="cat_item_details">
-                                    <a href="#">Buy</a>
-                                </div>
-                            </div>
-                        </div>*/}
-                        <ProductCard />
+                        {/*cat item*/}
+                        <ProductContainer />
                         {/* cat item*/}
                     </div>
                 </div>
@@ -116,8 +58,18 @@ const Search = () => {
                     <div className="article-bottom">
 
                     <div className="row">
-                        <p>Tourism means people traveling for fun. It includes activities such as sightseeing and camping. People who travel for fun are called "tourists". Places where many tourists stay are called "resorts". Places that people go to for tourism are called tourist destinations.</p>
-                        <p>Tourism can bring damage to the local area, and/or the tourists. Litter, scuba-diving and deforestation are problems for popular places such as St. Lucia, Hawaii and others. Scuba-diving can damage coral reefs which are home to hundreds of species of sea animals. Tourism means people traveling for fun. It includes activities such as sightseeing and camping. People who travel for fun are called "tourists". </p>
+                        <p>Tourism means people traveling for fun.
+                            It includes activities such as sightseeing and camping.
+                            People who travel for fun are called "tourists".
+                            Places where many tourists stay are called "resorts".
+                            Places that people go to for tourism are called tourist destinations.</p>
+                        <p>Tourism can bring damage to the local area, and/or the tourists. Litter,
+                            scuba-diving and deforestation are problems for popular places such as St. Lucia,
+                            Hawaii and others.
+                            Scuba-diving can damage coral reefs which are home to hundreds of species of sea animals.
+                            Tourism means people traveling for fun.
+                            It includes activities such as sightseeing and camping.
+                            People who travel for fun are called "tourists". </p>
                     </div>
                     </div>
                 </div>

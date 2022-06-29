@@ -6,7 +6,9 @@ import {authAPI} from "../api/api";
 const SET_CLIENT_PROFILE = "SET_CLIENT_PROFILE";
 
 
-const initialState = {}
+const initialState = {
+    isAuth:false
+}
 
 const profile_Reducer = (state=initialState,action)=>{
 
@@ -16,7 +18,8 @@ const profile_Reducer = (state=initialState,action)=>{
 
             return {
                 ...state,
-                ...action.data,}
+                ...action.data,
+            isAuth:true}
         }
         default:
             return state

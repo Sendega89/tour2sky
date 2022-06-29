@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../../../assets/common/Cards/ProductCard";
+import ProductCards from "../../../assets/common/Cards/ProductCards";
 
 
 
@@ -30,8 +30,8 @@ const MyBookings = () => {
 
                             <div className="row row-15">
                          {/*        cat item */}
-<ProductCard/>
-<ProductCard/>
+<ProductCards/>
+
 
                          {/*        cat item */}
 

@@ -1,12 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../../App.css";
 import 'rc-slider/assets/index.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from "@fortawesome/free-solid-svg-icons";
-import ProductCard from "../../assets/common/Cards/ProductCard";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
+import {NavLink} from "react-router-dom";
+import "rc-slider/assets/index.css";
+
+
 
 library.add(fas);
 
@@ -16,6 +20,10 @@ library.add(fas);
 
 
 const Catalog = (props) => {
+
+    useEffect(() => {
+      props.getProductCardData();
+    },[]);
 
 
     return <div className="catalog">
@@ -32,42 +40,52 @@ const Catalog = (props) => {
             <div className="container">
                 {/*breadcrumbs*/}
                 <div className="row breadcrumbs">
-                    <a className="" href="/">Home</a>
-                    <span>Catalog</span></div>
+                    <NavLink className="" to="/">Home</NavLink>
+                    <span>Catalog</span>
+                </div>
                 {/* breadcrumbs*/}
                 {/*Sidebar*/}
                 <div className="sidebar">
-                    <a className="pp-credit-block-button" href="#" onClick="return false">
+                    <NavLink className="pp-credit-block-button" to="#">
                         <svg className="button-icon fill-secondary"
                              width="17"
                              height="17"
                              aria-hidden="true"
                              role="img"
                              viewBox="0 0 24 24">
-                            <path d="M9.6 5.2c-.4-1.3-1.7-2-3-1.6-.8.2-1.5.9-1.7 1.6H3v1.5h1.9C5.3 8.1 6.7 8.8 8 8.4c.8-.2 1.4-.9 1.7-1.7H21V5.2H9.6zM12 15.5c-1.1 0-2 .7-2.4 1.8H3v1.5h6.7c.4 1.3 1.8 2.1 3.1 1.7.8-.2 1.4-.9 1.7-1.7H21v-1.5h-6.6c-.3-1.1-1.3-1.8-2.4-1.8zM16.8 9.5c-1.1 0-2 .7-2.4 1.8H3v1.5h11.4c.4 1.3 1.8 2.1 3.1 1.7.8-.2 1.4-.9 1.7-1.7H21v-1.5h-1.9c-.3-1.1-1.3-1.8-2.3-1.8z"></path>
+                            <path d="M9.6 5.2c-.4-1.3-1.7-2-3-1.6-.8.2-1.5.9-1.7 1.6H3v1.5h1.9C5.3 8.1 6.7 8.8 8 8.4c.8-.2 1.4-.9 1.7-1.7H21V5.2H9.6zM12 15.5c-1.1 0-2 .7-2.4 1.8H3v1.5h6.7c.4 1.3 1.8 2.1 3.1 1.7.8-.2 1.4-.9 1.7-1.7H21v-1.5h-6.6c-.3-1.1-1.3-1.8-2.4-1.8zM16.8 9.5c-1.1 0-2 .7-2.4 1.8H3v1.5h11.4c.4 1.3 1.8 2.1 3.1 1.7.8-.2 1.4-.9 1.7-1.7H21v-1.5h-1.9c-.3-1.1-1.3-1.8-2.3-1.8z"/>
                         </svg>
-                        Filter</a>
+                        Filter</NavLink>
                     {/*<SearchFilter/>*/}
                     <div className="popup-credit">
                         <div className="credit_block">
                             <a className="cancelComment" title="">
-                                <FontAwesomeIcon icon="fa-solid fa-times" aria-hidden="true"/></a>
+                                <FontAwesomeIcon icon="fa-solid fa-times" /></a>
                             <div className="row wighet">
                                 <h4>Filter by price</h4>
-                                <Slider
-                                    range
-                                    marks={{
+
+                                <Slider railStyle={{}}
+                                        handleStyle={{
+                                    position: "absolute",
+                                    width: "16px",
+                                    height: "16px",
+                                    boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
+                                    backgroundColor: "#ffffff",
+                                    cursor: "pointer"}}
+                                        range
+                                        marks={{
                                     100: `$ 100`,
                                     500: `$ 500`
                                 }}
                                        min={100}
                                        max={500}
                                        defaultValue={[200, 300]}
-                                       tipFormatter={value => `$ ${value}`}
+                                       tipFormatter={value =>`$ ${value}`}
                                        tipProps={{
-                                           placement: "top",
-                                           visible: true
+                                           placement: "bottom",
+                                           visible: true,
                                        }}/>
+
                                 {/*<div className="row wighet_row">
                                     <div id="slider-range"
                                          className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
@@ -105,33 +123,14 @@ const Catalog = (props) => {
                                             100: `$ 100`,
                                             500: `$ 500`
                                         }}
-
                                         min={100}
                                         max={500}
                                         defaultValue={[200, 300]}
                                         tipFormatter={value => `$ ${value}`}
-
                                         tipProps={{
                                             placement: "bottom",
-                                            visible: true
+                                            visible: true,
                                         }}/>
-
-                                    {/*<div id="slider_lenth"
-                                         className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                                        <div className="ui-slider-range ui-corner-all ui-widget-header"
-                                             style={{left: "25%", width: "50%}"}}>
-                                        </div>
-                                        <span tabIndex="0"
-                                              className="ui-slider-handle ui-corner-all ui-state-default"
-                                              style={{left: "25%"}}>
-                                    </span>
-                                        <span tabIndex="0"
-                                              className="ui-slider-handle ui-corner-all ui-state-default"
-                                              style={{left: "75%"}}/>
-                                    </div>
-                                    <div className="row price_slider">
-                                        <input type="text" id="amount_lenth" readOnly=""/>
-                                    </div>*/}
                                 </div>
                             </div>
                             <div className="row wighet">
@@ -189,42 +188,56 @@ const Catalog = (props) => {
                             <div className="row wighet">
                                 <h4>Top cities</h4>
                                 <div className="row wighet_row">
-                                    <div className="filter_links"><a href="#">Accra</a><a href="#">Addis Ababa</a><a
-                                        href="#">Boston</a><a href="#">Cali</a><a href="#">Dallas</a><a
-                                        href="#">Hangzhou</a><a href="#">Kuala Lumpur</a><a href="#">Mumbai</a><a
-                                        href="#">San Jose</a><a href="#">Taipei</a></div>
+                                    <div className="filter_links">
+                                        <NavLink to="#">Accra</NavLink>
+                                        <NavLink to="#">Addis Ababa</NavLink>
+                                        <NavLink to="#">Boston</NavLink>
+                                        <NavLink to="#">Cali</NavLink>
+                                        <NavLink to="#">Dallas</NavLink>
+                                        <NavLink to="#">Hangzhou</NavLink>
+                                        <NavLink to="#">Kuala Lumpur</NavLink>
+                                        <NavLink to="#">Mumbai</NavLink>
+                                        <NavLink to="#">San Jose</NavLink>
+                                        <NavLink to="#">Taipei</NavLink>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/*<SliderRangeRC/>*/}
+
                 </div>
                 <div className="catalog_r">
-                    <div className="row cat_top"><h4>2 helicopter tours found</h4>
+                    <div className="row cat_top">
+                        <h4>2 helicopter tours found</h4>
                         <div className="short">
                             <select >
-                            <option value="by_price">Sort by price</option>
-                            <option value="by_rating">Sort by rating</option>
-                            <option value="by_popular">Sort by popular</option>
-                            <option value="by_name">Sort by name</option>
+                            <option value="price">Sort by price</option>
+                            <option value="rating">Sort by rating</option>
+                            <option value="popular">Sort by popular</option>
+                            <option value="name">Sort by name</option>
                         </select>
                         </div>
                     </div>
                     <div className="row row-15">
-                        <ProductCard/>
-                        <ProductCard/>
+                        <ProductContainer/>
                     </div>
                     <div className="row">
                         <ul className="pagination">
-                            <li className="previous disabled"><a className=" " tabIndex="-1" role="button"
-                                                                 aria-disabled="true" aria-label="Previous page"
-                                                                 rel="prev">&lt;</a></li>
-                            <li className="page-item disabled"><a rel="canonical" role="button" tabIndex="-1"
-                                                                  aria-label="Page 1 is your current page"
-                                                                  aria-current="page">1</a></li>
-                            <li className="next disabled"><a className=" " tabIndex="-1" role="button"
-                                                             aria-disabled="true" aria-label="Next page"
-                                                             rel="next">&gt;</a></li>
+                            <li className="previous disabled">
+                                <a className=" " tabIndex="-1" role="button"
+                                   aria-disabled="true" aria-label="Previous page"
+                                   rel="prev">&lt;</a>
+                            </li>
+                            <li className="page-item disabled">
+                                <a rel="canonical" role="button" tabIndex="-1"
+                                   aria-label="Page 1 is your current page"
+                                   aria-current="page">1</a>
+                            </li>
+                            <li className="next disabled">
+                                <a className=" " tabIndex="-1" role="button"
+                                   aria-disabled="true" aria-label="Next page"
+                                   rel="next">&gt;</a>
+                            </li>
                         </ul>
                     </div>
                     <article className="row cat_text"><p>Tourism means people traveling for fun. It includes activities

@@ -2,11 +2,10 @@ import "../../App.css";
 import "../../rating.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
-import ProductCard from "../../assets/common/Cards/ProductCard";
 import Rating from "../../assets/common/Rating/Rating";
 import ProductAccordion from "../../assets/common/Accordion/ProductAccordion";
 import SlickSlider from "./SlickSlider";
-import {TextField} from "@mui/material";
+import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 
 const Product = () => {
     const settings = {
@@ -86,7 +85,6 @@ const Product = () => {
                                                       aria-disabled={false}>
                                                   <span className="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
                                                 </span>*/}
-
                                               </div>
                                         </div>
                                         <div className="row price">
@@ -123,8 +121,7 @@ const Product = () => {
                         <h3>Popular helicopter tours</h3>
                         <div className="row row-15">
                             {/*cat item*/}
-                            <ProductCard/>
-                            <ProductCard/>
+                            <ProductContainer/>
                             {/*cat item */}
                         </div>
                     </div>
@@ -132,26 +129,12 @@ const Product = () => {
                 </div>
                 {/*Popular helicopter tours end */}
 
-
                 <div className="container">
                     <div className="message message--reviews">
                         <div className="message__information">
                             <span className="message__name"> Tour reviews (9)</span>
                             <div className="message__rating-block">
                                 <div className="rating-stars ">
-                                    {/*<ul id="stars">
-                                    <li className="star" title="Poor" data-value="1">
-                                        <i><FontAwesomeIcon icon={faStar}/></i></li>
-                                    <li className="star" title="Fair" data-value="2">
-                                        <i><FontAwesomeIcon icon={faStar}/></i></li>
-                                    <li className="star" title="Good" data-value="3">
-                                        <i><FontAwesomeIcon icon="fa fa-star fa-fw"/></i></li>
-                                    <li className="star" title="Excellent" data-value="4">
-                                        <i><FontAwesomeIcon icon="fa-solid fa-star fa-fw"/></i></li>
-                                    <li className="star" title="WOW!!!" data-value="5">
-                                        <i><FontAwesomeIcon icon="fa fa-star fa-fw"/></i></li>
-
-                                </ul>*/}
                                     <Rating/>
                                 </div>
                             </div>
@@ -178,7 +161,6 @@ const Product = () => {
                                             <i><FontAwesomeIcon icon="fa-solid fa-star fa-fw"/></i></li>
                                         <li className="star" title="WOW!!!" data-value="5">
                                             <i><FontAwesomeIcon icon="fa fa-star fa-fw"/></i></li>
-
                                     </ul>
                                 </div>
                             </div>
