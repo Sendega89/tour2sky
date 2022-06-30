@@ -2,7 +2,8 @@ import React from "react";
 import s from "./Checkout.module.css";
 import '../../App.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Rating from "../../assets/common/Rating/Rating";
+import RatingTour2Sky from "../../assets/common/Rating/RatingTour2Sky";
+
 
 
 
@@ -19,7 +20,7 @@ const Checkout = () => {
 
                     <span><i><FontAwesomeIcon icon="fa-solid fa-calendar" aria-hidden="true"/></i>12.20.2019</span>
                         <h3>Sierra Nevada Helicopter day tour</h3>
-                        <Rating/>
+                        <RatingTour2Sky/>
                 </div>
             </div>
         </div>

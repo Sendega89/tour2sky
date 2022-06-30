@@ -39,6 +39,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({theme}) => ({
     padding: theme.spacing(2),
     border:"none",
     fontSize:"26px",
+    fontFamily:"Open-sans"
 }));
 
 export default function CustomizedAccordions() {

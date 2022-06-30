@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Rectangle from "../../Components/Main/ContentComponents/Main/MainComponents/Rectangle";
 import "./Search.css";
 import "../../App.css";
@@ -7,7 +7,13 @@ import BestCities from "../../Components/Main/ContentComponents/Main/MainCompone
 import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 
 
-const Search = () => {
+
+const Search = (props) => {
+
+   /* useEffect(() => {
+        props.getPopularProductCardData();
+    },[]);*/
+
     return  <>
     <div className="error200">
         <div className="header_title">

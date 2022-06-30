@@ -2,7 +2,7 @@ import "../../App.css";
 import "../../rating.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
-import Rating from "../../assets/common/Rating/Rating";
+import RatingTour2Sky from "../../assets/common/Rating/RatingTour2Sky";
 import ProductAccordion from "../../assets/common/Accordion/ProductAccordion";
 import SlickSlider from "./SlickSlider";
 import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
@@ -47,7 +47,7 @@ const Product = () => {
                                             <i><FontAwesomeIcon icon="fa-solid fa-clock" aria-hidden="true"/></i>
                                             <span>4h of flight</span>
                                         </div>
-                                        <Rating/>
+                                        <RatingTour2Sky/>
                                     </div>
                                     <div className="row options">
                                         <div className="row options_item">
@@ -135,7 +135,7 @@ const Product = () => {
                             <span className="message__name"> Tour reviews (9)</span>
                             <div className="message__rating-block">
                                 <div className="rating-stars ">
-                                    <Rating/>
+                                    <RatingTour2Sky/>
                                 </div>
                             </div>
                         </div>

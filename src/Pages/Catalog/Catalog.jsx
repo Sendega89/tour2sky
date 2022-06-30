@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "../../App.css";
 import 'rc-slider/assets/index.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -9,6 +9,14 @@ import "rc-slider/assets/index.css";
 import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 import {NavLink} from "react-router-dom";
 import "rc-slider/assets/index.css";
+import {Pagination, PaginationItem} from '@mui/material';
+import './Catalog.css';
+
+
+
+
+
+
 
 
 
@@ -21,8 +29,14 @@ library.add(fas);
 
 const Catalog = (props) => {
 
+    const [page, setPage] = useState();
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
+
     useEffect(() => {
       props.getProductCardData();
+
     },[]);
 
 
@@ -208,7 +222,7 @@ const Catalog = (props) => {
                 </div>
                 <div className="catalog_r">
                     <div className="row cat_top">
-                        <h4>2 helicopter tours found</h4>
+                        <h4>{props.amountProductFound} helicopter tours found</h4>
                         <div className="short">
                             <select >
                             <option value="price">Sort by price</option>
@@ -222,23 +236,24 @@ const Catalog = (props) => {
                         <ProductContainer/>
                     </div>
                     <div className="row">
-                        <ul className="pagination">
-                            <li className="previous disabled">
-                                <a className=" " tabIndex="-1" role="button"
-                                   aria-disabled="true" aria-label="Previous page"
-                                   rel="prev">&lt;</a>
-                            </li>
+                        <div className="paginationArea">
+
+                        <Pagination id="pagination"
+                            count={1} hidePrevButton hideNextButton size="large"
+                                    page={1} onChange={handleChange}
+                        />
+                    </div>
+
+                        {/*<ul className="pagination">
+
+
                             <li className="page-item disabled">
                                 <a rel="canonical" role="button" tabIndex="-1"
                                    aria-label="Page 1 is your current page"
                                    aria-current="page">1</a>
                             </li>
-                            <li className="next disabled">
-                                <a className=" " tabIndex="-1" role="button"
-                                   aria-disabled="true" aria-label="Next page"
-                                   rel="next">&gt;</a>
-                            </li>
-                        </ul>
+
+                        </ul>*/}
                     </div>
                     <article className="row cat_text"><p>Tourism means people traveling for fun. It includes activities
                         such as sightseeing and camping. People who travel for fun are called "tourists". Places where

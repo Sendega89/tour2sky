@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Rating from "../Rating/Rating";
+import RatingTour2Sky from "../Rating/RatingTour2Sky";
 import {faClockFour} from "@fortawesome/free-solid-svg-icons";
 import itemImage from "../../img/p1.jpg";
 
@@ -9,8 +9,8 @@ import itemImage from "../../img/p1.jpg";
 
 const ProductCards = (props) => {
 
-    return  props.productCards.map(card => <ProductCard key={card.id}
-                                                       /*img={card.images.data[0].link}*/
+    return  props.productCards.data.map(card => <ProductCard key={card.id}
+                                                       img={card.images.data.map(i=>i.link)}
                                                        name={card.name} price={card.price}
                                                        duration={card.duration}
                                                        description={card.description}
@@ -26,22 +26,22 @@ export const ProductCard = (props) => {
         <div className="cat_item_vn row">
             <div className="cat_item_img">
                 <NavLink product="[object Object]" to="/product/1">
-                    <img src={props.img != null ? props.img : itemImage} />
+                    <img src={props.img != null || undefined ? props.img : itemImage} alt={'No image'} />
                 </NavLink>
             </div>
 
             <div className="cat_item_center">
-                <div className="cat_item_title row"><i>
-                    <FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
+                <div className="cat_item_title row">
+                    <i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
                     <NavLink to="/product/1">
                         {props.name != null ? props.name :
                             <div>Tour2Sky VIP: NYC Helicopter Flight
                                 and Statue of Liberty Cruise</div>}</NavLink>
                 </div>
                 <div className="cat_item_price">
-                    <div className="item_price"><span>from</span> ${props.price != null? props.price :"420"}</div>
+                    <div className="item_price"><span>from</span> ${props.price != null? props.price :"???"}</div>
                     <div className="rating-container">
-                        <Rating rating={props.rating}/>
+                        <RatingTour2Sky rating={props.rating}/>
                         <div className="item_date">
                             <i><FontAwesomeIcon icon={faClockFour} /></i>
                             <span>{props.duration != null ? props.duration : "30"} minutes</span>

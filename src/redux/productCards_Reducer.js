@@ -4,7 +4,11 @@ import {productAPI} from "../api/api";
 const SET_PRODUCTS_DATA = "SET_CLIENT_PROFILE";
 
 
-const initialState = []
+const  initialState = {
+    data: [],
+    meta:{},
+    isFetching: true,
+};
 
 const productCards_Reducer = (state=initialState, action)=>{
 
@@ -12,9 +16,10 @@ const productCards_Reducer = (state=initialState, action)=>{
 
         case SET_PRODUCTS_DATA:{
 
-            return {
-                ...state,
-                ...action.data
+            return {...state,
+                data:action.data.data,
+                meta:action.data.meta,
+                isFetching: false
             }
         }
         default:
@@ -26,9 +31,10 @@ export const setProductCardData = (data) =>({type:SET_PRODUCTS_DATA,data});
 
 /*This is Thunk*/
 export const getProductCardData = () => async (dispatch) => {
+
         let response = await productAPI.getServiceList()
         if (response.status === 200) {
-            dispatch(setProductCardData(response))
+            dispatch(setProductCardData(response.data))
         } else {
             console.log('else')
         }
