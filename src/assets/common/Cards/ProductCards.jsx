@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import RatingTour2Sky from "../Rating/RatingTour2Sky";
 import {faClockFour} from "@fortawesome/free-solid-svg-icons";
 import itemImage from "../../img/p1.jpg";
+import logo from "../../../Components/Header/headerComponents/Logo";
 
 
 
@@ -21,6 +22,9 @@ const ProductCards = (props) => {
 
 
 export const ProductCard = (props) => {
+const getItemInfo =(itemId) => {
+    console.log(itemId)
+};
 
     return <div className="cat_item">
         <div className="cat_item_vn row">
@@ -33,8 +37,8 @@ export const ProductCard = (props) => {
             <div className="cat_item_center">
                 <div className="cat_item_title row">
                     <i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
-                    <NavLink to="/product/1">
-                        {props.name != null ? props.name :
+                    <NavLink to={`/product/${props.id}`}>
+                        {props.name != null ? <div onClick={()=> getItemInfo(props.id)}>{props.name}</div> :
                             <div>Tour2Sky VIP: NYC Helicopter Flight
                                 and Statue of Liberty Cruise</div>}</NavLink>
                 </div>

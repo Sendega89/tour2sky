@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "../../App.css";
+import s from "./Catalog.module.css";
 import 'rc-slider/assets/index.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {library} from '@fortawesome/fontawesome-svg-core';
@@ -9,17 +10,8 @@ import "rc-slider/assets/index.css";
 import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 import {NavLink} from "react-router-dom";
 import "rc-slider/assets/index.css";
-import {Pagination, PaginationItem} from '@mui/material';
-import './Catalog.css';
-
-
-
-
-
-
-
-
-
+import './Catalog.module.css';
+import Paginator from "../../assets/common/Pagination/Paginator";
 library.add(fas);
 
 
@@ -28,12 +20,10 @@ library.add(fas);
 
 
 const Catalog = (props) => {
-
-    const [page, setPage] = useState();
-    const handleChange = (event, value) => {
-        setPage(value);
-    };
-
+    const [minPrice,setMinPrice] = useState([200]);
+    const [maxPrice,setMaxPrice] = useState([300]);
+    const [minTime,setMinTime] = useState([200]);
+    const [maxTime,setMaxTime] = useState([300]);
     useEffect(() => {
       props.getProductCardData();
 
@@ -77,29 +67,43 @@ const Catalog = (props) => {
                                 <FontAwesomeIcon icon="fa-solid fa-times" /></a>
                             <div className="row wighet">
                                 <h4>Filter by price</h4>
-
-                                <Slider railStyle={{}}
-                                        handleStyle={{
-                                    position: "absolute",
-                                    width: "16px",
-                                    height: "16px",
-                                    boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
-                                    backgroundColor: "#ffffff",
-                                    cursor: "pointer"}}
-                                        range
-                                        marks={{
+                                <div className="row wighet_row">
+                                    <Slider range
+                                            onChange={(value)=> {
+                                            setMaxPrice(value[1]);
+                                            setMinPrice(value[0])}}
+                                            trackStyle={{
+                                                backgroundImage: "linear-gradient(272deg,#3cc,#2980b9)",
+                                                padding:"3px",
+                                            }}
+                                            dotStyle={{
+                                                backgroundColor: "#ffffff",
+                                                cursor: "pointer",
+                                                }}
+                                            handleStyle={{
+                                                /*position: "absolute",*/
+                                                width: "16px",
+                                                height: "16px",
+                                                boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
+                                                backgroundColor: "white",
+                                                cursor: "pointer",
+                                            }}
+                                            /* marks={{
                                     100: `$ 100`,
                                     500: `$ 500`
-                                }}
-                                       min={100}
-                                       max={500}
-                                       defaultValue={[200, 300]}
-                                       tipFormatter={value =>`$ ${value}`}
-                                       tipProps={{
-                                           placement: "bottom",
-                                           visible: true,
-                                       }}/>
-
+                                }}*/
+                                            min={100}
+                                            max={500}
+                                            defaultValue={[200, 300]}
+                                            tipFormatter={value =>`$ ${value}`}
+                                            tipProps={{
+                                                placement: "bottom",
+                                                visible: true,}}/>
+                                <div className={s.infoSliderPanel}>
+                                    <div className={s.info_L}>${minPrice}</div>
+                                    <div className={s.info_R}>${maxPrice}</div>
+                                 </div>
+                                </div>
                                 {/*<div className="row wighet_row">
                                     <div id="slider-range"
                                          className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
@@ -124,27 +128,37 @@ const Catalog = (props) => {
                             <div className="row wighet">
                                 <h4>Flight lenth</h4>
                                 <div className="row wighet_row">
-                                    <Slider handleStyle={{
-                                        position: "absolute",
-                                        width: "16px",
-                                        height: "16px",
-                                        boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
-                                        backgroundColor: "#ffffff",
-                                        cursor: "pointer"
-                                    }}
-                                        range
-                                        marks={{
-                                            100: `$ 100`,
-                                            500: `$ 500`
-                                        }}
-                                        min={100}
-                                        max={500}
-                                        defaultValue={[200, 300]}
-                                        tipFormatter={value => `$ ${value}`}
-                                        tipProps={{
-                                            placement: "bottom",
-                                            visible: true,
-                                        }}/>
+                                    <Slider range
+                                            onChange={(value)=> {
+                                                setMaxTime(value[1]);
+                                                setMinTime(value[0])}}
+                                            trackStyle={{
+                                                backgroundImage: "linear-gradient(272deg,#3cc,#2980b9)",
+                                                padding:"3px"}}
+                                            dotStyle={{
+                                                backgroundColor: "#ffffff",
+                                                cursor: "pointer",}}
+                                            handleStyle={{
+                                                width: "16px",
+                                                height: "16px",
+                                                boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
+                                                backgroundColor: "white",
+                                                cursor: "pointer"}}
+                                            /* marks={{
+                                100: `$ 100`,
+                                500: `$ 500`
+                            }}*/
+                                            min={100}
+                                            max={500}
+                                            defaultValue={[200, 300]}
+                                            /*tipFormatter={value =>`$ ${value}`}*/
+                                            /*tipProps={{
+                                                placement: "bottom",
+                                                visible: true,}}*//>
+                                    <div className={s.infoSliderPanel}>
+                                        <div className={s.info_L}>{minTime} min</div>
+                                        <div className={s.info_R}>{maxTime} min</div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="row wighet">
@@ -236,24 +250,20 @@ const Catalog = (props) => {
                         <ProductContainer/>
                     </div>
                     <div className="row">
-                        <div className="paginationArea">
-
-                        <Pagination id="pagination"
-                            count={1} hidePrevButton hideNextButton size="large"
-                                    page={1} onChange={handleChange}
-                        />
-                    </div>
-
-                        {/*<ul className="pagination">
-
-
-                            <li className="page-item disabled">
-                                <a rel="canonical" role="button" tabIndex="-1"
-                                   aria-label="Page 1 is your current page"
-                                   aria-current="page">1</a>
-                            </li>
-
-                        </ul>*/}
+                        <Paginator  totalUsersCount={props.pagination.total}
+                                    pageSize={props.pagination.per_page}
+                                    currentPage={props.pagination.current_page}
+                                    />
+                        {/*<ul class="pagination">
+                        <li class="previous disabled">
+                             <a class=" " tabindex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">&lt;</a>
+                             </li>
+                             <li class="page-item disabled">
+                             <a rel="canonical" role="button" tabindex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a>
+                             </li>
+                             <li class="next disabled"><a class=" " tabindex="-1" role="button" aria-disabled="true" aria-label="Next page" rel="next">&gt;</a>
+                             </li>
+                             </ul>*/}
                     </div>
                     <article className="row cat_text"><p>Tourism means people traveling for fun. It includes activities
                         such as sightseeing and camping. People who travel for fun are called "tourists". Places where

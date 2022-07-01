@@ -34,6 +34,9 @@ export const productAPI = {
     getServiceList (){
         return instance.get(`service/list`)
     },
+    getServiceItemView (serviceId){
+      return instance.get(`service/${serviceId}/view`)
+    },
     /*getServiceList (page,per_page,category_id,category_link,city_id,
     city_link,activity_location_id,activity_location_link,
                     min_price,max_price,min_duration,max_duration,

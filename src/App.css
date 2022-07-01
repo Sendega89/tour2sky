@@ -2522,13 +2522,13 @@ img.mfp-img {
     border-top: 1px solid #ecf0f1;
     text-align: center;
     font-size: 22px;
+
 }
 #pagination li {
     display: inline-block;
-
 }
-#pagination li button, .pagination li span {
-    /*padding-top: 7px;*/
+#pagination li a, #pagination li span {
+    padding-top: 7px;
     display: inline-block;
     border: 1px solid #ECF0F1;
     margin: 0 4px;
@@ -2539,7 +2539,7 @@ img.mfp-img {
     color: #B6C2CC;
     background-image: none;
 }
-#pagination li button:hover {
+#pagination li a:hover {
     box-shadow: 0 8px 10px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08);
     background-color: #ffffff;
     color: #2980b9;
@@ -2547,16 +2547,13 @@ img.mfp-img {
     text-decoration: none;
     transition: 0.5s;
 }
-#pagination li button .active {
+#pagination li a.active {
     box-shadow: 0 8px 10px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08);
     background-color: #ffffff;
     color: #2980b9;
     cursor: pointer;
     text-decoration: none;
     transition: 0.5s;
-    /* identical to box height, or 109% */
-
-
 }
 #pagination li.disabled {
     pointer-events: none;
@@ -2565,9 +2562,7 @@ img.mfp-img {
 #pagination .page-item. disabled button {
     border-color: #2ea3c0;
 }
-.Mui-selected {
-    background-color: black;
-}
+
 
 /* Контейнер слайдера */
 .wighet .price_slider input {

@@ -7,6 +7,7 @@ const SET_PRODUCTS_DATA = "SET_CLIENT_PROFILE";
 const  initialState = {
     data: [],
     meta:{},
+    pagination:{},
     isFetching: true,
 };
 
@@ -19,6 +20,7 @@ const productCards_Reducer = (state=initialState, action)=>{
             return {...state,
                 data:action.data.data,
                 meta:action.data.meta,
+                pagination:action.data.meta.pagination,
                 isFetching: false
             }
         }
@@ -38,6 +40,5 @@ export const getProductCardData = () => async (dispatch) => {
         } else {
             console.log('else')
         }
-
 }
 export default productCards_Reducer

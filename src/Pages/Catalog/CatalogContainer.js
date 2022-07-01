@@ -11,7 +11,7 @@ const CatalogContainer = (props) => {
 const mapStateToProps =(state)=> ({
     amountProductFound:state.productCards.data.length,
     meta:state.productCards.meta,
-
+    pagination:state.productCards.pagination
 });
 
 export default connect(mapStateToProps,{getProductCardData})(CatalogContainer)

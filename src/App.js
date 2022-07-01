@@ -21,6 +21,7 @@ import AuthContainer from "./Profiles/AuthContainer";
 import {useRef, useState} from "react";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import CatalogContainer from "./Pages/Catalog/CatalogContainer";
+import ProductContainer from "./Pages/Product/ProductContainer";
 
 
 function App() {
@@ -61,8 +62,8 @@ function App() {
                            element={<CreateAccount/>}/>
                     <Route path="/404"
                            element={<Page404/>}/>
-                    <Route path="/product/1"
-                           element={<Product/>}/>
+                    <Route path="/product/:itemId?"
+                           element={<ProductContainer/>}/>
                 </Routes>
 
                 <Footer/>
