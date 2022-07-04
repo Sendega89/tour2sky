@@ -18,15 +18,15 @@ import MyBookings from "./Pages/MyAccount/MyBookings/MyBookings";
 import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
 import CreateAccount from "./Profiles/CreateAccount";
 import AuthContainer from "./Profiles/AuthContainer";
-import {useRef, useState} from "react";
+import { useState} from "react";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import CatalogContainer from "./Pages/Catalog/CatalogContainer";
 import ProductContainer from "./Pages/Product/ProductContainer";
+import CreateAccountContainer from "./Profiles/CreateAccountContainer";
 
 
 function App() {
     const [isHamburgerOpened, setIsHamburgerOpened] = useState(false);
-
     const toggleHamburger = () => {
         setIsHamburgerOpened((prev) => !prev);
     };
@@ -34,6 +34,7 @@ function App() {
     const closeHamburger = () => {
         setIsHamburgerOpened(false);
     };
+
     return (
         <div className="wrapper" id="App">
             <HeaderNavbar closeHamburger={closeHamburger} isHamburgerOpened={isHamburgerOpened}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
@@ -59,10 +60,10 @@ function App() {
                     <Route path="/authorization"
                            element={<AuthContainer/>}/>
                     <Route path="/create"
-                           element={<CreateAccount/>}/>
+                           element={<CreateAccountContainer/>}/>
                     <Route path="/404"
                            element={<Page404/>}/>
-                    <Route path="/product/:itemId?"
+                    <Route path="/product/:itemId"
                            element={<ProductContainer/>}/>
                 </Routes>
 

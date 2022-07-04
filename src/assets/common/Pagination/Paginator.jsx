@@ -33,7 +33,7 @@ function Paginator({onPageChanged, currentPage, totalUsersCount, pageSize}) {
                       onPageChanged(p)
                       }
                       }>
-                    <a className={currentPage === p && "active"} >{p}</a> </li>
+                    <a className={currentPage === p ? undefined : "active"} >{p}</a> </li>
             })}
        {/* {portionCount > portionNumber &&
             <li>

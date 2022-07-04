@@ -1,7 +1,9 @@
 import {productAPI} from "../api/api";
+import Page404 from "../Pages/Page404/Page404";
 
 
-const SET_PRODUCTS_DATA = "SET_CLIENT_PROFILE";
+const SET_UNAUTHORIZED_CATALOG = "SET_UNAUTHORIZED_CATALOG";
+const SET_CLIENTS_CATALOG = "SET_CLIENTS_CATALOG";
 
 
 const  initialState = {
@@ -15,8 +17,7 @@ const productCards_Reducer = (state=initialState, action)=>{
 
     switch (action.type) {
 
-        case SET_PRODUCTS_DATA:{
-
+        case SET_UNAUTHORIZED_CATALOG:{
             return {...state,
                 data:action.data.data,
                 meta:action.data.meta,
@@ -24,21 +25,33 @@ const productCards_Reducer = (state=initialState, action)=>{
                 isFetching: false
             }
         }
+        case SET_CLIENTS_CATALOG:{
+            return {...state,
+                data:action.data.data,
+                meta:action.data.meta,
+                pagination:action.data.meta.pagination,
+                isFetching: false
+            }
+        }
+
         default:
             return state
     }
 }
 
-export const setProductCardData = (data) =>({type:SET_PRODUCTS_DATA,data});
+export const setUnauthorizedCatalog = (data) =>({type:SET_UNAUTHORIZED_CATALOG,data});
+export const setClientCatalog = (data) =>({type:SET_CLIENTS_CATALOG,data});
 
 /*This is Thunk*/
 export const getProductCardData = () => async (dispatch) => {
-
         let response = await productAPI.getServiceList()
         if (response.status === 200) {
-            dispatch(setProductCardData(response.data))
-        } else {
-            console.log('else')
-        }
+            dispatch(setUnauthorizedCatalog(response.data))
+        } else if (response.data===null) {
+            return setClientCatalog(response.data)
+            }
+         else {
+        return <Page404/>}
 }
+
 export default productCards_Reducer

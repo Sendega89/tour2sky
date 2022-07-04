@@ -18,8 +18,8 @@ const Authorization = (props) => {
 
                 <div className="login_wrap">
                     <Formik initialValues={{
-                        email: "client@gmail.com",
-                        password: "111111",
+                        email: "sendega89@gmail.com",
+                        password: "24052016",
                         type: 1
                     }}
                             onSubmit={(values, submitProps) => {

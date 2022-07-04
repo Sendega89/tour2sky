@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import RatingTour2Sky from "../Rating/RatingTour2Sky";
 import {faClockFour} from "@fortawesome/free-solid-svg-icons";
 import itemImage from "../../img/p1.jpg";
-import logo from "../../../Components/Header/headerComponents/Logo";
+
 
 
 
@@ -17,20 +17,17 @@ const ProductCards = (props) => {
                                                        description={card.description}
                                                        rating={card.rating}
                                                        id={card.id}
+                                                       getProductItemView={props.getProductItemView}
     />)
 }
-
-
 export const ProductCard = (props) => {
-const getItemInfo =(itemId) => {
-    console.log(itemId)
-};
 
     return <div className="cat_item">
         <div className="cat_item_vn row">
             <div className="cat_item_img">
-                <NavLink product="[object Object]" to="/product/1">
-                    <img src={props.img != null || undefined ? props.img : itemImage} alt={'No image'} />
+                <NavLink product="[object Object]" to="/product/">
+
+                    <img src={props.img[0] != null || undefined ? props.img[1] : itemImage} alt={'No image'} />
                 </NavLink>
             </div>
 
@@ -38,7 +35,7 @@ const getItemInfo =(itemId) => {
                 <div className="cat_item_title row">
                     <i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
                     <NavLink to={`/product/${props.id}`}>
-                        {props.name != null ? <div onClick={()=> getItemInfo(props.id)}>{props.name}</div> :
+                        {props.name != null ? <div onClick={()=> props.getProductItemView(props.id)}>{props.name}</div> :
                             <div>Tour2Sky VIP: NYC Helicopter Flight
                                 and Statue of Liberty Cruise</div>}</NavLink>
                 </div>

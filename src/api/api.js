@@ -1,5 +1,6 @@
 import * as axios from "axios";
 
+
 /*Дані для авторизації апі
 client@gmail.com
 partner@gmail.com
@@ -7,29 +8,38 @@ partner@gmail.com
 
 const instance = axios.create(
     {
-        /*withCredentials: true,*/
+        withCredentials: true,
         baseURL: 'https://tour2sky.silvito.com.ua/api/',
+
     }
 );
 export const authAPI = {
-    me() { return  instance.get(`cabinet/profile/me`) },
+    me(token) { return  instance.get(`cabinet/profile/me`,{headers: {Authorization: token}}) },
 
     login(email, password, type = 1) {
         return (
             instance.post(`auth/login`,{email,password,type})
         )
-    }
-}
-/*export const testRequest = {
-    getTest() {
+    },
+    register(registerData){
         return (
-            instance.get(`service/categories`)
-                .then(response => {
-                    return console.log(response.data.data)
-                })
+            instance.post(`auth/register`,registerData)
         )
-    }
-}*/
+    },
+    loginFromFacebook (socialToken,type){
+        return (
+            instance.post(`auth/facebook`,{socialToken,type})
+        )
+    },
+    loginFromGoogle (googleServerAuthCode,type){
+        return (
+            instance.post(`auth/google`,{googleServerAuthCode,type})
+        )
+    },
+}
+export const profileAPI = {
+
+}
 export const productAPI = {
     getServiceList (){
         return instance.get(`service/list`)
@@ -37,18 +47,7 @@ export const productAPI = {
     getServiceItemView (serviceId){
       return instance.get(`service/${serviceId}/view`)
     },
-    /*getServiceList (page,per_page,category_id,category_link,city_id,
-    city_link,activity_location_id,activity_location_link,
-                    min_price,max_price,min_duration,max_duration,
-                    popular_cities,sort){
-        return instance.get(`service/list?page=${page}&per_page=${per_page}&
-        category_id=${category_id}&category_link=${category_link}&
-        city_id=${city_id}&city_link=${city_link}&activity_location_id=${activity_location_id}&
-        activity_location_link=${activity_location_link}&
-        min_price=${min_price}&max_price=${max_price}&
-        min_duration=${min_duration}&max_duration=${max_duration}&
-        sort=${sort}`)
-    },*/
+
 }
 
 

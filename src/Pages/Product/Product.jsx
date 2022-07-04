@@ -6,29 +6,29 @@ import RatingTour2Sky from "../../assets/common/Rating/RatingTour2Sky";
 import ProductAccordion from "../../assets/common/Accordion/ProductAccordion";
 import SlickSlider from "./SlickSlider";
 import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
+import Paginator from "../../assets/common/Pagination/Paginator";
 
-const Product = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
+import { NavLink} from "react-router-dom";
+
+
+
+
+const Product = ({productItemInfo,categoriesInfo}) => {
+
     return <main>
         <div className="container">
             <div className="row">
                 {/*breadcrumbs */}
                 <div className="row breadcrumbs">
-                    <a href="#">Home page </a>
-                    <a href="#">Balloning</a>
-                    <span>Sierra Nevada</span>
+                    <NavLink to="#">Home page </NavLink>
+                    <NavLink to="#">Balloning</NavLink>
+                    <span>{productItemInfo.name}</span>
                 </div>
                 {/*breadcrumbs*/}
                 <article>
                     <div className="product_title row">
                         <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden={true}/></i>
-                        <h1>Tour2Sky VIP: NYC Helicopter Flight and Statue of Liberty Cruise</h1>
+                        <h1>{productItemInfo.name}</h1>
                     </div>
                     {/*product top row */}
                     <div className="row product_top">
@@ -45,9 +45,9 @@ const Product = () => {
                                     <div className="row">
                                         <div className="time">
                                             <i><FontAwesomeIcon icon="fa-solid fa-clock" aria-hidden="true"/></i>
-                                            <span>4h of flight</span>
+                                            <span>{productItemInfo.duration} min</span>
                                         </div>
-                                        <RatingTour2Sky/>
+                                        <RatingTour2Sky rating={productItemInfo.rating}/>
                                     </div>
                                     <div className="row options">
                                         <div className="row options_item">
@@ -88,20 +88,20 @@ const Product = () => {
                                               </div>
                                         </div>
                                         <div className="row price">
-                                            $ 420
+                                            ${productItemInfo.price}
                                         </div>
                                     </div>
                                     <div className="add">
-                                        <a href="" className="btn">Book tour</a>
+                                        <NavLink to="" className="btn">Book tour</NavLink>
                                     </div>
                                 </div>
                                 <div className="row pick">
                                     <div className="pick_l">
                                         <strong>Pick up location</strong>
-                                        We are located at the Aerodromo La Juliana, Ctra. A474
+                                        We are located at the {productItemInfo.city.name}
                                     </div>
                                     <div className="pick_r">
-                                        <a href="#" target="_blank">Watch on google maps</a>
+                                        <NavLink to={productItemInfo.city.link} target="_blank">Watch on google maps</NavLink>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +238,10 @@ const Product = () => {
                             way to discover the city skyline aboard a private plane.</p></div>
                 </div>
                 {/*Other popular cities*/}
-                <ul className="pagination">
+                <Paginator totalUsersCount={2}
+                           pageSize={1}
+                           currentPage={1}/>
+               {/* <ul className="pagination">
                     <li className="previous disabled"><a className=" " tabIndex="-1" role="button" aria-disabled="true"
                                                          aria-label="Previous page" rel="prev">&lt;</a></li>
                     <li className="page-item disabled"><a rel="canonical" role="button" tabIndex="-1"
@@ -249,7 +252,7 @@ const Product = () => {
                     <li className="page-item"><a role="button" tabIndex="0" aria-label="Page 3">3</a></li>
                     <li className="next"><a className="" tabIndex="0" role="button" aria-disabled="false"
                                             aria-label="Next page" rel="next">&gt;</a></li>
-                </ul>
+                </ul>*/}
                 {/*Other popular cities*/}
             </div>
 

@@ -5,8 +5,7 @@ import Slider from "rc-slider";
 
 
 const MyWishlist = () => {
-    const [min,setMin] = useState([]);
-    const [max,setMax] = useState([]);
+
     return   <div className="content">
             <div className="catalog_item row">
                 <div className="container">
@@ -35,35 +34,6 @@ const MyWishlist = () => {
                             </div>
 
                             <div className="row row-15">
-<div>{min}</div>
-<div>{max}</div>
-                                    <Slider  trackStyle={{
-                                        backgroundImage: "linear-gradient(272deg,#3cc,#2980b9)"
-                                    }}
-                                             handleStyle={{
-                                                 boxShadow:" 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08)",
-                                                 backgroundColor: "#ffffff",
-                                             }}
-                                             range
-                                        /*marks={{
-                                            100: `$ 100`,
-                                            500: `$ 500`
-                                        }}*/
-                                             min={100}
-                                             max={500}
-                                             defaultValue={[200, 300]}
-                                             tipFormatter={value => <span>`$ ${value}`</span>}
-                                            onChange={(value)=> {
-                                                setMax(value[1]);
-                                                setMin(value[0])}}
-
-
-                                             tipProps={{
-                                                 placement: "bottom",
-                                                 visible: true,
-                                             }}/>
-
-
                             </div>
                         </div>
 

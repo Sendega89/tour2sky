@@ -8,6 +8,7 @@ import "./slickStyle.css"
 import "../../App.css"
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {NavLink} from "react-router-dom";
 export default function SlickSlider () {
     const [nav1, setNav1] = useState();
     const [nav2, setNav2] = useState();
@@ -17,16 +18,16 @@ const sliderRef = useRef()
         <div>
             <Slider asNavFor={nav2} arrows={false}  ref={(slider1) => setNav1(slider1)} className="slider-for">
                 <div >
-                    <a href={product}><img src={product}/></a>
+                    <NavLink to={product}><img src={product}/></NavLink>
                 </div>
                 <div>
-                    <a href={product2}><img src={product2}/></a>
+                    <NavLink to={product2}><img src={product2}/></NavLink>
                 </div>
                 <div>
-                    <a href={product3}><img src={product3}/></a>
+                    <NavLink to={product3}><img src={product3}/></NavLink>
                 </div>
                 <div>
-                    <a href={product4}><img src={product4}/></a>
+                    <NavLink to={product4}><img src={product4}/></NavLink>
                 </div>
 
             </Slider>
@@ -44,16 +45,16 @@ const sliderRef = useRef()
                      className="slideNavCarousel slick-list draggable">
 
                                         <div className="slick-slide slickSlideItem">
-                                            <a href="#"><img src={product}/></a>
+                                            <NavLink to="#"><img src={product}/></NavLink>
                                         </div>
                                         <div className="slick-slide slickSlideItem">
-                                            <a href="#"><img src={product2}/></a>
+                                            <NavLink to="#"><img src={product2}/></NavLink>
                                         </div>
                                         <div className="slick-slide slickSlideItem">
-                                            <a href="#"><img src={product3}/></a>
+                                            <NavLink to="#"><img src={product3}/></NavLink>
                                         </div>
                                         <div className="slick-slide slickSlideItem">
-                                            <a href="#"><img src={product4}/></a>
+                                            <NavLink to="#"><img src={product4}/></NavLink>
                                         </div>
             </Slider>
 

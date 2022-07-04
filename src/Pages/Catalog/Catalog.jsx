@@ -20,14 +20,13 @@ library.add(fas);
 
 
 const Catalog = (props) => {
+
     const [minPrice,setMinPrice] = useState([200]);
     const [maxPrice,setMaxPrice] = useState([300]);
     const [minTime,setMinTime] = useState([200]);
     const [maxTime,setMaxTime] = useState([300]);
-    useEffect(() => {
-      props.getProductCardData();
 
-    },[]);
+
 
 
     return <div className="catalog">

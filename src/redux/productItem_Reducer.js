@@ -1,4 +1,5 @@
 import {productAPI} from "../api/api";
+import Page404 from "../Pages/Page404/Page404";
 
 
 const SET_PRODUCT_ITEM_INFO = "tour2sky/productItemInfo/SET_PRODUCT_ITEM_INFO";
@@ -126,8 +127,8 @@ const productItem_Reducer = (state=initialState, action)=>{
     switch (action.type) {
 
         case SET_PRODUCT_ITEM_INFO:{
-            return {...state,
-               ...action.data
+            return {
+               ...action.data.data
             }
         }
         default:
@@ -138,13 +139,13 @@ const productItem_Reducer = (state=initialState, action)=>{
 export const setProductItemView = (data) =>({type:SET_PRODUCT_ITEM_INFO,data});
 
 /*This is Thunk*/
-export const getProductItemView = () => async (dispatch) => {
-
-        let response = await productAPI.getServiceItemView()
+export const getProductItemView = (itemId,token) => async (dispatch) => {
+        let response = await productAPI.getServiceItemView(itemId,token)
         if (response.status === 200) {
             dispatch(setProductItemView(response.data))
+
         } else {
-            console.log('else')
+            return <Page404/>
         }
 }
 export default productItem_Reducer
