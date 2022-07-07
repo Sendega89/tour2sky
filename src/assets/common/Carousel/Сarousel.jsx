@@ -8,8 +8,11 @@ import img1 from "../../img/rectangle.png";
 import img2 from "../../img/rectangle-copy-5.png";
 import img3 from "../../img/rectangle-copy-6.png";
 import img4 from "../../img/rectangle-copy-7.png";
+import {NavLink} from "react-router-dom";
+
 
 const Carousel = () => {
+
      const options = {
         loop: true,
         margin: 10,
@@ -41,11 +44,11 @@ const Carousel = () => {
                 <span>Edinburgh</span></a>
             </div>
             <div>
-                <a href=""> <img
+                <NavLink to=""> <img
                     src={img4}
                     alt="item4"
                 />
-                <span>San Diego</span></a>
+                <span>San Diego</span></NavLink>
             </div>
         </OwlCarousel>
         </div>

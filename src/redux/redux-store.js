@@ -4,6 +4,7 @@ import profile_Reducer from "./profile_Reducer";
 import auth_Reducer from "./auth_Reducer";
 import productCards_Reducer from "./productCards_Reducer";
 import productItem_Reducer from "./productItem_Reducer";
+import myAccount_Reducer from "./myAccount_Reducer";
 
 
 let reducers = combineReducers({
@@ -11,6 +12,7 @@ let reducers = combineReducers({
     auth:auth_Reducer,
     productCards:productCards_Reducer,
     productItemView:productItem_Reducer,
+    myAccount:myAccount_Reducer,
 });
 
 

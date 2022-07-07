@@ -2266,6 +2266,7 @@ img.mfp-img {
     float: left;
     padding: 12px 10px;
     width: 25%;
+
 }
 
 .cat_item_vn {
@@ -2273,6 +2274,7 @@ img.mfp-img {
     overflow: hidden;
     box-shadow: 0 8px 10px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08);
     background-color: #ffffff;
+
 }
 
 .cat_item_img {
@@ -2344,6 +2346,8 @@ img.mfp-img {
     font-size: 14px;
     line-height: 1.21;
     color: #2f3337;
+    min-height: 40px; /*add 05.07.2022*/
+
 }
 
 .cat_item_details {
@@ -2516,7 +2520,7 @@ img.mfp-img {
 }
 
 /* Pagination */
-#pagination  {
+.pagination  {
     padding: 24px 0 54px 0;
     margin-top: 28px;
     border-top: 1px solid #ecf0f1;
@@ -2524,7 +2528,7 @@ img.mfp-img {
     font-size: 22px;
 
 }
-#pagination li {
+.pagination li {
     display: inline-block;
 }
 #pagination li a, #pagination li span {

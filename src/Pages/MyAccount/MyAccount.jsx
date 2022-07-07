@@ -1,34 +1,28 @@
-import React, {useState} from "react";
-import Authorization from "../../Profiles/Authorization";
-import CreateAccount from "../../Profiles/CreateAccount";
+import React from "react";
+
 import "./MyAccount.css";
 import {NavLink} from "react-router-dom";
-//import {getTest, testRequest} from "../../api/api";
-
+import AuthContainer from "../../Profiles/AuthContainer";
 
 
 const MyAccount = (props) => {
-    const [auth,setAuth] = useState(true);
+
     return <div>
-        {auth ?
+        {props.isAuth ?
             <div className={"myAccountPage"}>
                 <div className="content">
-                    {/*Main start*/}
                     <main>
-                        {/*catalog start*/}
                         <div className="catalog_item row">
                             <div className="container">
-                                {/*catalog row */}
                                 <div className="row catalog_row">
-                                    {/*Sidebar*/}
                                     <div className="sidebar">
                                         <div className="row wighet">
                                             <h5>Hi, and welcome to <br/> your personal account</h5>
                                             <div className="row wighet_row">
                                                 <div className="account_links">
                                                     <ul>
-                                                        <li><NavLink className="active" to="/myAccount">Account
-                                                            settings</NavLink></li>
+                                                        <li><NavLink className="active" to="/myAccount">
+                                                            Account settings</NavLink></li>
                                                         <li><NavLink to="/bookings">Bookings</NavLink></li>
                                                         <li><NavLink to="/wishlist">Wishlist</NavLink></li>
                                                     </ul>
@@ -36,8 +30,6 @@ const MyAccount = (props) => {
                                             </div>
                                         </div>
                                     </div>
-                                    {/*Sidebar */}
-                                    {/*cat right*/}
                                     <div className="catalog_r">
                                         <div className="row account_settings">
                                             <h4>Account settings</h4>
@@ -69,7 +61,6 @@ const MyAccount = (props) => {
                                         <div className={"profileInfo"}>
                                             <h6>Hello User</h6>
                                             <div className="description">
-
                                                 <div className="descriptionItem">
                                                     <span>Client ID - </span>
                                                     <span>{props.id}</span>
@@ -91,36 +82,28 @@ const MyAccount = (props) => {
                                                     <span>{props.phone}</span>
                                                 </div>
                                                 <div className="descriptionItem">
-                                                    <span>You hobbies - </span>
-                                                    <span>{props.hobbies}</span>
-                                                </div>
-                                                <div className="descriptionItem">
                                                     <span>Date of registration - </span>
                                                     <span>{props.created_at}</span>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     </div>
                                     {/*cat right*/}
                                 </div>
-
                                 {/*catalog row */}
                             </div>
                         </div>
                         {/*catalog end*/}
-
                     </main>
                     {/*Main end*/}
                 </div>
                 {/*Wrapper End*/}
 
 
-            </div> : <div>
-                <Authorization/>
-                <CreateAccount/>
-            </div>}
+            </div> : <AuthContainer />}
+
+
+
 
         {/*content end*/}
 </div>

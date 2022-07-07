@@ -1,8 +1,8 @@
 import React from "react";
 import MyAccount from "./MyAccount";
 import {connect} from "react-redux";
-import {compose} from "redux";
-//import {getClientProfile} from "../../redux/profile_Reducer";
+
+import {getAuthUserData} from "../../redux/auth_Reducer";
 
 
 const MyAccountContainer = (props) => {
@@ -16,7 +16,8 @@ const MyAccountContainer = (props) => {
                       hobbies={props.hobbies}
                       about={props.about}
                       created_at={props.created_at}
-                      getClientProfile={props.getClientProfile}/>
+                      getAuthUserData={props.getAuthUserData}
+                        isAuth={props.isAuth}/>
 }
 const mapStateToProps = (state) => ({
     id:state.profilePage.id,
@@ -28,6 +29,6 @@ const mapStateToProps = (state) => ({
     hobbies: state.profilePage.hobbies,
     about: state.profilePage.about,
     created_at:state.profilePage.created_at,
+    isAuth:state.profilePage.isAuth,
 })
-export default compose(
-    connect(mapStateToProps,/*{getClientProfile}*/))(MyAccountContainer)
+export default connect(mapStateToProps,{getAuthUserData})(MyAccountContainer)

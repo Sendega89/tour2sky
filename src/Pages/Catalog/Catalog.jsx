@@ -11,21 +11,41 @@ import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 import {NavLink} from "react-router-dom";
 import "rc-slider/assets/index.css";
 import './Catalog.module.css';
-import Paginator from "../../assets/common/Pagination/Paginator";
+import PaginatorContainer from "../../assets/common/Pagination/PaginatorContainer";
 library.add(fas);
-
-
-
 
 
 
 const Catalog = (props) => {
 
-    const [minPrice,setMinPrice] = useState([200]);
-    const [maxPrice,setMaxPrice] = useState([300]);
-    const [minTime,setMinTime] = useState([200]);
-    const [maxTime,setMaxTime] = useState([300]);
+    const page = props.pagination.current_page || 1;
+    const [minPrice,setMinPrice] = useState([20]);
+    const [maxPrice,setMaxPrice] = useState([200]);
+    const [minTime,setMinTime] = useState([10]);
+    const [maxTime,setMaxTime] = useState([200]);
+    const [sort,setSort] = useState("")
+    const [rating, setRating] = useState( [1]);
 
+
+
+    const changeSelect = (e) => {
+        setSort(e.target.value)
+    }
+    const changeCheckBox =(e) => {
+        let newArray = [...rating, +e.target.id];
+        if (rating.includes(+e.target.id)) {
+            newArray = newArray.filter(day => day !== +e.target.id);
+        }
+        setRating(
+            newArray
+        );
+    }
+
+useEffect(()=> {
+
+    props.getFilteredCatalog({minPrice,maxPrice,minTime,maxTime,sort,rating,page})
+
+},[minPrice,maxPrice,minTime,maxTime,sort,rating])
 
 
 
@@ -71,6 +91,7 @@ const Catalog = (props) => {
                                             onChange={(value)=> {
                                             setMaxPrice(value[1]);
                                             setMinPrice(value[0])}}
+                                            step={10}
                                             trackStyle={{
                                                 backgroundImage: "linear-gradient(272deg,#3cc,#2980b9)",
                                                 padding:"3px",
@@ -91,9 +112,9 @@ const Catalog = (props) => {
                                     100: `$ 100`,
                                     500: `$ 500`
                                 }}*/
-                                            min={100}
-                                            max={500}
-                                            defaultValue={[200, 300]}
+                                            min={20}
+                                            max={200}
+                                            defaultValue={[20, 200]}
                                             tipFormatter={value =>`$ ${value}`}
                                             tipProps={{
                                                 placement: "bottom",
@@ -103,26 +124,7 @@ const Catalog = (props) => {
                                     <div className={s.info_R}>${maxPrice}</div>
                                  </div>
                                 </div>
-                                {/*<div className="row wighet_row">
-                                    <div id="slider-range"
-                                         className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                                        <div className="ui-slider-range ui-corner-all ui-widget-header"
-                                             style={{left: "27%", width: "30.4%"}}>
-                                        </div>
-                                        <span tabIndex="0"
-                                              className="ui-slider-handle ui-corner-all ui-state-default"
-                                              style={{left: "27%"}}>
 
-                                    </span>
-                                        <span tabIndex="0"
-                                              className="ui-slider-handle ui-corner-all ui-state-default"
-                                              style={{left: "57.4%"}}>
-                                    </span>
-                                    </div>
-                                    <div className="row price_slider">
-                                        <input type="text" id="amount" readOnly=""/>
-                                    </div>
-                                </div>*/}
                             </div>
                             <div className="row wighet">
                                 <h4>Flight lenth</h4>
@@ -131,6 +133,7 @@ const Catalog = (props) => {
                                             onChange={(value)=> {
                                                 setMaxTime(value[1]);
                                                 setMinTime(value[0])}}
+                                            step={10}
                                             trackStyle={{
                                                 backgroundImage: "linear-gradient(272deg,#3cc,#2980b9)",
                                                 padding:"3px"}}
@@ -147,13 +150,13 @@ const Catalog = (props) => {
                                 100: `$ 100`,
                                 500: `$ 500`
                             }}*/
-                                            min={100}
-                                            max={500}
-                                            defaultValue={[200, 300]}
-                                            /*tipFormatter={value =>`$ ${value}`}*/
-                                            /*tipProps={{
+                                            min={10}
+                                            max={200}
+                                            defaultValue={[10, 200]}
+                                            tipFormatter={value =>`$ ${value}`}
+                                            tipProps={{
                                                 placement: "bottom",
-                                                visible: true,}}*//>
+                                                visible: true,}}/>
                                     <div className={s.infoSliderPanel}>
                                         <div className={s.info_L}>{minTime} min</div>
                                         <div className={s.info_R}>{maxTime} min</div>
@@ -166,47 +169,48 @@ const Catalog = (props) => {
                                     <div className="row checkbox_row">
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                                <input type="checkbox"
-                                                       name="1" id="otkritka1"
-                                                       className="align-self-center"/>
+                                                <input type="checkbox" id={5} value={5}
+                                                       className="align-self-center" onChange={changeCheckBox}
+                                                />
                                                 <span className="custom-big-checkbox__checkbox">
-                                        </span>
+                                                </span>
                                             </label>
-                                            <span className="labeltext">5 star</span></div>
+                                            <span className="labeltext">5 star</span>
+                                        </div>
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                                <input type="checkbox" name="2" id="otkritka2"
-                                                       className="align-self-center"/>
+                                                <input type="checkbox" id={4} value={4}
+                                                       className="align-self-center" onChange={changeCheckBox}/>
                                                 <span className="custom-big-checkbox__checkbox">
-                                        </span>
+                                                </span>
                                             </label>
                                             <span className="labeltext">4 star</span>
                                         </div>
-                                        <div className="row checkbox_item"><label className="custom-big-checkbox"><input
-                                            type="checkbox" name="3" id="otkritka3" className="align-self-center"/>
+                                        <div className="row checkbox_item">
+                                            <label className="custom-big-checkbox">
+                                            <input type="checkbox" name="3" id={3} value={3}
+                                                   className="align-self-center" onChange={changeCheckBox} />
                                             <span className="custom-big-checkbox__checkbox">
-
                                             </span>
-                                        </label>
+                                            </label>
                                             <span className="labeltext">3 star</span>
                                         </div>
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                            <input type="checkbox" name="4" id="otkritka4" className="align-self-center"/>
+                                            <input type="checkbox" id={2} value={2}
+                                                   className="align-self-center" onChange={changeCheckBox}/>
                                             <span className="custom-big-checkbox__checkbox">
-
                                             </span>
-                                        </label>
-                                            <span
-                                                className="labeltext">2 star</span>
+                                            </label>
+                                            <span className="labeltext">2 star</span>
                                         </div>
-                                        <div className="row checkbox_item"><label className="custom-big-checkbox">
-                                            <input
-                                                type="checkbox" name="5" id="otkritka5" className="align-self-center"/>
-                                            <span
-                                                className="custom-big-checkbox__checkbox">
-
-                                        </span></label>
+                                        <div className="row checkbox_item">
+                                            <label className="custom-big-checkbox">
+                                            <input type="checkbox" id={1} value={1}
+                                                   className="align-self-center" onChange={changeCheckBox}/>
+                                            <span className="custom-big-checkbox__checkbox">
+                                            </span>
+                                            </label>
                                             <span className="labeltext">1 star</span>
                                         </div>
                                     </div>
@@ -235,13 +239,14 @@ const Catalog = (props) => {
                 </div>
                 <div className="catalog_r">
                     <div className="row cat_top">
-                        <h4>{props.amountProductFound} helicopter tours found</h4>
+                        <h4>{props.pagination.total} helicopter tours found</h4>
                         <div className="short">
-                            <select >
+                            <select onChange={changeSelect}>
                             <option value="price">Sort by price</option>
                             <option value="rating">Sort by rating</option>
                             <option value="popular">Sort by popular</option>
                             <option value="name">Sort by name</option>
+
                         </select>
                         </div>
                     </div>
@@ -249,20 +254,18 @@ const Catalog = (props) => {
                         <ProductContainer/>
                     </div>
                     <div className="row">
-                        <Paginator  totalUsersCount={props.pagination.total}
-                                    pageSize={props.pagination.per_page}
+                        {/*<Paginator  totalItemCount={props.pagination.total}
+                                    pageSize={props.pagination.count}
                                     currentPage={props.pagination.current_page}
-                                    />
-                        {/*<ul class="pagination">
-                        <li class="previous disabled">
-                             <a class=" " tabindex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">&lt;</a>
-                             </li>
-                             <li class="page-item disabled">
-                             <a rel="canonical" role="button" tabindex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a>
-                             </li>
-                             <li class="next disabled"><a class=" " tabindex="-1" role="button" aria-disabled="true" aria-label="Next page" rel="next">&gt;</a>
-                             </li>
-                             </ul>*/}
+                                    totalPages={props.pagination.total_pages}
+                                    links={props.pagination.links}
+                                    />*/}
+                        <PaginatorContainer totalItemCount={props.pagination.total}
+                                       pageSize={props.pagination.count}
+                                       currentPage={props.pagination.current_page}
+                                       totalPages={props.pagination.total_pages}
+                                       links={props.pagination.links}
+                        />
                     </div>
                     <article className="row cat_text"><p>Tourism means people traveling for fun. It includes activities
                         such as sightseeing and camping. People who travel for fun are called "tourists". Places where

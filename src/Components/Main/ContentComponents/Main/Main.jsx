@@ -2,9 +2,11 @@ import ServiceStart from "./MainComponents/ServiceStart";
 import Rectangle from "./MainComponents/Rectangle";
 import About from "./MainComponents/About";
 import Carousel from "../../../../assets/common/Carousel/Сarousel";
+import {useEffect} from "react";
 
 
 const Main = () => {
+
     return <main>
         {/* Service start */}
         <ServiceStart/>
@@ -16,7 +18,8 @@ const Main = () => {
                     <h3>Top sights for balloing</h3>
                 </div>
                 {/* End Tabs Title */}
-                <Carousel />
+                    <Carousel />
+
             </div>
         </div>
         {/* End Tabs Container */}

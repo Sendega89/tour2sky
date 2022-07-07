@@ -1,0 +1,11 @@
+.error {
+    border-color: red;
+    color: red;
+
+}
+.error::placeholder {
+
+}
+.error span {
+    color: red;
+}

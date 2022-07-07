@@ -22,7 +22,7 @@ const Authorization = (props) => {
                         password: "24052016",
                         type: 1
                     }}
-                            onSubmit={(values, submitProps) => {
+                       onSubmit={(values, submitProps) => {
                                 props.login(values.email,values.password,values.type)
                             }}>
                         {({values, status}) => (

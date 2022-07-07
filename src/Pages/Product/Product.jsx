@@ -27,7 +27,7 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                 {/*breadcrumbs*/}
                 <article>
                     <div className="product_title row">
-                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden={true}/></i>
+                        <i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
                         <h1>{productItemInfo.name}</h1>
                     </div>
                     {/*product top row */}

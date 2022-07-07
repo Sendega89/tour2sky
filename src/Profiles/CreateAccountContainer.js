@@ -1,20 +1,18 @@
 import React from "react";
 import CreateAccount from "./CreateAccount";
 import {connect} from "react-redux";
-import {createAccount} from "../redux/auth_Reducer";
-import MyAccount from "../Pages/MyAccount/MyAccount";
+import {createAccount, getUserType} from "../redux/auth_Reducer";
+
 
 
 const CreateAccountContainer = (props) => {
-if (props.createdSuccess){
-    return <MyAccount />
-}
 
     return <CreateAccount {...props} />
 }
 const mapStateToProps = (state) => ({
-    createdSuccess:state.auth.createdSuccess
+    createdSuccess:state.auth.createdSuccess,
+    userType:state.auth.userType,
 })
 
 
-export default connect(mapStateToProps,{createAccount})(CreateAccountContainer)
+export default connect(mapStateToProps,{createAccount,getUserType})(CreateAccountContainer)

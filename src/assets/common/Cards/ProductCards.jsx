@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import RatingTour2Sky from "../Rating/RatingTour2Sky";
 import {faClockFour} from "@fortawesome/free-solid-svg-icons";
 import itemImage from "../../img/p1.jpg";
+import {Checkbox} from "@mui/material";
 
 
 
@@ -18,24 +19,44 @@ const ProductCards = (props) => {
                                                        rating={card.rating}
                                                        id={card.id}
                                                        getProductItemView={props.getProductItemView}
+                                                       isAuth={props.isAuth}
+                                                       getWishlist={props.getWishlist}
+                                                             token={props.token}
+
     />)
 }
 export const ProductCard = (props) => {
 
+    const [checked, setChecked] = useState(false);
+    const handleChange = (event) => {
+        if(props.isAuth){
+            let addRemoveHandler =event.target.checked
+        setChecked(event.target.checked);
+        props.getWishlist(props.id,true,props.token)
+        }
+        /*setChecked(!checked)*/
+    };
+
     return <div className="cat_item">
         <div className="cat_item_vn row">
             <div className="cat_item_img">
-                <NavLink product="[object Object]" to="/product/">
-
+                <NavLink product="[object Object]" to={`/product/${props.id}`}>
                     <img src={props.img[0] != null || undefined ? props.img[1] : itemImage} alt={'No image'} />
                 </NavLink>
             </div>
 
             <div className="cat_item_center">
                 <div className="cat_item_title row">
-                    <i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
+                    <Checkbox
+                        checked={checked}
+                        onChange={handleChange}
+                        inputProps={{ 'aria-label': 'controlled' }}
+                        checkedIcon={<i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>}
+                        icon={<i><FontAwesomeIcon icon="fa-solid fa-bookmark" style={{color: "#B6C2CC"}}/></i>}
+                    />
+
                     <NavLink to={`/product/${props.id}`}>
-                        {props.name != null ? <div onClick={()=> props.getProductItemView(props.id)}>{props.name}</div> :
+                        {props.name != null ? <div>{props.name}</div> :
                             <div>Tour2Sky VIP: NYC Helicopter Flight
                                 and Statue of Liberty Cruise</div>}</NavLink>
                 </div>
