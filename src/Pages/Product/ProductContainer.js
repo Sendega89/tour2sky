@@ -12,7 +12,7 @@ const ProductContainer = (props)=> {
     const itemId= params.itemId;
     useEffect(()=> {
         props.getProductItemView(itemId)
-    },[])
+    },[params])
 
     return <Product {...props} />
 }

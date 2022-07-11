@@ -27,3 +27,7 @@ border: 1px solid black;
     background: #33cccc;
 }
 */
+.carouselImg {
+    width: 100%;
+    height: 100%;
+}

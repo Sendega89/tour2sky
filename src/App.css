@@ -457,7 +457,8 @@ header {
 
 /* Logo */
 .logo {
-
+    width: 10%;
+    height: 100%;
 }
 
 .logo a {
@@ -2760,7 +2761,8 @@ footer .footer_c {
 
 footer .footer_logo {
     float: left;
-    width: 10%;
+    width: 80%;
+    height: 100%;
 }
 
 footer .soc {

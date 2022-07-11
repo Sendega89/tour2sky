@@ -17,7 +17,7 @@ const ChatCarousel = () => {
             <div className="item">
                 <div className="row review">
                     <div className="row review_top">
-                        <div className="review_top_l"><img src={oval}/></div>
+                        <div className="review_top_l"><img src={oval} alt={'user icon'}/></div>
                         <div className="review_top_r">How to be ready?</div>
                     </div>
                     <div className="row review_niz">
@@ -26,14 +26,14 @@ const ChatCarousel = () => {
                             and
                             come a bit earlier to have possibility to listen for our short instructions
                         </div>
-                        <div className="review_niz_r"><img src={rewiev}/></div>
+                        <div className="review_niz_r"><img src={rewiev} alt={'icon'}/></div>
                     </div>
                 </div>
             </div>
             <div className="item">
                 <div className="row review">
                     <div className="row review_top">
-                        <div className="review_top_l"><img src={oval}/></div>
+                        <div className="review_top_l"><img src={oval} alt={'icon'}/></div>
                         <div className="review_top_r">Ola olo ololo?</div>
                     </div>
                     <div className="row review_niz">
@@ -42,14 +42,14 @@ const ChatCarousel = () => {
                             and
                             come a bit earlier to have possibility to listen for our short instructions
                         </div>
-                        <div className="review_niz_r"><img src={rewiev}/></div>
+                        <div className="review_niz_r"><img src={rewiev} alt={'logo'}/></div>
                     </div>
                 </div>
             </div>
             <div className="item">
                 <div className="row review">
                     <div className="row review_top">
-                        <div className="review_top_l"><img src={oval}/></div>
+                        <div className="review_top_l"><img src={oval} alt={'user icon'}/></div>
                         <div className="review_top_r">How to be ready?</div>
                     </div>
                     <div className="row review_niz">
@@ -58,7 +58,7 @@ const ChatCarousel = () => {
                             and
                             come a bit earlier to have possibility to listen for our short instructions
                         </div>
-                        <div className="review_niz_r"><img src={rewiev}/></div>
+                        <div className="review_niz_r"><img src={rewiev} alt={'logo'}/></div>
                     </div>
                 </div>
             </div>

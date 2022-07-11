@@ -45,7 +45,7 @@ const Search = (props) => {
                     <h3>Popular helicopter tours</h3>
                     <div className="row row-15">
                         {/*cat item*/}
-                        <ProductCards productCards={props.productCards}
+                        <ProductCards productCards={props.productCards.data}
                                       addRemoveWishlist={props.addRemoveWishlist}
                                       getProductItemView={props.getProductItemView}
                                       isAuth={props.isAuth}

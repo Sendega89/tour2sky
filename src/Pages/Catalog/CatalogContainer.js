@@ -23,6 +23,7 @@ const mapStateToProps =(state)=> ({
     isAuth:state.profilePage.isAuth,
     token:state.profilePage.token,
     productCards:state.productCards,
+    isFetching:state.productCards.isFetching,
 });
 
 export default connect(mapStateToProps,{getProductCardData,getFilteredCatalog,addRemoveWishlist,getProductItemView})(CatalogContainer)

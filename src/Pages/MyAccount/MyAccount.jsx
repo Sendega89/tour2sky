@@ -22,7 +22,7 @@ props.getUpdateProfile(updateOption,props.token)
 
    }
 useEffect(()=>{
-   //props.getAuthUserData(props.token)
+   props.getAuthUserData(props.token)
 },[]);
     return <div>
         <Helmet>

@@ -13,7 +13,6 @@ import './Catalog.module.css';
 import PaginatorContainer from "../../assets/common/Pagination/PaginatorContainer";
 import ProductCards from "../../assets/common/Cards/ProductCards";
 import {Helmet} from "react-helmet";
-
 library.add(fas);
 
 
@@ -86,8 +85,8 @@ const Catalog = (props) => {
                     {/*<SearchFilter/>*/}
                     <div className="popup-credit">
                         <div className="credit_block">
-                            <a className="cancelComment" title="">
-                                <FontAwesomeIcon icon="fa-solid fa-times" /></a>
+                            <NavLink to="/" className="cancelComment" title="">
+                                <FontAwesomeIcon icon="fa-solid fa-times" /></NavLink>
                             <div className="row wighet">
                                 <h4>Filter by price</h4>
                                 <div className="row wighet_row">
@@ -256,7 +255,7 @@ const Catalog = (props) => {
                         </div>
                     </div>
                     <div className="row row-15">
-                        <ProductCards productCards={props.productCards}
+                        <ProductCards productCards={props.productCards.data}
                                       addRemoveWishlist={props.addRemoveWishlist}
                                       getProductItemView={props.getProductItemView}
                                       isAuth={props.isAuth}

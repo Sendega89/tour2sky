@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const Logo = () => {
     return <div className="logo">
-        <NavLink to="/"><img className="lozad" src={logo} alt="Tour2Sky"/></NavLink>
+        <NavLink to="/"><img className={"logoSeoSet"} src={logo} alt="Tour2Sky"/></NavLink>
 </div>
 }
 export default Logo

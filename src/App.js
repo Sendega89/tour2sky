@@ -3,20 +3,14 @@ import "./font-awesome.css";
 import "./responsice.css";
 import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
 import HeaderNavbar from "./Components/Header/headerComponents/HeaderMobileMenu";
 import {Route} from "react-router-dom";
 import {Routes} from "react-router";
-import Catalog from "./Pages/Catalog/Catalog";
-import Search from "./Pages/Search/Search";
 import Balloning from "./Pages/Balloning/Balloning";
 import Page404 from "./Pages/Page404/Page404";
 import Checkout from "./Pages/Checkout/Checkout";
-import Product from "./Pages/Product/Product";
-import MyWishlist from "./Pages/MyAccount/MyWishlist/MyWishlist";
 import MyBookings from "./Pages/MyAccount/MyBookings/MyBookings";
 import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
-import CreateAccount from "./Profiles/CreateAccount";
 import AuthContainer from "./Profiles/AuthContainer";
 import { useState} from "react";
 import HeaderContainer from "./Components/Header/HeaderContainer";
@@ -25,7 +19,7 @@ import ProductContainer from "./Pages/Product/ProductContainer";
 import CreateAccountContainer from "./Profiles/CreateAccountContainer";
 import MyWishlistContainer from "./Pages/MyAccount/MyWishlist/MyWishlistContainer";
 import SearchContainer from "./Pages/Search/SearchContainer";
-import {Helmet} from "react-helmet";
+
 
 
 function App() {
@@ -33,17 +27,12 @@ function App() {
     const toggleHamburger = () => {
         setIsHamburgerOpened((prev) => !prev);
     };
-
     const closeHamburger = () => {
         setIsHamburgerOpened(false);
     };
 
     return (
         <div className="wrapper" id="App">
-            <Helmet>
-                <title>Tour2sky</title>
-                <meta name="description" content="Tour2sky" />
-            </Helmet>
             <HeaderNavbar closeHamburger={closeHamburger} isHamburgerOpened={isHamburgerOpened}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <div id="page-wrap" className={"headerMenu"}>
                 <HeaderContainer />

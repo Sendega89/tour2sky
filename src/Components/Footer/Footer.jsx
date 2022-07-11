@@ -1,7 +1,6 @@
 import footerLogo from "../../assets/img/footer_logo.png";
-//import "../../App.css";
-//import "../../rating.css";
 import "./Footer.css"
+import {NavLink} from "react-router-dom";
 
 const Footer = () => {
 
@@ -10,16 +9,16 @@ const Footer = () => {
     <div className={"row mainFooter"}>
                 <div className={"footer_l"}>
                     {/* Start footer_logo*/}
-                    <a href="/" >
-                        <img  src={footerLogo} alt="Tour2Sky" />
-                    </a>
+                    <NavLink to="/" >
+                        <img  src={footerLogo} alt="Tour2Sky" className={'footer_logo'} />
+                    </NavLink>
                     {/* End footer_logo*/}
                 </div>
                 <div className={"soc"}>
         <span>Socials:</span>
         <div className="row">
             <a href="https://www.facebook.com/" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 40 40">
                     <g fill="none" fillRule="evenodd">
                         <rect width="40" height="40" fill="#295DB9" rx="8"/>
                         <path fill="#FFF"

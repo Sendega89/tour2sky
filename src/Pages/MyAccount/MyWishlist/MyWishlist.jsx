@@ -7,10 +7,10 @@ import {useEffect} from "react";
 
 
 const MyWishlist = (props) => {
+
     useEffect(()=>{
         props.getWishList(props.token)
-
-    },[])
+    },[props.wishList])
 
     return   <div className="content">
             <div className="catalog_item row">
@@ -37,10 +37,21 @@ const MyWishlist = (props) => {
 
                                 {/*<FavoriteItems {...props}/>*/}
                             </div>
-
                             <div className="row row-15">
-                                {/*<ProductCards productCards={props.productCards}/>*/}
-                                <PaginatorContainer/>
+                                <ProductCards productCards={props.productCards}
+                                              addRemoveWishlist={props.addRemoveWishlist}
+                                              getProductItemView={props.getProductItemView}
+                                              isAuth={props.isAuth}
+                                              token={props.token}/>
+                            </div>
+                            <div className="row">
+
+                                <PaginatorContainer totalItemCount={props.pagination.total}
+                                                    pageSize={props.pagination.count}
+                                                    currentPage={props.pagination.current_page}
+                                                    totalPages={props.pagination.total_pages}
+                                                    links={props.pagination.links}
+                                />
                             </div>
                         </div>
 

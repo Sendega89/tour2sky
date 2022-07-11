@@ -22,7 +22,7 @@ const mapStateToProps = (state) => ({
     productCards:state.productCards,
     token:state.profilePage.token,
     isAuth:state.profilePage.isAuth,
-    wishList:state.productCards.wishList
+
 
 });
 

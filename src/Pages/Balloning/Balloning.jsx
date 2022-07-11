@@ -59,27 +59,27 @@ const Balloning = () => {
 
                         <div className="col-2 blogBox blog_item">
                             <a href={post} className="post_big">
-                                <img src={post}/>
+                                <img src={post} alt={'city icon'}/>
                             </a>
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post2.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                             </div>
@@ -88,27 +88,27 @@ const Balloning = () => {
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                             </div>
                             <a href="../../assets/img/post.jpg" className="post_big">
-                                <img src={post}/>
+                                <img src={post} alt={'city icon'}/>
                             </a>
                         </div>
                         {/*Blog Item col*/}
@@ -120,27 +120,27 @@ const Balloning = () => {
                         {/*Blog Item col*/}
                         <div className="col-2 blogBox blog_item">
                             <a href="../../assets/img/post.jpg" className="post_big">
-                                <img src={post}/>
+                                <img src={post} alt={'city icon'}/>
                             </a>
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post2.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                             </div>
@@ -150,27 +150,27 @@ const Balloning = () => {
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="../../assets/img/post.jpg">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                                 <div className="post_smoll_item">
                                     <a href="#">
-                                        <img src={post2}/>
+                                        <img src={post2} alt={'city icon'}/>
                                     </a>
                                 </div>
                             </div>
                             <a href="#" className="post_big">
-                                <img src={post}/>
+                                <img src={post} alt={'city icon'}/>
                             </a>
                         </div>
 

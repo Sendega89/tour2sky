@@ -7,12 +7,14 @@ import productItem_Reducer from "./productItem_Reducer";
 import myAccount_Reducer from "./myAccount_Reducer";
 
 
+
 let reducers = combineReducers({
     profilePage: profile_Reducer,
     auth:auth_Reducer,
     productCards:productCards_Reducer,
     productItemView:productItem_Reducer,
     myAccount:myAccount_Reducer,
+
 });
 
 
