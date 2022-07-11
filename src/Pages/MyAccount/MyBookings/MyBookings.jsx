@@ -1,6 +1,6 @@
 import React from "react";
-import ProductCardsContainer from "../../../assets/common/Cards/ProductCardsContainer";
 import {NavLink} from "react-router-dom";
+
 
 
 const MyBookings = () => {
@@ -28,7 +28,7 @@ const MyBookings = () => {
 
                     <div className="row row-15">
                         {/*        cat item */}
-                        <ProductCardsContainer/>
+                        {/*<ProductCards />*/}
 
 
                         {/*        cat item */}

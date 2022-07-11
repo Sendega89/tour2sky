@@ -1,13 +1,33 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import "./MyAccount.css";
 import {NavLink} from "react-router-dom";
 import AuthContainer from "../../Profiles/AuthContainer";
+import {Helmet} from "react-helmet";
 
 
 const MyAccount = (props) => {
+   const editProfile =(e) => {
+     e.preventDefault()
+       let updateOption = {
+           "name": e.target[0].value || props.name,
+           "surname": e.target[2].value || props.surname,
+           "email": e.target[1].value || props.email,
+           "phone": props.phone,
+           "hobbies": "hobbies",
+           "about": "I`am great",
+           "social_profiles": []
+       }
+props.getUpdateProfile(updateOption,props.token)
 
+   }
+useEffect(()=>{
+   //props.getAuthUserData(props.token)
+},[]);
     return <div>
+        <Helmet>
+            <title>Tour2sky - My Account</title>
+        </Helmet>
         {props.isAuth ?
             <div className={"myAccountPage"}>
                 <div className="content">
@@ -34,7 +54,7 @@ const MyAccount = (props) => {
                                         <div className="row account_settings">
                                             <h4>Account settings</h4>
                                             <div className="row row-15">
-                                                <form>
+                                                <form onSubmit={editProfile}>
                                                     <div className="col-2">
                                                         <div className="account_input">
                                                             <span>First Name</span>
@@ -42,17 +62,16 @@ const MyAccount = (props) => {
                                                         </div>
                                                         <div className="account_input">
                                                             <span>E-mail</span>
-                                                            <input type="text"/>
+                                                            <input type="email"/>
                                                         </div>
                                                     </div>
-
                                                     <div className="col-2">
                                                         <div className="account_input">
                                                             <span>Last Name</span>
                                                             <input type="text"/>
                                                         </div>
                                                         <div className="account_button">
-                                                            <button>Save changes</button>
+                                                            <button type={'submit'}>Save changes</button>
                                                         </div>
                                                     </div>
                                                 </form>

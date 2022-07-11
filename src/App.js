@@ -23,6 +23,9 @@ import HeaderContainer from "./Components/Header/HeaderContainer";
 import CatalogContainer from "./Pages/Catalog/CatalogContainer";
 import ProductContainer from "./Pages/Product/ProductContainer";
 import CreateAccountContainer from "./Profiles/CreateAccountContainer";
+import MyWishlistContainer from "./Pages/MyAccount/MyWishlist/MyWishlistContainer";
+import SearchContainer from "./Pages/Search/SearchContainer";
+import {Helmet} from "react-helmet";
 
 
 function App() {
@@ -37,6 +40,10 @@ function App() {
 
     return (
         <div className="wrapper" id="App">
+            <Helmet>
+                <title>Tour2sky</title>
+                <meta name="description" content="Tour2sky" />
+            </Helmet>
             <HeaderNavbar closeHamburger={closeHamburger} isHamburgerOpened={isHamburgerOpened}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <div id="page-wrap" className={"headerMenu"}>
                 <HeaderContainer />
@@ -48,11 +55,11 @@ function App() {
                     <Route path="/balloning"
                            element={ <Balloning/>}/>
                     <Route path="/search"
-                           element={<Search/>}/>
+                           element={<SearchContainer/>}/>
                     <Route path="/myAccount"
                            element={<MyAccountContainer/>}/>
                     <Route path="/wishlist"
-                           element={<MyWishlist/>}/>
+                           element={<MyWishlistContainer />}/>
                     <Route path="/bookings"
                            element={<MyBookings/>}/>
                     <Route path="/Checkout"

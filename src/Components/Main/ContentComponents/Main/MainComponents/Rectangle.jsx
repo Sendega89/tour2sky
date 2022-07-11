@@ -1,6 +1,16 @@
 import s from "./Rectangle.module.css";
+import {subscribe} from "../../../../../api/api";
+
 
 const  Rectangle = () => {
+
+     const subscribeMe =(e)=> {
+        subscribe.subscribe(e.target[0].value)
+         e.preventDefault()
+         e.target[0].value=''
+     }
+
+
     return     <div className="row rectangle section" >
         <div className="container">
             <div className="row_title row_title_white">
@@ -9,9 +19,10 @@ const  Rectangle = () => {
             </div>
 
             <div className={`row header_search ${s.header_search}`}>
-                <form action="email">
+                <form action="email" onSubmit={subscribeMe}>
                     <input type="text" className="input_search" placeholder="Entet your e-mail" />
-                <button>Subscribe</button></form>
+                    <button  type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </div>

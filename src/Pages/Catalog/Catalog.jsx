@@ -7,11 +7,13 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 import {NavLink} from "react-router-dom";
 import "rc-slider/assets/index.css";
 import './Catalog.module.css';
 import PaginatorContainer from "../../assets/common/Pagination/PaginatorContainer";
+import ProductCards from "../../assets/common/Cards/ProductCards";
+import {Helmet} from "react-helmet";
+
 library.add(fas);
 
 
@@ -26,13 +28,17 @@ const Catalog = (props) => {
     const [sort,setSort] = useState("")
     const [rating, setRating] = useState( [1]);
 
+    useEffect(()=> {
+        props.getFilteredCatalog({minPrice,maxPrice,minTime,maxTime,sort,rating,page})
 
+    },[minPrice,maxPrice,minTime,maxTime,sort,rating])
 
     const changeSelect = (e) => {
         setSort(e.target.value)
     }
     const changeCheckBox =(e) => {
-        let newArray = [...rating, +e.target.id];
+        /*setRating([+e.target.id])*/
+        let newArray = [...rating,+e.target.id];
         if (rating.includes(+e.target.id)) {
             newArray = newArray.filter(day => day !== +e.target.id);
         }
@@ -41,15 +47,13 @@ const Catalog = (props) => {
         );
     }
 
-useEffect(()=> {
 
-    props.getFilteredCatalog({minPrice,maxPrice,minTime,maxTime,sort,rating,page})
-
-},[minPrice,maxPrice,minTime,maxTime,sort,rating])
-
-
+    console.log(rating)
 
     return <div className="catalog">
+        <Helmet>
+            <title>Tour2sky - Catalog</title>
+        </Helmet>
         <div className="header_title">
             <div className="container">
                 <div className="row">
@@ -207,7 +211,8 @@ useEffect(()=> {
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
                                             <input type="checkbox" id={1} value={1}
-                                                   className="align-self-center" onChange={changeCheckBox}/>
+                                                  readOnly checked
+                                                   className="align-self-center" />
                                             <span className="custom-big-checkbox__checkbox">
                                             </span>
                                             </label>
@@ -251,7 +256,11 @@ useEffect(()=> {
                         </div>
                     </div>
                     <div className="row row-15">
-                        <ProductContainer/>
+                        <ProductCards productCards={props.productCards}
+                                      addRemoveWishlist={props.addRemoveWishlist}
+                                      getProductItemView={props.getProductItemView}
+                                      isAuth={props.isAuth}
+                                      token={props.token}/>
                     </div>
                     <div className="row">
                         {/*<Paginator  totalItemCount={props.pagination.total}

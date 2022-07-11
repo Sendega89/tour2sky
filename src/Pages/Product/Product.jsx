@@ -5,15 +5,14 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 import RatingTour2Sky from "../../assets/common/Rating/RatingTour2Sky";
 import ProductAccordion from "../../assets/common/Accordion/ProductAccordion";
 import SlickSlider from "./SlickSlider";
-import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
 import Paginator from "../../assets/common/Pagination/Paginator";
-
 import { NavLink} from "react-router-dom";
+import ProductCards from "../../assets/common/Cards/ProductCards";
 
 
 
 
-const Product = ({productItemInfo,categoriesInfo}) => {
+const Product = (props) => {
 
     return <main>
         <div className="container">
@@ -22,13 +21,13 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                 <div className="row breadcrumbs">
                     <NavLink to="#">Home page </NavLink>
                     <NavLink to="#">Balloning</NavLink>
-                    <span>{productItemInfo.name}</span>
+                    <span>{props.productItemInfo.name}</span>
                 </div>
                 {/*breadcrumbs*/}
                 <article>
                     <div className="product_title row">
                         <i><FontAwesomeIcon icon="fa-solid fa-bookmark"/></i>
-                        <h1>{productItemInfo.name}</h1>
+                        <h1>{props.productItemInfo.name}</h1>
                     </div>
                     {/*product top row */}
                     <div className="row product_top">
@@ -45,9 +44,9 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                                     <div className="row">
                                         <div className="time">
                                             <i><FontAwesomeIcon icon="fa-solid fa-clock" aria-hidden="true"/></i>
-                                            <span>{productItemInfo.duration} min</span>
+                                            <span>{props.productItemInfo.duration} min</span>
                                         </div>
-                                        <RatingTour2Sky rating={productItemInfo.rating}/>
+                                        <RatingTour2Sky rating={props.productItemInfo.rating}/>
                                     </div>
                                     <div className="row options">
                                         <div className="row options_item">
@@ -88,7 +87,7 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                                               </div>
                                         </div>
                                         <div className="row price">
-                                            ${productItemInfo.price}
+                                            ${props.productItemInfo.price}
                                         </div>
                                     </div>
                                     <div className="add">
@@ -98,10 +97,10 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                                 <div className="row pick">
                                     <div className="pick_l">
                                         <strong>Pick up location</strong>
-                                        We are located at the {productItemInfo.city.name}
+                                        We are located at the {props.productItemInfo.city.name}
                                     </div>
                                     <div className="pick_r">
-                                        <NavLink to={productItemInfo.city.link} target="_blank">Watch on google maps</NavLink>
+                                        <NavLink to={props.productItemInfo.city.link} target="_blank">Watch on google maps</NavLink>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +120,11 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                         <h3>Popular helicopter tours</h3>
                         <div className="row row-15">
                             {/*cat item*/}
-                            <ProductContainer/>
+                            <ProductCards productCards={props.productCards}
+                                          addRemoveWishlist={props.addRemoveWishlist}
+                                          getProductItemView={props.getProductItemView}
+                                          isAuth={props.isAuth}
+                                          token={props.token}/>
                             {/*cat item */}
                         </div>
                     </div>
@@ -241,19 +244,6 @@ const Product = ({productItemInfo,categoriesInfo}) => {
                 <Paginator totalUsersCount={2}
                            pageSize={1}
                            currentPage={1}/>
-               {/* <ul className="pagination">
-                    <li className="previous disabled"><a className=" " tabIndex="-1" role="button" aria-disabled="true"
-                                                         aria-label="Previous page" rel="prev">&lt;</a></li>
-                    <li className="page-item disabled"><a rel="canonical" role="button" tabIndex="-1"
-                                                          aria-label="Page 1 is your current page"
-                                                          aria-current="page">1</a>
-                    </li>
-                    <li className="page-item"><a rel="next" role="button" tabIndex="0" aria-label="Page 2">2</a></li>
-                    <li className="page-item"><a role="button" tabIndex="0" aria-label="Page 3">3</a></li>
-                    <li className="next"><a className="" tabIndex="0" role="button" aria-disabled="false"
-                                            aria-label="Next page" rel="next">&gt;</a></li>
-                </ul>*/}
-                {/*Other popular cities*/}
             </div>
 
         </div>

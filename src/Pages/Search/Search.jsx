@@ -1,10 +1,11 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Rectangle from "../../Components/Main/ContentComponents/Main/MainComponents/Rectangle";
 import "./Search.css";
 import "../../App.css";
 import "../../responsice.css";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
-import ProductContainer from "../../assets/common/Cards/ProductCardsContainer";
+import ProductCards from "../../assets/common/Cards/ProductCards";
+import {Helmet} from "react-helmet";
 
 
 
@@ -15,6 +16,9 @@ const Search = (props) => {
     },[]);*/
 
     return  <>
+        <Helmet>
+            <title>Tour2sky - Search</title>
+        </Helmet>
     <div className="error200">
         <div className="header_title">
             <div className="container">
@@ -41,7 +45,11 @@ const Search = (props) => {
                     <h3>Popular helicopter tours</h3>
                     <div className="row row-15">
                         {/*cat item*/}
-                        <ProductContainer />
+                        <ProductCards productCards={props.productCards}
+                                      addRemoveWishlist={props.addRemoveWishlist}
+                                      getProductItemView={props.getProductItemView}
+                                      isAuth={props.isAuth}
+                                      token={props.token}/>
                         {/* cat item*/}
                     </div>
                 </div>

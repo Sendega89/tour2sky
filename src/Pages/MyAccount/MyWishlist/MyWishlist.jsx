@@ -1,10 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import {NavLink} from "react-router-dom";
-import Slider from "rc-slider";
+import ProductCards from "../../../assets/common/Cards/ProductCards";
+import PaginatorContainer from "../../../assets/common/Pagination/PaginatorContainer";
+import {useEffect} from "react";
 
 
 
-const MyWishlist = () => {
+const MyWishlist = (props) => {
+    useEffect(()=>{
+        props.getWishList(props.token)
+
+    },[])
 
     return   <div className="content">
             <div className="catalog_item row">
@@ -26,14 +32,15 @@ const MyWishlist = () => {
                             </div>
                         </div>
          {/*Sidebar */}
-
-
                         <div className="catalog_r">
                             <div className="row cat_top">
-                                <h4>Wishlist</h4>
+
+                                {/*<FavoriteItems {...props}/>*/}
                             </div>
 
                             <div className="row row-15">
+                                {/*<ProductCards productCards={props.productCards}/>*/}
+                                <PaginatorContainer/>
                             </div>
                         </div>
 

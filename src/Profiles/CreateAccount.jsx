@@ -36,7 +36,7 @@ const CreateAccount = (props) => {
                             {({values, status}) => (
                                 <Form>
                                     <div>
-                                    {status && status.error.name && <span>{status.error.name}</span>}
+                                    {status && status.error.name && <span className={s.error}>{status.error.name}</span>}
                                         <Field  placeholder={"First name"}
                                                 type={"text"}
                                                 name={"name"}

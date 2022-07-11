@@ -8,10 +8,14 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
 import ChatCarousel from "./ChatCarousel";
+import {Helmet} from "react-helmet";
 
 
 const Balloning = () => {
     return <>
+        <Helmet>
+            <title>Tour2sky - Balloning</title>
+        </Helmet>
         <div className="section">
             <div className="balloning">
                 <div className="header_title">

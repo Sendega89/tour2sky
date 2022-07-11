@@ -9,6 +9,10 @@ import {Checkbox} from "@mui/material";
 
 
 
+
+
+
+
 const ProductCards = (props) => {
 
     return  props.productCards.data.map(card => <ProductCard key={card.id}
@@ -20,8 +24,8 @@ const ProductCards = (props) => {
                                                        id={card.id}
                                                        getProductItemView={props.getProductItemView}
                                                        isAuth={props.isAuth}
-                                                       getWishlist={props.getWishlist}
-                                                             token={props.token}
+                                                       addRemoveWishlist={props.addRemoveWishlist}
+                                                       token={props.token}
 
     />)
 }
@@ -29,10 +33,11 @@ export const ProductCard = (props) => {
 
     const [checked, setChecked] = useState(false);
     const handleChange = (event) => {
+        debugger
         if(props.isAuth){
-            let addRemoveHandler =event.target.checked
+            let addRemoveHandler=event.target.checked
         setChecked(event.target.checked);
-        props.getWishlist(props.id,true,props.token)
+        props.addRemoveWishlist(props.id,addRemoveHandler,props.token)
         }
         /*setChecked(!checked)*/
     };
