@@ -1,9 +1,8 @@
-import React, {useEffect} from "react";
-
+import React from "react";
 import "./MyAccount.css";
 import {NavLink} from "react-router-dom";
 import AuthContainer from "../../Profiles/AuthContainer";
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
 
 const MyAccount = (props) => {
@@ -21,9 +20,9 @@ const MyAccount = (props) => {
 props.getUpdateProfile(updateOption,props.token)
 
    }
-useEffect(()=>{
+/*useEffect(()=>{
    props.getAuthUserData(props.token)
-},[]);
+},[]);*/
     return <div>
         <Helmet>
             <title>Tour2sky - My Account</title>

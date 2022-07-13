@@ -45,7 +45,7 @@ const Authorization = (props) => {
                 </div>
 
                 <div className="row authorization_link">
-                    New her? <NavLink to="/create" className="create">Create an account</NavLink>
+                    New here? <NavLink to="/create" className="create">Create an account</NavLink>
                 </div>
             </div>
         </div>

@@ -8,7 +8,8 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
 import ChatCarousel from "./ChatCarousel";
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
+import {NavLink} from "react-router-dom";
 
 
 const Balloning = () => {
@@ -58,58 +59,58 @@ const Balloning = () => {
                     <div className="row row_item">
 
                         <div className="col-2 blogBox blog_item">
-                            <a href={post} className="post_big">
+                            <NavLink to={post} className="post_big">
                                 <img src={post} alt={'city icon'}/>
-                            </a>
+                            </NavLink>
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to={post2}>
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to={post2}>
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post2.jpg">
+                                    <NavLink to="../../assets/img/post2.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
                         <div className="col-2 blogBox blog_item">
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to={post2}>
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
-                            <a href="../../assets/img/post.jpg" className="post_big">
+                            <NavLink to="../../assets/img/post.jpg" className="post_big">
                                 <img src={post} alt={'city icon'}/>
-                            </a>
+                            </NavLink>
                         </div>
                         {/*Blog Item col*/}
                     </div>
@@ -119,29 +120,29 @@ const Balloning = () => {
                     <div className="row row_item">
                         {/*Blog Item col*/}
                         <div className="col-2 blogBox blog_item">
-                            <a href="../../assets/img/post.jpg" className="post_big">
+                            <NavLink to="../../assets/img/post.jpg" className="post_big">
                                 <img src={post} alt={'city icon'}/>
-                            </a>
+                            </NavLink>
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post2.jpg">
+                                    <NavLink to="../../assets/img/post2.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
@@ -149,37 +150,37 @@ const Balloning = () => {
                         <div className="col-2 blogBox blog_item">
                             <div className="row-15 row post_smoll">
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="../../assets/img/post.jpg">
+                                    <NavLink to="../../assets/img/post.jpg">
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <div className="post_smoll_item">
-                                    <a href="#">
+                                    <NavLink to={post2}>
                                         <img src={post2} alt={'city icon'}/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
-                            <a href="#" className="post_big">
+                            <NavLink to={post2} className="post_big">
                                 <img src={post} alt={'city icon'}/>
-                            </a>
+                            </NavLink>
                         </div>
 
                     </div>
 
                 </div>
                 <div className="center">
-                    <a href="#" id="loadMore" className="btn">Load more</a>{/*for mobile*/}
-                    <a href="#" id="loadMoredesc" className="btn">Load more</a>
+                    <NavLink to="/#" id="loadMore" className="btn">Load more</NavLink>{/*for mobile*/}
+                    <NavLink to="/#" id="loadMoredesc" className="btn">Load more</NavLink>
                 </div>
             </div>
         </div>
@@ -208,7 +209,8 @@ const Balloning = () => {
                 </div>
             </div>
         </div>
-        <About/></main>
+        <About/>
+                </main>
     </>
 }
 export default Balloning

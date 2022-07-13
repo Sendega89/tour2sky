@@ -5,7 +5,7 @@ import "../../App.css";
 import "../../responsice.css";
 import BestCities from "../../Components/Main/ContentComponents/Main/MainComponents/BestCities";
 import ProductCards from "../../assets/common/Cards/ProductCards";
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
 
 

@@ -29,8 +29,8 @@ const  HeaderTitle = () => {
                             </div>
                         </form>
                     </div>
-                    {/* <div id="tabs">
-                                         <form>
+                     <div id="tabs">
+                                     {/*    <form>
                                              <input type="radio" name="tabs" id="toggle-tab1" checked="checked" />
                                              <label for="toggle-tab1">Air tours</label>
                                              <input type="radio" name="tabs" id="toggle-tab2" />
@@ -62,8 +62,8 @@ const  HeaderTitle = () => {
                                                  <input type="text" className="input_search" placeholder="Enter city, region or country" />
                                                  <button>Search5</button>
                                              </div>
-                                         </form>
-                                     </div>*/}
+                                         </form>*/}
+                                     </div>
                 </div>
             </div>
         </div>

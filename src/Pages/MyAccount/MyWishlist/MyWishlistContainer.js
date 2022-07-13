@@ -6,7 +6,7 @@ import {getProductItemView} from "../../../redux/productItem_Reducer";
 
 const MyWishlistContainer = (props) => {
 
-    let productCardsMaker = (props) => {
+    const productCardsMaker = (props) => {
 
         return props.productCards.map(i => i.service)
     }
@@ -18,6 +18,7 @@ const MyWishlistContainer = (props) => {
                        getWishList={props.getWishList}
                        addRemoveWishlist={props.addRemoveWishlist}
                        getProductItemView={props.getProductItemView}
+                       isFavoriteItem={props.isFavoriteItem}
     />
 }
 let mapStateToProps = (state) => ({
@@ -26,5 +27,6 @@ let mapStateToProps = (state) => ({
     productCards: state.myAccount.wishList.data,
     pagination: state.myAccount.wishList.pagination,
     isAuth: state.profilePage.isAuth,
+    isFavoriteItem: state.myAccount.isFavoriteItem,
 })
 export default connect(mapStateToProps, {getWishList, addRemoveWishlist, getProductItemView})(MyWishlistContainer)

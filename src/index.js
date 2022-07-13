@@ -4,19 +4,22 @@ import './index.css';
 import "./App.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, HashRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./redux/redux-store";
+import {HelmetProvider} from "react-helmet-async";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
+        <HelmetProvider>
         <HashRouter>
             <Provider store={store}>
                 <App/>
             </Provider>
         </HashRouter>
+        </HelmetProvider>
     </React.StrictMode>
 );
 

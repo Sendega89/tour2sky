@@ -20,7 +20,7 @@ const  Rectangle = () => {
 
             <div className={`row header_search ${s.header_search}`}>
                 <form action="email" onSubmit={subscribeMe}>
-                    <input type="text" className="input_search" placeholder="Entet your e-mail" />
+                    <input type="text" className="input_search" placeholder="Enter your e-mail" />
                     <button  type="submit">Subscribe</button>
                 </form>
             </div>

@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "../../App.css";
+import "../../responsice.css";
+import "../../index.css";
 import s from "./Catalog.module.css";
 import 'rc-slider/assets/index.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -12,7 +14,7 @@ import "rc-slider/assets/index.css";
 import './Catalog.module.css';
 import PaginatorContainer from "../../assets/common/Pagination/PaginatorContainer";
 import ProductCards from "../../assets/common/Cards/ProductCards";
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 library.add(fas);
 
 
@@ -26,6 +28,8 @@ const Catalog = (props) => {
     const [maxTime,setMaxTime] = useState([200]);
     const [sort,setSort] = useState("")
     const [rating, setRating] = useState( [1]);
+
+
 
     useEffect(()=> {
         props.getFilteredCatalog({minPrice,maxPrice,minTime,maxTime,sort,rating,page})
@@ -47,12 +51,15 @@ const Catalog = (props) => {
     }
 
 
-    console.log(rating)
 
-    return <div className="catalog">
+
+    return <>
+
         <Helmet>
-            <title>Tour2sky - Catalog</title>
+            <title>Tour2sky-catalog</title>
         </Helmet>
+    <div className="catalog">
+
         <div className="header_title">
             <div className="container">
                 <div className="row">
@@ -62,7 +69,7 @@ const Catalog = (props) => {
                 </div>
             </div>
         </div>
-        <div className="catalog_item row">
+        <div className="catalog_item row wighet">
             <div className="container">
                 {/*breadcrumbs*/}
                 <div className="row breadcrumbs">
@@ -72,7 +79,7 @@ const Catalog = (props) => {
                 {/* breadcrumbs*/}
                 {/*Sidebar*/}
                 <div className="sidebar">
-                    <NavLink className="pp-credit-block-button" to="#">
+                    <NavLink className="pp-credit-block-button" to="/">
                         <svg className="button-icon fill-secondary"
                              width="17"
                              height="17"
@@ -84,7 +91,7 @@ const Catalog = (props) => {
                         Filter</NavLink>
                     {/*<SearchFilter/>*/}
                     <div className="popup-credit">
-                        <div className="credit_block">
+                        <div className="credit_block ">
                             <NavLink to="/" className="cancelComment" title="">
                                 <FontAwesomeIcon icon="fa-solid fa-times" /></NavLink>
                             <div className="row wighet">
@@ -172,7 +179,7 @@ const Catalog = (props) => {
                                     <div className="row checkbox_row">
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                                <input type="checkbox" id={5} value={5}
+                                                <input type="checkbox" id="5" value={5}
                                                        className="align-self-center" onChange={changeCheckBox}
                                                 />
                                                 <span className="custom-big-checkbox__checkbox">
@@ -182,7 +189,7 @@ const Catalog = (props) => {
                                         </div>
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                                <input type="checkbox" id={4} value={4}
+                                                <input type="checkbox" id="4" value={4}
                                                        className="align-self-center" onChange={changeCheckBox}/>
                                                 <span className="custom-big-checkbox__checkbox">
                                                 </span>
@@ -191,7 +198,7 @@ const Catalog = (props) => {
                                         </div>
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                            <input type="checkbox" name="3" id={3} value={3}
+                                            <input type="checkbox" name="3" id="3" value={3}
                                                    className="align-self-center" onChange={changeCheckBox} />
                                             <span className="custom-big-checkbox__checkbox">
                                             </span>
@@ -200,7 +207,7 @@ const Catalog = (props) => {
                                         </div>
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                            <input type="checkbox" id={2} value={2}
+                                            <input type="checkbox" id="2" value={2}
                                                    className="align-self-center" onChange={changeCheckBox}/>
                                             <span className="custom-big-checkbox__checkbox">
                                             </span>
@@ -209,7 +216,7 @@ const Catalog = (props) => {
                                         </div>
                                         <div className="row checkbox_item">
                                             <label className="custom-big-checkbox">
-                                            <input type="checkbox" id={1} value={1}
+                                            <input type="checkbox" id="1" value={1}
                                                   readOnly checked
                                                    className="align-self-center" />
                                             <span className="custom-big-checkbox__checkbox">
@@ -259,15 +266,10 @@ const Catalog = (props) => {
                                       addRemoveWishlist={props.addRemoveWishlist}
                                       getProductItemView={props.getProductItemView}
                                       isAuth={props.isAuth}
-                                      token={props.token}/>
+                                      token={props.token}
+                        isFavoriteItem={props.isFavoriteItem}/>
                     </div>
                     <div className="row">
-                        {/*<Paginator  totalItemCount={props.pagination.total}
-                                    pageSize={props.pagination.count}
-                                    currentPage={props.pagination.current_page}
-                                    totalPages={props.pagination.total_pages}
-                                    links={props.pagination.links}
-                                    />*/}
                         <PaginatorContainer totalItemCount={props.pagination.total}
                                        pageSize={props.pagination.count}
                                        currentPage={props.pagination.current_page}
@@ -288,6 +290,6 @@ const Catalog = (props) => {
             </div>
         </div>
     </div>
-
+    </>
 }
 export default Catalog

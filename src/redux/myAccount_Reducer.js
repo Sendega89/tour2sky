@@ -1,13 +1,9 @@
 import {myAccountAPI} from "../api/api";
 
 
-
-
 const SET_WISHLIST = "tour2sky/myAccount/SET_WISHLIST";
 const SET_ADD_TO_FAVORITE = "tour2sky/myAccount/SET_ADD_TO_FAVORITE";
 const REMOVE_ITEM_FAVORITE = "tour2sky/myAccount/REMOVE_ITEM_FAVORITE";
-
-
 
 
 const initialState = {
@@ -151,7 +147,7 @@ const initialState = {
         },
         pagination: {},
     },
-    isFavoriteItem:false,
+    isFavoriteItem: false,
 }
 
 const myAccount_Reducer = (state = initialState, action) => {
@@ -159,18 +155,25 @@ const myAccount_Reducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_WISHLIST: {
-            return {...state,
-                wishList:{
-                    data:action.data.data,
+            return {
+                ...state,
+                wishList: {
+                    data: action.data.data,
                     meta: action.data.meta,
-                    pagination:action.data.meta.pagination
-            }
+                    pagination: action.data.meta.pagination
+                }
             }
         }
-        case SET_ADD_TO_FAVORITE:{
+        case SET_ADD_TO_FAVORITE: {
             return {
                 ...state,
                 isFavoriteItem: true
+            }
+        }
+        case REMOVE_ITEM_FAVORITE: {
+            return {
+                ...state,
+                isFavoriteItem: false
             }
         }
         default:
@@ -180,8 +183,8 @@ const myAccount_Reducer = (state = initialState, action) => {
 
 
 export const setWishlist = (data) => ({type: SET_WISHLIST, data});
-export const setItemToFavorite = (data) => ({type: SET_WISHLIST, data});
-export const removeItemToFavorite = (data) => ({type: SET_WISHLIST, data});
+export const setItemToFavorite = () => ({type: SET_ADD_TO_FAVORITE});
+export const delItemToFavorite = () => ({type: REMOVE_ITEM_FAVORITE});
 
 
 
@@ -189,9 +192,11 @@ export const removeItemToFavorite = (data) => ({type: SET_WISHLIST, data});
 export const addRemoveWishlist = (serviceId, addRemoveHandler, token) => async (dispatch) => {
     let response;
     if (addRemoveHandler) {
-        response = await myAccountAPI.addServiceToFavorite(serviceId,token)
+        response = await myAccountAPI.addServiceToFavorite(serviceId, token);
+        dispatch(setItemToFavorite(response.data))
     } else {
-        response = await myAccountAPI.removeServiceFromFavorite(serviceId,token)
+        response = await myAccountAPI.removeServiceFromFavorite(serviceId, token);
+        dispatch(delItemToFavorite(response.data))
     }
 }
 export const getWishList = (token) => async (dispatch) => {

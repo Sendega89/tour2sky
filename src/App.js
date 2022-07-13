@@ -1,6 +1,7 @@
 import './App.css';
 import "./font-awesome.css";
 import "./responsice.css";
+import s from "./App.module.css";
 import Content from "./Components/Main/Content";
 import Footer from "./Components/Footer/Footer";
 import HeaderNavbar from "./Components/Header/headerComponents/HeaderMobileMenu";
@@ -24,9 +25,9 @@ import SearchContainer from "./Pages/Search/SearchContainer";
 
 function App() {
     const [isHamburgerOpened, setIsHamburgerOpened] = useState(false);
-    const toggleHamburger = () => {
+    /*const toggleHamburger = () => {
         setIsHamburgerOpened((prev) => !prev);
-    };
+    };*/
     const closeHamburger = () => {
         setIsHamburgerOpened(false);
     };
@@ -36,6 +37,7 @@ function App() {
             <HeaderNavbar closeHamburger={closeHamburger} isHamburgerOpened={isHamburgerOpened}  pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <div id="page-wrap" className={"headerMenu"}>
                 <HeaderContainer />
+<div className={s.testContainer}>
                 <Routes>
                     <Route exact path="/"
                            element={<Content/>}/>
@@ -62,7 +64,7 @@ function App() {
                     <Route path="/product/:itemId"
                            element={<ProductContainer/>}/>
                 </Routes>
-
+            </div>
                 <Footer/>
             </div>
         </div>
