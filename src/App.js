@@ -10,8 +10,8 @@ import {Routes} from "react-router";
 import Balloning from "./Pages/Balloning/Balloning";
 import Page404 from "./Pages/Page404/Page404";
 import Checkout from "./Pages/Checkout/Checkout";
-import MyBookings from "./Pages/MyAccount/MyBookings/MyBookings";
-import MyAccountContainer from "./Pages/MyAccount/MyAccountContainer";
+import Orders from "./Pages/MyAccount/MyBookings/Orders";
+import MyAccountContainer from "./Pages/MyAccount/PersonalInfoContainer";
 import AuthContainer from "./Profiles/AuthContainer";
 import { useState} from "react";
 import HeaderContainer from "./Components/Header/HeaderContainer";
@@ -51,8 +51,8 @@ function App() {
                            element={<MyAccountContainer/>}/>
                     <Route path="/wishlist"
                            element={<MyWishlistContainer />}/>
-                    <Route path="/bookings"
-                           element={<MyBookings/>}/>
+                    <Route path="/orders"
+                           element={<Orders/>}/>
                     <Route path="/Checkout"
                            element={<Checkout/>}/>
                     <Route path="/authorization"

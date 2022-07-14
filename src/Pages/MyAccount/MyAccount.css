@@ -1,9 +1,0 @@
-.myAccount {
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    gap: 20px;
-}
-.reloadUserInfo {
-    width: 100px;
-}

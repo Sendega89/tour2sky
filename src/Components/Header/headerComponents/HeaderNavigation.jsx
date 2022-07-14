@@ -9,7 +9,7 @@ const HeaderNavigation = () => {
                 <li><NavLink to="/catalog">Catalog</NavLink></li>
                 <li><NavLink to="/balloning">Balloning</NavLink></li>
                 <li><NavLink to="/search">Search</NavLink></li>
-                <li><NavLink to="/myAccount">My account</NavLink></li>
+                <li><NavLink to="/orders">My account</NavLink></li>
                 <li><NavLink to="/checkout" href="#">Checkout</NavLink></li>
                 <li className="drop-item" ><NavLink to="/404">Other</NavLink>
                     <ul className="drop-menu">

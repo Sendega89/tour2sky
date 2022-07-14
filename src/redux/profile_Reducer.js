@@ -2,12 +2,14 @@ import {authAPI, myAccountAPI} from "../api/api";
 import Page404 from "../Pages/Page404/Page404";
 
 
-const SET_CLIENT_PROFILE = "SET_CLIENT_PROFILE";
-const SET_AUTH_PROFILE = "SET_AUTH_PROFILE";
-const UPDATE_CLIENT_PROFILE = "UPDATE_CLIENT_PROFILE";
+const SET_CLIENT_PROFILE = "tour2sky/profile/SET_CLIENT_PROFILE";
+const SET_AUTH_PROFILE = "tour2sky/profile/SET_AUTH_PROFILE";
+const UPDATE_CLIENT_PROFILE = "tour2sky/profile/UPDATE_CLIENT_PROFILE";
+const SET_PROFILE_INFO = "tour2sky/profile/SET_PROFILE_INFO";
+
 
 const initialState = {
-
+    profileInfo:[],
     isAuth: false,
 }
 
@@ -33,7 +35,12 @@ const profile_Reducer = (state = initialState, action) => {
                 ...action.data
             }
         }
-
+        case SET_PROFILE_INFO: {
+            return {
+                ...state,
+                profileInfo: action.data.social_profiles
+            }
+        }
         default:
             return state
     }
@@ -41,7 +48,9 @@ const profile_Reducer = (state = initialState, action) => {
 
 export const setClientProfile = (data) => ({type: SET_CLIENT_PROFILE, data});
 export const setAuthProfile = (data) => ({type: SET_AUTH_PROFILE, data});
+export const setProfileInfo = (data) => ({type: SET_PROFILE_INFO, data});
 export const setUpdateProfile = (data) => ({type: UPDATE_CLIENT_PROFILE, data});
+
 
 /*This is Thunk*/
 export const login = (email, password, type) => async (dispatch) => {
@@ -53,13 +62,21 @@ export const login = (email, password, type) => async (dispatch) => {
         return <Page404/>
     }
 }
-export const getUpdateProfile = (updateOption,token) => async (dispatch) => {
-    let response = await myAccountAPI.updateProfileInfo(updateOption,token)
+export const getProfileInfo = (token) => async (dispatch) => {
+    let response = await authAPI.me(token);
     if (response.status === 200) {
-        dispatch(setUpdateProfile(response.data));
-
+        dispatch(setProfileInfo(response.data))
     } else {
         return <Page404/>
     }
 }
+export const getUpdateProfile = (updateOption, token) => async (dispatch) => {
+    let response = await myAccountAPI.updateProfileInfo(updateOption, token)
+    if (response.status === 200) {
+        dispatch(setUpdateProfile(response.data));
+    } else {
+        return <Page404/>
+    }
+}
+
 export default profile_Reducer

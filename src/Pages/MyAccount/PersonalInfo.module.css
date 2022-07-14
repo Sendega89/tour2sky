@@ -1,0 +1,73 @@
+/*
+.myAccount {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
+}
+.reloadUserInfo {
+    width: 100px;
+}*/
+.personalInfoContainer {
+
+}
+.description {
+    padding: 21px 35px 40px 35px;
+    border-radius: 12px;
+    background-color: #ecf0f1;
+    max-width: 750px;
+margin-bottom: 10px;
+}
+.descriptionItem {
+    padding: 20px;
+}
+.descriptionItem span {
+font-weight: 700;
+}
+.addButton {
+    padding: 10px;
+    border-radius: 15px;
+    background-color:  #f0f6f8;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #2980b9;
+    cursor: pointer;
+}
+.socialLinks {
+
+}
+.checkboxContainer span {
+    font-weight: 700;
+}
+.account_buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+.account_button {
+    min-width: 30px;
+    height: 50px;
+
+}
+.checkboxContainer label {
+    display: flex;
+    align-items: center;
+}
+.inputValue {
+
+}
+
+.infoContainer {
+
+}
+.infoItem {
+    display: flex;
+    padding: 10px;
+    justify-content:space-between;
+}
+.infoItem span {
+    flex:1 1 20%;
+}
+.infoItem input {
+    flex: 0 1 20%;
+}

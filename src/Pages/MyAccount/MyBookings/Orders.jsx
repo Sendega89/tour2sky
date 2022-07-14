@@ -3,8 +3,9 @@ import {NavLink} from "react-router-dom";
 
 
 
-const MyBookings = () => {
-    return <div className="catalog_item row">
+const Orders = () => {
+    return <main>
+        <div className="catalog_item row">
         <div className="container">
             <div className="row catalog_row">
                 <div className="sidebar">
@@ -13,9 +14,10 @@ const MyBookings = () => {
                         <div className="row wighet_row">
                             <div className="account_links">
                                 <ul>
-                                    <li><NavLink to="/myAccount">Account settings</NavLink></li>
-                                    <li><NavLink to="/bookings" className="active"  >Bookings</NavLink></li>
+                                    <li><NavLink to="/orders" className="active">Orders</NavLink></li>
+                                    <li><NavLink to="/myAccount">Personal info</NavLink></li>
                                     <li><NavLink to="/wishlist">Wishlist</NavLink></li>
+                                    <li><NavLink to="/delAccount">Delete Account</NavLink></li>
                                 </ul>
                             </div>
                         </div>
@@ -23,22 +25,15 @@ const MyBookings = () => {
                 </div>
                 <div className="catalog_r">
                     <div className="row cat_top">
-                        <h4>My Bookings</h4>
+                        <h4>My Orders</h4>
                     </div>
-
                     <div className="row row-15">
-                        {/*        cat item */}
-                        {/*<ProductCards />*/}
-
-
-                        {/*        cat item */}
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+</main>
 
 }
-export default MyBookings
+export default Orders
