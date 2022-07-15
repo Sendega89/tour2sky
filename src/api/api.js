@@ -73,7 +73,10 @@ export const myAccountAPI = {
         return (
             instance.post(`cabinet/profile/update`,updateOption,{headers: {Authorization: token}})
         )
-    }
+    },
+    getProfileOrders(token,page,service_name,status) {
+        return instance.get(`cabinet/order`,{headers: {Authorization: token}})
+    },
 }
 export const productAPI = {
     getServiceList(page) {

@@ -8,24 +8,11 @@ import {Field, FieldArray, Form, Formik} from "formik";
 
 
 const PersonalInfo = (props) => {
-const [editMode,setEditMode] = useState(false)
+    const [editMode, setEditMode] = useState(false)
 
-    useEffect(()=> {
-    props.getProfileInfo(props.token)
-},[editMode])
-   /* const editProfile =(e) => {
-     e.preventDefault()
-       let updateOption = {
-           "name": e.target[0].value || props.name,
-           "surname": e.target[2].value || props.surname,
-           "email": e.target[1].value || props.email,
-           "phone": props.phone,
-           "hobbies": "hobbies",
-           "about": "I`am great",
-           "social_profiles": ["https://www.facebook.com/sendega"],
-       }
-props.getUpdateProfile(updateOption,props.token)
-   }*/
+    useEffect(() => {
+        props.getProfileInfo(props.token)
+    },[editMode])
     return <div>
         <Helmet>
             <title>Tour2sky - My Account</title>
@@ -58,17 +45,17 @@ props.getUpdateProfile(updateOption,props.token)
                                             <h4>{editMode ? "Account settings" : "Personal info"}</h4>
                                             <div className="row row-15">
                                                 <Formik initialValues={{
-                                                    name:  props.name,
+                                                    name: props.name,
                                                     surname: props.surname,
                                                     email: props.email,
                                                     phone: props.phone,
                                                     hobbies: "hobbies",
                                                     about: "about",
-                                                    subscribe:true,
-                                                    social_profiles:[props.social_profiles],
+                                                    subscribe: true,
+                                                    social_profiles: [props.social_profiles],
                                                 }}
                                                         onSubmit={(values) => {
-                                                            props.getUpdateProfile(values,props.token);
+                                                            props.getUpdateProfile(values, props.token);
                                                             props.getProfileInfo(props.token)
                                                             setEditMode(!editMode)
                                                         }}>
@@ -82,49 +69,50 @@ props.getUpdateProfile(updateOption,props.token)
                                                                             type={"text"}
                                                                             name={"name"}
                                                                             value={values.name}/> :
-                                                                      <span>{props.name}</span>}
+                                                                        <span>{props.name}</span>}
                                                                 </div>
                                                                 <div className={s.infoItem}>
                                                                     <span>Last Name</span>
                                                                     {editMode ? <Field
-                                                                        placeholder={props.surname}
-                                                                        type={"text"}
-                                                                        name={"surname"}
-                                                                        value={values.surname}/> :
-                                                                        <span>{props.surname}</span> }
+                                                                            placeholder={props.surname}
+                                                                            type={"text"}
+                                                                            name={"surname"}
+                                                                            value={values.surname}/> :
+                                                                        <span>{props.surname}</span>}
                                                                 </div>
                                                                 <div className={s.infoItem}>
                                                                     <span>E-mail</span>
                                                                     {editMode ? <Field type="email"
-                                                                           placeholder={"email"}
-                                                                           name={"email"}
-                                                                           value={values.email}/> :
-                                                                    <span>{props.name}</span>}
+                                                                                       placeholder={"email"}
+                                                                                       name={"email"}
+                                                                                       value={values.email}/> :
+                                                                        <span>{props.name}</span>}
                                                                 </div>
                                                             </div>
                                                             <div>
                                                                 <div className={s.infoItem}>
                                                                     <span>Phone</span>
-                                                                    {editMode ?<Field type="phone"
-                                                                           placeholder={"phone"}
-                                                                           name={"phone"}
-                                                                           value={values.phone}/>:
+                                                                    {editMode ? <Field type="phone"
+                                                                                       placeholder={"phone"}
+                                                                                       name={"phone"}
+                                                                                       value={values.phone}/> :
                                                                         <span>{props.phone}</span>}
                                                                 </div>
 
                                                                 <div className={s.infoItem}>
                                                                     <span>Social profiles </span>
-                                                                    <span>{!props.social_profiles.length >0 ? props.social_profiles :
-                                                                        props.social_profiles.map(item=> <div>{item}</div>)
+                                                                    <span>{!props.social_profiles.length > 0 ? props.social_profiles :
+                                                                        props.social_profiles.map(item =>
+                                                                            <div>{item}</div>)
                                                                     }</span>
                                                                     <FieldArray name="social_profiles">
-                                                                        {({ remove, push }) => (
+                                                                        {({remove, push}) => (
                                                                             <div>
                                                                                 {values.social_profiles.length > 0 &&
                                                                                     values.social_profiles.map((social_profiles, index) => (
-                                                                                        <div className="row" key={index}>
-                                                                                            {editMode &&     <div >
-                                                                                                {/*<label htmlFor={`social_profiles`}></label>*/}
+                                                                                        <div className="row"
+                                                                                             key={index}>
+                                                                                            {editMode && <div>
                                                                                                 <Field
                                                                                                     name={`social_profiles.${index}`}
                                                                                                     placeholder="addSocial"
@@ -133,8 +121,8 @@ props.getUpdateProfile(updateOption,props.token)
                                                                                             </div>}
                                                                                             <div>
                                                                                                 {editMode && <div
-                                                                                                     className={s.secondaryDel}
-                                                                                                     onClick={() => remove(index)}
+                                                                                                    className={s.secondaryDel}
+                                                                                                    onClick={() => remove(index)}
                                                                                                 >
                                                                                                     X
                                                                                                 </div>}
@@ -155,36 +143,38 @@ props.getUpdateProfile(updateOption,props.token)
                                                                 <div className={s.infoItem}>
                                                                     <label>
                                                                         <span>Subscribe</span>
-                                                                        <Field  type={"checkbox"}
-                                                                                name={"subscribe"}
-                                                                       />
+                                                                        <Field type={"checkbox"}
+                                                                               name={"subscribe"}
+                                                                        />
                                                                     </label>
                                                                 </div>
-                                                                <div >
-                                                                    {!editMode && <button className={s.account_button} onClick={() => setEditMode(!editMode)}>
+                                                                <div>
+                                                                    {!editMode && <button className={s.account_button}
+                                                                                          onClick={() => setEditMode(!editMode)}>
                                                                         Edit</button>}
                                                                 </div>
                                                             </div>
                                                             {editMode &&
                                                                 <div className={s.account_buttonContainer}>
-                                                                <button className={s.account_button} onClick={()=> setEditMode(!editMode)}>Cancel</button>
-                                                                <button className={s.account_button} type="submit">Save</button>
+                                                                    <button className={s.account_button}
+                                                                            onClick={() => setEditMode(!editMode)}>Cancel
+                                                                    </button>
+                                                                    <button className={s.account_button}
+                                                                            type="submit">Save
+                                                                    </button>
                                                                 </div>}
-
                                                         </Form>)}
                                                 </Formik>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
-            </main>
-            </div>
-            </div> : <AuthContainer />}
-</div>
+                    </main>
+                </div>
+            </div> : <AuthContainer/>}
+    </div>
 }
 
 export default PersonalInfo

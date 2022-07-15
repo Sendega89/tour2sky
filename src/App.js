@@ -20,6 +20,7 @@ import ProductContainer from "./Pages/Product/ProductContainer";
 import CreateAccountContainer from "./Profiles/CreateAccountContainer";
 import MyWishlistContainer from "./Pages/MyAccount/MyWishlist/MyWishlistContainer";
 import SearchContainer from "./Pages/Search/SearchContainer";
+import OrdersContainer from "./Pages/MyAccount/MyBookings/OrdersContainer";
 
 
 
@@ -52,7 +53,7 @@ function App() {
                     <Route path="/wishlist"
                            element={<MyWishlistContainer />}/>
                     <Route path="/orders"
-                           element={<Orders/>}/>
+                           element={<OrdersContainer />}/>
                     <Route path="/Checkout"
                            element={<Checkout/>}/>
                     <Route path="/authorization"
