@@ -4,13 +4,16 @@ import {NavLink} from "react-router-dom";
 import AuthContainer from "../../Profiles/AuthContainer";
 import {Helmet} from "react-helmet-async";
 
-import {Field, Form, Formik} from "formik";
+import {Field, FieldArray, Form, Formik} from "formik";
 
 
 const PersonalInfo = (props) => {
 const [editMode,setEditMode] = useState(false)
 
-    const editProfile =(e) => {
+    useEffect(()=> {
+    props.getProfileInfo(props.token)
+},[editMode])
+   /* const editProfile =(e) => {
      e.preventDefault()
        let updateOption = {
            "name": e.target[0].value || props.name,
@@ -22,7 +25,7 @@ const [editMode,setEditMode] = useState(false)
            "social_profiles": ["https://www.facebook.com/sendega"],
        }
 props.getUpdateProfile(updateOption,props.token)
-   }
+   }*/
     return <div>
         <Helmet>
             <title>Tour2sky - My Account</title>
@@ -52,7 +55,7 @@ props.getUpdateProfile(updateOption,props.token)
                                     </div>
                                     <div className="catalog_r">
                                         <div className="row account_settings">
-                                            <h4>{editMode && "Account settings" || "Personal info"}</h4>
+                                            <h4>{editMode ? "Account settings" : "Personal info"}</h4>
                                             <div className="row row-15">
                                                 <Formik initialValues={{
                                                     name:  props.name,
@@ -60,14 +63,16 @@ props.getUpdateProfile(updateOption,props.token)
                                                     email: props.email,
                                                     phone: props.phone,
                                                     hobbies: "hobbies",
-                                                    about: "I`am great",
-                                                    social_profiles: props.social_profiles,
+                                                    about: "about",
                                                     subscribe:true,
+                                                    social_profiles:[props.social_profiles],
                                                 }}
-                                                        onSubmit={(values, submitProps) => {
-                                                            props.login(values.email,values.password,values.type)
+                                                        onSubmit={(values) => {
+                                                            props.getUpdateProfile(values,props.token);
+                                                            props.getProfileInfo(props.token)
+                                                            setEditMode(!editMode)
                                                         }}>
-                                                    {({values, status}) => (
+                                                    {({values}) => (
                                                         <Form>
                                                             <div className={s.infoContainer}>
                                                                 <div className={s.infoItem}>
@@ -106,10 +111,54 @@ props.getUpdateProfile(updateOption,props.token)
                                                                            value={values.phone}/>:
                                                                         <span>{props.phone}</span>}
                                                                 </div>
+
                                                                 <div className={s.infoItem}>
-                                                                    <span>Social links </span>
-                                                                    <p>{props.social_profiles}</p>
-                                                                    {editMode && <div className={s.addButton}>+</div>}
+                                                                    <span>Social profiles </span>
+                                                                    <span>{!props.social_profiles.length >0 ? props.social_profiles :
+                                                                        props.social_profiles.map(item=> <div>{item}</div>)
+                                                                    }</span>
+                                                                    <FieldArray name="social_profiles">
+                                                                        {({ remove, push }) => (
+                                                                            <div>
+                                                                                {values.social_profiles.length > 0 &&
+                                                                                    values.social_profiles.map((social_profiles, index) => (
+                                                                                        <div className="row" key={index}>
+                                                                                            {editMode &&     <div >
+                                                                                                {/*<label htmlFor={`social_profiles`}></label>*/}
+                                                                                                <Field
+                                                                                                    name={`social_profiles.${index}`}
+                                                                                                    placeholder="addSocial"
+                                                                                                    type="text"
+                                                                                                />
+                                                                                            </div>}
+                                                                                            <div>
+                                                                                                {editMode && <div
+                                                                                                     className={s.secondaryDel}
+                                                                                                     onClick={() => remove(index)}
+                                                                                                >
+                                                                                                    X
+                                                                                                </div>}
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    ))}
+                                                                                {editMode && <div
+                                                                                    className={s.secondaryAdd}
+                                                                                    onClick={() => push()}
+                                                                                >
+                                                                                    Add
+                                                                                </div>}
+                                                                            </div>
+                                                                        )}
+                                                                    </FieldArray>
+                                                                </div>
+
+                                                                <div className={s.infoItem}>
+                                                                    <label>
+                                                                        <span>Subscribe</span>
+                                                                        <Field  type={"checkbox"}
+                                                                                name={"subscribe"}
+                                                                       />
+                                                                    </label>
                                                                 </div>
                                                                 <div >
                                                                     {!editMode && <button className={s.account_button} onClick={() => setEditMode(!editMode)}>
@@ -121,13 +170,7 @@ props.getUpdateProfile(updateOption,props.token)
                                                                 <button className={s.account_button} onClick={()=> setEditMode(!editMode)}>Cancel</button>
                                                                 <button className={s.account_button} type="submit">Save</button>
                                                                 </div>}
-                                                            <div className={s.checkboxContainer}>
-                                                                <label>
-                                                                    <span>Subscribe</span>
-                                                                    <span><Field  type={"checkbox"}
-                                                                                  name={"subscribe"}/></span>
-                                                                </label>
-                                                            </div>
+
                                                         </Form>)}
                                                 </Formik>
                                             </div>
