@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {useParams} from "react-router";
 import {getProductItemView} from "../../redux/productItem_Reducer";
 import {addRemoveWishlist} from "../../redux/myAccount_Reducer";
+import {getCreateNewOrder} from "../../redux/profile_Reducer";
 
 
 
@@ -24,4 +25,4 @@ let mapStateToProps =(state) => ({
     categoriesInfo:state.productItemView.categories.data,
     token:state.profilePage.token
 })
-export default connect(mapStateToProps, {getProductItemView, addRemoveWishlist})(ProductContainer)
+export default connect(mapStateToProps, {getProductItemView, addRemoveWishlist,getCreateNewOrder})(ProductContainer)

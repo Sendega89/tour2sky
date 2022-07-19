@@ -8,12 +8,42 @@ import SlickSlider from "./SlickSlider";
 import Paginator from "../../assets/common/Pagination/Paginator";
 import { NavLink} from "react-router-dom";
 import ProductCards from "../../assets/common/Cards/ProductCards";
+import {useState} from "react";
+
+/*import {DatePicker} from "@mui/x-date-pickers";
+import {AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import MaterialUIPickers from "./Data&Time";*/
 
 
 
 
 const Product = (props) => {
 
+const [members_count,setMembers_count] = useState(2);
+const [date,setDate] = useState();
+let time = props.productItemInfo.times.data
+let timeService = time.map(t=><option key={t.id} value="2">{t.time}</option>);
+    console.log(date)
+
+    const handleChangeAdults = (e) => {
+        setMembers_count(e.target.value)
+    }
+    const handleChangeDate = (e) => {
+        setDate(e.target.value)
+    }
+    const handleChangeData =(e) => {
+
+    }
+const bookTour = () => {
+        let ordersInfo = {
+            service_id: props.productItemInfo.id,
+            date: date,
+            time: timeService[0],
+            members_count: members_count
+        }
+    props.getCreateNewOrder(props.token,ordersInfo)
+}
     return <main>
         <div className="container">
             <div className="row">
@@ -43,55 +73,47 @@ const Product = (props) => {
                                 <div className="row product_r_top">
                                     <div className="row">
                                         <div className="time">
-                                            <i><FontAwesomeIcon icon="fa-solid fa-clock" aria-hidden="true"/></i>
+                                            <i><FontAwesomeIcon icon="fa-solid fa-clock"/></i>
                                             <span>{props.productItemInfo.duration} min</span>
                                         </div>
                                         <RatingTour2Sky rating={props.productItemInfo.rating}/>
                                     </div>
                                     <div className="row options">
+                                        {/*<div className="row options_item">
+                                            <span className="sel_icon">
+                                                <i><FontAwesomeIcon icon="fa-solid fa-calendar"/></i></span>
+                                            <input type="text"
+                                                   id="datepicker"
+                                                   placeholder="Select date"
+                                                   className="hasDatepicker"/>
+                                        </div>*/}
                                         <div className="row options_item">
-                                        <span className="sel_icon">
-                                            <i><FontAwesomeIcon icon="fa-solid fa-calendar" aria-hidden="true"/></i>
-                                        </span>
-                                            <input type="text" id="datepicker" placeholder="Select date" className="hasDatepicker"/>
-                                            {/*<TextField sx={{borderRadius: "26px"}}
-                                                id="date"
-                                                label="Select date"
-                                                type="date"
-                                                defaultValue="2022-05-24"
-                                                className={"textFieldSelectDate"}
-                                                InputLabelProps={{
-                                                    shrink: true,
-                                                }}
-                                            />*/}
+                                            <div className="row options_select">
+                                                <span className="sel_icon">
+                                                    <i><FontAwesomeIcon icon="fa-solid fa-calendar"/></i></span>
+                                                <select onChange={handleChangeData} >
+                                                    {timeService}
+                                                </select>
+                                            </div>
                                         </div>
                                         <div className="row options_item">
                                             <div className="row options_select">
-                                            <span className="sel_icon">
-                                                <i><FontAwesomeIcon icon="fa-solid fa-user" aria-hidden="true"/></i>
-                                            </span>
-                                            <select id="ui-id-1">
-                                                    <option>2 adults</option>
-                                                    <option>3 adults</option>
-                                                    <option>4 adults</option>
-                                                    <option>5 adults</option>
+                                                <span className="sel_icon">
+                                                    <i><FontAwesomeIcon icon="fa-solid fa-user"/></i></span>
+                                                <select onChange={handleChangeAdults} >
+                                                    <option value="2">2 adults</option>
+                                                    <option value="3">3 adults</option>
+                                                    <option value="4">4 adults</option>
+                                                    <option value="5">5 adults</option>
                                                 </select>
-                                                {/*  <span tabIndex="0" id="ui-id-1-button" role="combobox"
-                                                      aria-expanded="false" aria-autocomplete="list"
-                                                      aria-owns="ui-id-1-menu" aria-haspopup={true}
-                                                      className="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
-                                                      aria-activedescendant="ui-id-8" aria-labelledby="ui-id-8"
-                                                      aria-disabled={false}>
-                                                  <span className="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
-                                                </span>*/}
-                                              </div>
+                                            </div>
                                         </div>
                                         <div className="row price">
                                             ${props.productItemInfo.price}
                                         </div>
                                     </div>
                                     <div className="add">
-                                        <NavLink to="" className="btn">Book tour</NavLink>
+                                        <NavLink to="" className="btn" onClick={bookTour}>Book tour</NavLink>
                                     </div>
                                 </div>
                                 <div className="row pick">

@@ -1,9 +1,8 @@
 import {NavLink} from "react-router-dom";
-//import itemImage from "../../../assets/img/p1.jpg";
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const OrderCards = (props) => {
+const BookingsCards = (props) => {
 
     return props.orders.map(card => <OrderCard key={card.id}
                                                img={card.service.images.data.map(img => img.link)}
@@ -13,7 +12,7 @@ const OrderCards = (props) => {
                                                price={card.price}
     />)
 }
-export default OrderCards
+export default BookingsCards
 
 
 const OrderCard = (props) => {

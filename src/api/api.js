@@ -27,9 +27,9 @@ export const authAPI = {
         return instance.get(`cabinet/profile/me`, {headers: {Authorization: token}})
     },
 
-    login(email, password, type = 1) {
+    login(email, password) {
         return (
-            instance.post(`auth/login`, {email, password, type})
+            instance.post(`auth/login`, {email, password})
         )
     },
     register(registerData) {
@@ -77,6 +77,18 @@ export const myAccountAPI = {
     getProfileOrders(token,page,service_name,status) {
         return instance.get(`cabinet/order`,{headers: {Authorization: token}})
     },
+    getCreateNewOrder(token,ordersInfo) {
+        let orderCreateRequest = {
+            service_id:ordersInfo.service_id ,
+            date: ordersInfo.date,
+            time: ordersInfo.time,
+            members_count: ordersInfo.members_count
+        }
+        return instance.post(`order/create`,orderCreateRequest ,{headers: {Authorization: token}})
+    },
+    deleteClientProfile (token){
+        return instance.delete(`cabinet/profile/delete`,{headers: {Authorization: token}})
+    }
 }
 export const productAPI = {
     getServiceList(page) {

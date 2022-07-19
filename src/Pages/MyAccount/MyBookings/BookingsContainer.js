@@ -1,14 +1,14 @@
 import React from "react";
-import Orders from "./Orders";
+import Bookings from "./Bookings";
 import {connect} from "react-redux";
 import AuthContainer from "../../../Profiles/AuthContainer";
 import {getOrders} from "../../../redux/profile_Reducer";
 
 
 
-const OrdersContainer = (props) => {
+const BookingsContainer = (props) => {
 
-    return (props.isAuth ? <Orders {...props} /> : <AuthContainer/>
+    return (props.isAuth ? <Bookings {...props} /> : <AuthContainer/>
 
 )}
 
@@ -16,5 +16,7 @@ const mapStateToProps =(state) => ({
 isAuth:state.profilePage.isAuth,
     orders:state.profilePage.myOrders,
     token:state.profilePage.token,
+    name:state.profilePage.name,
+    surname:state.profilePage.surname,
 })
-export default connect(mapStateToProps,{getOrders})(OrdersContainer)
+export default connect(mapStateToProps,{getOrders})(BookingsContainer)

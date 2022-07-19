@@ -181,12 +181,9 @@ const myAccount_Reducer = (state = initialState, action) => {
     }
 }
 
-
 export const setWishlist = (data) => ({type: SET_WISHLIST, data});
 export const setItemToFavorite = () => ({type: SET_ADD_TO_FAVORITE});
 export const delItemToFavorite = () => ({type: REMOVE_ITEM_FAVORITE});
-
-
 
 /*This is Thunk*/
 export const addRemoveWishlist = (serviceId, addRemoveHandler, token) => async (dispatch) => {
@@ -203,4 +200,5 @@ export const getWishList = (token) => async (dispatch) => {
     let response = await myAccountAPI.getFavoriteService(token);
     dispatch(setWishlist(response.data))
 }
+
 export default myAccount_Reducer

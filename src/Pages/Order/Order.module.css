@@ -41,3 +41,14 @@
 .Checkout_right {
 
 }
+.Checkout_Form {
+    margin-top: 17px;
+    border-top:1px solid #F0F6F8 ;
+    padding-top: 15px;
+}
+.Checkout_Form_Info {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}

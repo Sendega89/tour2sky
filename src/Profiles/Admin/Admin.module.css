@@ -1,0 +1,31 @@
+.adminContainer {
+    background-color: #e7f3fd;
+    display: grid;
+    grid-template-columns:1fr 2fr;
+
+}
+
+.menuColumnLeft {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+}
+.menuLeftNameItems,
+.menuLeftIcons {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    padding: 20px;
+}
+.menuColumnLeft_Item,
+.menuColumnLeft_icon{
+ margin: 10px;
+}
+
+.dashboardContent {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 40px 1fr 40px 1fr;
+}
+
+

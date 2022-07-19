@@ -6,7 +6,7 @@ import {Field, Form, Formik} from "formik";
 const Authorization = (props) => {
 
     if(props.isAuth){
-      return  <Navigate to={"/orders"}/>
+      return  <Navigate to={"/myAccount"}/>
     }
     return <div id="authorization"
                 className="white-popup mfp-with-anim mfp-hide order_popup">
@@ -20,7 +20,6 @@ const Authorization = (props) => {
                     <Formik initialValues={{
                         email: "sendega89@gmail.com",
                         password: "24052016",
-                        type: 1
                     }}
                        onSubmit={(values, submitProps) => {
                                 props.login(values.email,values.password,values.type)

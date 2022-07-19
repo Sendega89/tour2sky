@@ -112,7 +112,7 @@ const  initialState = {
                 id: 2,
                 service_id: 1,
                 date: null,
-                time: "21:00:00",
+                time: "22:00",
                 day_of_week: null,
                 day_of_month: 10,
                 month: 3,

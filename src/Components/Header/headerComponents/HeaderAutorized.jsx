@@ -6,15 +6,17 @@ import {NavLink} from "react-router-dom";
 
 
 
-const HeaderAutorized = () => {
+
+const HeaderAutorized = (props) => {
+
     return <div className="header_login">
         <div className="login_drop">
-            <span><i><FontAwesomeIcon icon="fa-solid fa-user"/></i>Personal account</span>
+            <span><i><FontAwesomeIcon icon="fa-solid fa-user"/></i>My account</span>
             <ul>
                 <li><NavLink to="/myAccount">Account settings</NavLink></li>
                 <li><NavLink to="/bookings">Bookings</NavLink></li>
                 <li><NavLink to="/wishlist">Wishlist</NavLink></li>
-                <li><NavLink to="#">Sign Out</NavLink></li>
+                <li><NavLink to="#" onClick={props.getOutClientProfile}>Sign Out</NavLink></li>
             </ul>
         </div>
     </div>

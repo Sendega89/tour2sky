@@ -2,11 +2,14 @@ import {authAPI, myAccountAPI} from "../api/api";
 import Page404 from "../Pages/Page404/Page404";
 
 
+
 const SET_CLIENT_PROFILE = "tour2sky/profile/SET_CLIENT_PROFILE";
 const SET_AUTH_PROFILE = "tour2sky/profile/SET_AUTH_PROFILE";
 const UPDATE_CLIENT_PROFILE = "tour2sky/profile/UPDATE_CLIENT_PROFILE";
 const SET_PROFILE_INFO = "tour2sky/profile/SET_PROFILE_INFO";
 const SET_ORDERS_INFO = "tour2sky/profile/SET_ORDERS_INFO";
+const SET_CREATE_ORDER = "tour2sky/profile/SET_CREATE_ORDERS";
+const OUT_CLIENT_PROFILE = "tour2sky/profile/SET_DEL_CLIENT_PROFILE";
 
 
 const initialState = {
@@ -86,6 +89,7 @@ const initialState = {
             }
         }
     },
+    myCreateOrders:{},
 }
 
 const profile_Reducer = (state = initialState, action) => {
@@ -123,6 +127,19 @@ const profile_Reducer = (state = initialState, action) => {
                 myOrdersMeta:action.data.meta,
             }
         }
+        case SET_CREATE_ORDER: {
+            return {
+                ...state,
+                myCreateOrders:action.data
+            }
+        }case OUT_CLIENT_PROFILE: {
+            return {
+
+                ...state,
+                isAuth:false
+            }
+        }
+
         default:
             return state
     }
@@ -133,11 +150,12 @@ export const setAuthProfile = (data) => ({type: SET_AUTH_PROFILE, data});
 export const setProfileInfo = (data) => ({type: SET_PROFILE_INFO, data});
 export const setUpdateProfile = (data) => ({type: UPDATE_CLIENT_PROFILE, data});
 export const setOrders = (data) => ({type: SET_ORDERS_INFO, data});
-
+export const setCreateOrder = (data) => ({type: SET_CREATE_ORDER, data});
+export const outClientProfile = () => ({type:OUT_CLIENT_PROFILE});
 
 /*This is Thunk*/
-export const login = (email, password, type) => async (dispatch) => {
-    let response = await authAPI.login(email, password, type);
+export const login = (email, password) => async (dispatch) => {
+    let response = await authAPI.login(email, password);
     if (response.status === 200) {
         dispatch(setClientProfile(response.data));
         dispatch(setAuthProfile())
@@ -168,5 +186,20 @@ export const getOrders = (token,page,service_name,status) => async (dispatch) =>
     } else {
         return <Page404/>
     }
+}
+export const getCreateNewOrder = (ordersInfo,token,) => async (dispatch) => {
+    let response = await myAccountAPI.getCreateNewOrder(ordersInfo,token)
+    if (response.status === 200) {
+        dispatch(setCreateOrder(response.data));
+    } else {
+        return <Page404/>
+    }
+}
+export const getDeleteClientProfile = (token) => async (dispatch) => {
+    let response = await myAccountAPI.deleteClientProfile(token);
+    dispatch(outClientProfile())
+}
+export const getOutClientProfile = () => (dispatch) => {
+    dispatch(outClientProfile())
 }
 export default profile_Reducer

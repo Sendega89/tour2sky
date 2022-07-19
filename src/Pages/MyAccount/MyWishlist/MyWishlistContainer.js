@@ -19,6 +19,8 @@ const MyWishlistContainer = (props) => {
                        addRemoveWishlist={props.addRemoveWishlist}
                        getProductItemView={props.getProductItemView}
                        isFavoriteItem={props.isFavoriteItem}
+                       name={props.name}
+                       surname={props.surname}
     />
 }
 let mapStateToProps = (state) => ({
@@ -28,5 +30,7 @@ let mapStateToProps = (state) => ({
     pagination: state.myAccount.wishList.pagination,
     isAuth: state.profilePage.isAuth,
     isFavoriteItem: state.myAccount.isFavoriteItem,
+    name:state.profilePage.name,
+    surname:state.profilePage.surname,
 })
 export default connect(mapStateToProps, {getWishList, addRemoveWishlist, getProductItemView})(MyWishlistContainer)

@@ -21,13 +21,13 @@ const CreateAccount = (props) => {
 
                     <div className="login_wrap">
                         <Formik initialValues={{
-                            name: "name",
-                            surname:"surname",
-                            email:"lololo@gmail.com",
-                            password: "00000000",
-                            phone:"+380956665544",
+                            name: "",
+                            surname:"",
+                            email:"",
+                            password: "",
+                            phone:"",
                             type:props.userType || 1,
-                            company_name:"lego",
+                            company_name:"",
                             company_type:1
 
                         }} onSubmit={(values,submitProps) => {

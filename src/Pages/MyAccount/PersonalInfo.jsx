@@ -3,13 +3,25 @@ import s from "./PersonalInfo.module.css";
 import {NavLink} from "react-router-dom";
 import AuthContainer from "../../Profiles/AuthContainer";
 import {Helmet} from "react-helmet-async";
-
 import {Field, FieldArray, Form, Formik} from "formik";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogActions from "@mui/material/DialogActions";
 
 
 const PersonalInfo = (props) => {
-    const [editMode, setEditMode] = useState(false)
-
+    const [editMode, setEditMode] = useState(false);
+    const [deleteAccMode,setDeleteAccMode] = useState(false);
+    const [open, setOpen] = useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
     useEffect(() => {
         props.getProfileInfo(props.token)
     },[editMode])
@@ -26,15 +38,15 @@ const PersonalInfo = (props) => {
                                 <div className="row catalog_row">
                                     <div className="sidebar">
                                         <div className="row wighet">
-                                            <h5>Hi,and welcome to <br/> your personal account</h5>
+                                            <h5>Hi, {props.name} <br/>{props.surname}</h5>
                                             <div className="row wighet_row">
                                                 <div className="account_links">
                                                     <ul>
-                                                        <li><NavLink to="/orders">Orders</NavLink></li>
-                                                        <li><NavLink className="active" to="/myAccount">
+                                                        <li><NavLink to="/bookings">Bookings</NavLink></li>
+                                                        <li><NavLink to="/myAccount">
                                                             Personal info</NavLink></li>
                                                         <li><NavLink to="/wishlist">Wishlist</NavLink></li>
-                                                        <li><NavLink to="/delAccount">Delete Account</NavLink></li>
+
                                                     </ul>
                                                 </div>
                                             </div>
@@ -51,7 +63,7 @@ const PersonalInfo = (props) => {
                                                     phone: props.phone,
                                                     hobbies: "hobbies",
                                                     about: "about",
-                                                    subscribe: true,
+                                                    subscribe_news: true,
                                                     social_profiles: [props.social_profiles],
                                                 }}
                                                         onSubmit={(values) => {
@@ -86,7 +98,7 @@ const PersonalInfo = (props) => {
                                                                                        placeholder={"email"}
                                                                                        name={"email"}
                                                                                        value={values.email}/> :
-                                                                        <span>{props.name}</span>}
+                                                                        <span>{props.email}</span>}
                                                                 </div>
                                                             </div>
                                                             <div>
@@ -142,9 +154,9 @@ const PersonalInfo = (props) => {
 
                                                                 <div className={s.infoItem}>
                                                                     <label>
-                                                                        <span>Subscribe</span>
+                                                                        <span>Subscribe News</span>
                                                                         <Field type={"checkbox"}
-                                                                               name={"subscribe"}
+                                                                               name={"subscribe_news"}
                                                                         />
                                                                     </label>
                                                                 </div>
@@ -152,7 +164,33 @@ const PersonalInfo = (props) => {
                                                                     {!editMode && <button className={s.account_button}
                                                                                           onClick={() => setEditMode(!editMode)}>
                                                                         Edit</button>}
+
                                                                 </div>
+                                                                {!editMode &&
+                                                                <div className={s.deleteAccountContainer}>
+                                                                    <div>
+                                                                        <Dialog
+                                                                            open={open}
+                                                                            onClose={handleClose}
+                                                                            aria-labelledby="alert-dialog-title"
+                                                                            aria-describedby="alert-dialog-description"
+                                                                        >
+                                                                            <DialogTitle id="alert-dialog-title">
+                                                                                {"Are you sure you want to delete your account?"}
+                                                                            </DialogTitle>
+                                                                            <DialogActions>
+                                                                                <Button onClick={handleClose}>Disagree</Button>
+                                                                                <Button onClick={()=>props.getDeleteClientProfile(props.token)} autoFocus>
+                                                                                    Agree
+                                                                                </Button>
+                                                                            </DialogActions>
+                                                                        </Dialog>
+                                                                    </div>
+                                                                    <Button className={s.account_button} variant="outlined" onClick={handleClickOpen}>
+                                                                        Delete account
+                                                                    </Button>
+                                                                </div>}
+
                                                             </div>
                                                             {editMode &&
                                                                 <div className={s.account_buttonContainer}>
@@ -165,6 +203,7 @@ const PersonalInfo = (props) => {
                                                                 </div>}
                                                         </Form>)}
                                                 </Formik>
+
                                             </div>
                                         </div>
                                     </div>
@@ -174,6 +213,7 @@ const PersonalInfo = (props) => {
                     </main>
                 </div>
             </div> : <AuthContainer/>}
+
     </div>
 }
 

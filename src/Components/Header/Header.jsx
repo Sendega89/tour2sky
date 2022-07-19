@@ -7,7 +7,9 @@ import HeaderAutorized from "./headerComponents/HeaderAutorized";
 
 
 
+
 const Header = (props) => {
+
     return <header id="myHeader" className="">
         {/* Header bottom start */}
         <div className="row header">
@@ -21,7 +23,7 @@ const Header = (props) => {
                    <HeaderNavigation/>
                     {/* NAVIGATION end */}
                     {/* account not login */}
-                    {props.isAuth ? <HeaderAutorized/> :
+                    {props.isAuth ? <HeaderAutorized getOutClientProfile={props.getOutClientProfile}/> :
                    <HeaderAuthorization />}
                     {/* account not login */}
 

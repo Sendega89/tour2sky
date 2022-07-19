@@ -1,0 +1,21 @@
+.modalContainer {
+    width: 250px;
+    height: 100px;
+    background-color:#abe2fb;
+    border-radius: 15px;
+    text-align: center;
+}
+.modalText {
+    font-weight: 600;
+    margin: 20px 0;
+    padding-top: 20px;
+
+}
+.modalButton {
+    width: 75px;
+    padding: 0 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #e7f3fd;
+}

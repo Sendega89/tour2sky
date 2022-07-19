@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
-import {NavLink} from "react-router-dom";
-import OrderCards from "./OrderCards";
+import {Link, NavLink} from "react-router-dom";
+import BookingsCards from "./BookingsCards";
 
 
 
-const Orders = (props) => {
+const Bookings = (props) => {
+
   /*  useEffect(()=>{
         props.getOrders(props.token)
     },[])*/
@@ -15,14 +16,13 @@ const Orders = (props) => {
                 <div className="row catalog_row">
                     <div className="sidebar">
                         <div className="row wighet">
-                            <h5>Hi, and welcome to <br/> your personal account</h5>
+                            <h5>Hi, {props.name} <br/>{props.surname}</h5>
                             <div className="row wighet_row">
                                 <div className="account_links">
                                     <ul>
-                                        <li><NavLink to="/orders" className="active">Orders</NavLink></li>
-                                        <li><NavLink to="/myAccount">Personal info</NavLink></li>
-                                        <li><NavLink to="/wishlist">Wishlist</NavLink></li>
-                                        <li><NavLink to="/delAccount">Delete Account</NavLink></li>
+                                        <li><Link to="/bookings" className="active">Bookings</Link></li>
+                                        <li><Link to="/myAccount">Personal info</Link></li>
+                                        <li><Link to="/wishlist">Wishlist</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@ const Orders = (props) => {
                             <h4>My Orders</h4>
                         </div>
                         <div className="row row-15">
-                            <OrderCards {...props}/>
+                            <BookingsCards {...props}/>
 
                         </div>
                     </div>
@@ -43,4 +43,4 @@ const Orders = (props) => {
     </main>
 
 }
-export default Orders
+export default Bookings

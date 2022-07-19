@@ -46,7 +46,7 @@ font-weight: 700;
 }
 .account_button {
     min-width: 20px;
-    height: 10px;
+   min-height: 20px;
 
 }
 .checkboxContainer label {
@@ -96,4 +96,24 @@ font-weight: 700;
     border-radius: 8px;
     border: solid 1px #ecf0f1;
     background-color: #96dbfa;
+}
+.deleteAccountContainer {
+    position: absolute;
+    width: 150px;
+    right: 130px;
+    bottom: 40px;
+}
+@media (max-width:790px) {
+    .deleteAccountContainer {
+        position: absolute;
+        right: 30px;
+        bottom: 20px;
+    }
+}
+@media (max-width:360px) {
+    .deleteAccountContainer {
+        position: absolute;
+        left: 25px;
+        bottom: -50px;
+    }
 }

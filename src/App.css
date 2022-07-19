@@ -336,8 +336,10 @@ article ul, article ol {
 }
 
 main {
+
     padding-top: 40px;
     padding-bottom: 70px;
+    flex: 1 1 auto;
 }
 
 /* Custom Styles */
@@ -345,6 +347,7 @@ main {
     max-width: 1140px;
     margin: 0 auto;
     position: relative;
+
 }
 
 .row:before, .row:after {
@@ -578,7 +581,7 @@ header {
     position: relative;
     color: #265878;
     font-size: 14px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
 }
 
 .login_drop:hover {
@@ -630,9 +633,9 @@ header {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 60px;
+    top: 38px;
     width: 100%;
-    padding-top: 5px; /* padding-bottom: 8px; */
+   /* padding-top: 5px;*/ /* padding-bottom: 8px; */
     display: none;
     left: 0;
     border-radius: 8px;
@@ -2877,7 +2880,7 @@ footer .footer_r ul li a {
     position: relative;
 }
 
-.account_links a:before {
+/*.account_links a:before {
     content: '';
     border: solid 2px #b6c2cc;
     width: 4px;
@@ -2886,7 +2889,7 @@ footer .footer_r ul li a {
     left: 0;
     top: 7px;
     border-radius: 50%;
-}
+}*/
 
 .account_links a:hover {
     color: #2f3337;
@@ -2900,9 +2903,7 @@ footer .footer_r ul li a {
     display: block;
     margin-bottom: 12px;
 }
-.account_links li:last-child {
-    margin-top: 50px;
-}
+
 .account_links .active {
     color: #2f3337;
 }
@@ -3926,3 +3927,56 @@ footer .white-popup {
 .productAccordionArrow:focus {
     color: #6c6c6c;
 }
+/*
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root {
+    background-image: none;
+    max-height: 65px;
+ height: 65px;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-width: 260px;
+ border: none;
+ padding: 20px 40px;
+ text-shadow: 0 1px 1px rgb(0 0 0 / 34%);
+ font-size: initial;
+ font-weight: initial;
+ line-height: initial;
+ text-align: center;
+ color: #ffffff;
+ object-fit: contain;
+ font-family: 'Open Sans', sans-serif;
+ border-radius: 16px;
+
+}
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root:hover {
+background-image: none;
+    background-color: rgb(0 0 0 / 0%) !important;
+    text-decoration: initial;
+    cursor: pointer;
+    color: initial;
+}
+.css-169iwlq-MuiCalendarPicker-root button {
+    background-image: none;
+    max-height: initial;
+    height: initial;
+    display: initial;
+    align-items: initial;
+    justify-content: initial;
+    min-width:initial;
+    border: initial;
+    padding: initial;
+    text-shadow:initial;
+    font-size: initial;
+    font-weight: initial;
+    line-height: initial;
+    text-align: center;
+    color: initial;
+    object-fit:initial;
+    font-family: initial;
+    border-radius: initial;
+
+}
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+    border-radius: 15px;
+}*/

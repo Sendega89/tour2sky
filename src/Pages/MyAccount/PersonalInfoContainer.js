@@ -2,8 +2,9 @@ import React from "react";
 import PersonalInfo from "./PersonalInfo";
 import {connect} from "react-redux";
 import {getAuthUserData} from "../../redux/auth_Reducer";
-import {getProfileInfo, getUpdateProfile} from "../../redux/profile_Reducer";
+import {getDeleteClientProfile, getProfileInfo, getUpdateProfile} from "../../redux/profile_Reducer";
 import {useEffect} from "react";
+
 
 
 const PersonalInfoContainer = (props) => {
@@ -25,6 +26,7 @@ const PersonalInfoContainer = (props) => {
                          getUpdateProfile={props.getUpdateProfile}
                          getProfileInfo={props.getProfileInfo}
                          social_profiles={props.social_profiles}
+                         getDeleteClientProfile={props.getDeleteClientProfile}
                          />
 }
 const mapStateToProps = (state) => ({
@@ -42,4 +44,4 @@ const mapStateToProps = (state) => ({
     social_profiles:state.profilePage.profileInfo,
 
 })
-export default connect(mapStateToProps, {getAuthUserData, getUpdateProfile,getProfileInfo})(PersonalInfoContainer)
+export default connect(mapStateToProps, {getAuthUserData, getUpdateProfile,getProfileInfo,getDeleteClientProfile})(PersonalInfoContainer)
