@@ -1,11 +1,15 @@
 import UsePagination from "./Paginator";
 import {connect} from "react-redux";
-import {getProductCardData} from "../../../redux/productCards_Reducer";
 
 
 const PaginatorContainer = (props) => {
-
-    return <UsePagination {...props} />
+/*в пропсах отправляем санку, которую называем getProductCardData */
+    return <UsePagination getItemsData={props.getProductCardData}/*in props send Thunk named "getProductCardData" */
+                          currentPage={props.currentPage}
+                          totalPages={props.totalPages}
+                          token={props.token}/>
 }
-
-export default connect(()=>({}),{getProductCardData})(PaginatorContainer)
+const mapStateToProps = (state) => ({
+    token: state.profilePage.token,
+})
+export default connect(mapStateToProps)(PaginatorContainer)

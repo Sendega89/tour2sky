@@ -1,0 +1,18 @@
+.usersAvailable_Container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 2fr 50px 3fr 2fr 1fr 1fr 50px 50px;
+}
+.UserNavMenu {
+    margin-top: 5px;
+    font-weight: bold;
+}
+.UserNavMenu ul {
+    display: flex;
+    gap:20px;
+}
+.usersAvailable_item  {
+    display: flex;
+    justify-content: center;
+    border:1px solid black;
+}

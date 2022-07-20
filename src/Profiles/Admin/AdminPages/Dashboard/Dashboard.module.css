@@ -1,0 +1,22 @@
+.dashboardContent {
+    display: grid;
+    gap: 40px;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.imgContainer {
+    width: 80px;
+    height: 80px;
+}
+.imgContainer img {
+    padding: 10px;
+}
+.categoryInfo {
+
+}
+.categoryInfo span {
+    font-weight: bold;
+}
+.categoryInfo a {
+    color: #33CCCC;
+}

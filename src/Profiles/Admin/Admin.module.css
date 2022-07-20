@@ -1,13 +1,17 @@
+.mainAdminContainer {
+
+}
 .adminContainer {
     background-color: #e7f3fd;
-    display: grid;
-    grid-template-columns:1fr 2fr;
-
+    display: flex;
+    /*display: grid;
+    grid-template-columns:1fr 5fr;*/
 }
 
 .menuColumnLeft {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+    margin-right: 20px;
+}
+.contentColumnRight {
 
 }
 .menuLeftNameItems,
@@ -17,15 +21,7 @@
     font-weight: 600;
     padding: 20px;
 }
-.menuColumnLeft_Item,
-.menuColumnLeft_icon{
+.menuColumnLeft_Item {
  margin: 10px;
 }
-
-.dashboardContent {
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 40px 1fr 40px 1fr;
-}
-
 

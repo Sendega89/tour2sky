@@ -57,8 +57,7 @@ export default function UsePagination(props) {
 const [clickPage,setClickPage] = useState(props.currentPage)
 
     const handleChange =(event) => {
-
-        props.getProductCardData(event.target.name);
+        props.getItemsData(event.target.name,props.token)
         setClickPage(props.currentPage)
     }
     const { items } = usePagination({

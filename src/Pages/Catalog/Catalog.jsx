@@ -15,6 +15,7 @@ import './Catalog.module.css';
 import PaginatorContainer from "../../assets/common/Pagination/PaginatorContainer";
 import ProductCards from "../../assets/common/Cards/ProductCards";
 import {Helmet} from "react-helmet-async";
+import {getProductCardData} from "../../redux/productCards_Reducer";
 library.add(fas);
 
 
@@ -275,6 +276,7 @@ const Catalog = (props) => {
                                        currentPage={props.pagination.current_page}
                                        totalPages={props.pagination.total_pages}
                                        links={props.pagination.links}
+                                       getProductCardData={props.getProductCardData}
                         />
                     </div>
                     <article className="row cat_text"><p>Tourism means people traveling for fun. It includes activities

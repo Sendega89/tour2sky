@@ -1,14 +1,18 @@
 import React from "react";
 import s from "./Admin.module.css"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {NavLink, Route} from "react-router-dom";
+import "../../App.css"
+import {Link, NavLink, Route} from "react-router-dom";
 import {Routes} from "react-router";
 import AdminUsersContainer from "./AdminPages/AdminUsers/AdminUsersContainer";
 import "./Admin.css";
+import DashboardContainer from "./AdminPages/Dashboard/DashboardContainer";
+import PartnersContainer from "./AdminPages/Partners/PartnersContainer";
+import RegionContainer from "./AdminPages/Region/RegionContainer";
+import AvailableContainer from "./AdminPages/AdminUsers/MenuPages/AvailableContainer";
 
 const Admin = (props) => {
     return <div className={"container"}>
-        <main>
+    <main>
             <div className={s.adminContainer}>
                 <div className={s.menuColumnLeft}>
                     <div className={s.menuLeftNameItems}>
@@ -28,32 +32,54 @@ const Admin = (props) => {
                                 <li className={s.menuColumnLeft_Item}>
                                     <NavLink to="category">Category</NavLink>
                                 </li>
-                                <li className={s.menuColumnLeft_Item}>Attributes</li>
-                                <li className={s.menuColumnLeft_Item}>Services</li>
-                                <li className={s.menuColumnLeft_Item}>Orders</li>
-                                <li className={s.menuColumnLeft_Item}>Activity in location</li>
-                                <li className={s.menuColumnLeft_Item}>Feedback/rating</li>
-                                <li className={s.menuColumnLeft_Item}>Criteria for evaluation</li>
-                                <li className={s.menuColumnLeft_Item}>Payment</li>
-                                <li className={s.menuColumnLeft_Item}>Letters</li>
-                                <li className={s.menuColumnLeft_Item}>Pages</li>
-                                <li className={s.menuColumnLeft_Item}>Blog</li>
-                                <li className={s.menuColumnLeft_Item}>Settings</li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="attributes">Attributes</NavLink></li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="services">Services</NavLink></li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="orders">Orders</NavLink></li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="activity_location">Activity in location</NavLink></li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="feedback_rating">Feedback/rating</NavLink></li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="criteria_evaluation">Criteria for evaluation</NavLink></li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="payment">Payment</NavLink>
+                                </li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="letters">Letters</NavLink>
+                                </li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="pages">Pages</NavLink>
+                                </li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="blog">Blog</NavLink>
+                                </li>
+                                <li className={s.menuColumnLeft_Item}>
+                                    <NavLink to="settings">Settings</NavLink>
+                                </li>
                             </ul>
                         </nav>
-                    </div>
-                    <div className={s.menuLeftIcons}>
-
                     </div>
                 </div>
                 <div className={s.contentColumnRight}>
                     <Routes>
-                        <Route path="/users"
-                               element={<AdminUsersContainer/>}/>
+                        <Route path="/dashboard"
+                               element={<DashboardContainer/>}/>
+                        <Route path="/users/*"
+                               element={<AdminUsersContainer/>}>
+                                <Route path="user_available"
+                                       element={<AvailableContainer />}/>
+                        </Route>
+                        <Route path="/partners"
+                               element={<PartnersContainer/>}/>
+                        <Route path="/region_interests"
+                               element={<RegionContainer/>}/>
                     </Routes>
                 </div>
             </div>
-        </main>
-    </div>
+    </main>
+</div>
 }
 export default Admin
