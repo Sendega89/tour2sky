@@ -1,7 +1,8 @@
-
+import s from "./HeaderTitle.module.css"
 
 const  HeaderTitle = () => {
-    return  <div className="header_title">
+    return <div className={s.HeaderTitleContainer}>
+        <div className="header_title">
         <div className="container">
             <div className="row">
                 <h1>Discover your <br />perfect tour now!</h1>
@@ -24,7 +25,6 @@ const  HeaderTitle = () => {
                                     </div>
 
                                 </div>
-
                                 <button>Search</button>
                             </div>
                         </form>
@@ -67,6 +67,6 @@ const  HeaderTitle = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </div></div>
 }
 export default HeaderTitle

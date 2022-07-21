@@ -1,0 +1,8 @@
+.partnerNavMenu {
+    margin-top: 5px;
+    font-weight: bold;
+}
+.partnerNavMenu ul {
+    display: flex;
+    gap:20px;
+}

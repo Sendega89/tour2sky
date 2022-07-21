@@ -2,6 +2,7 @@ import s from "./Rectangle.module.css";
 import {subscribe} from "../../../../../api/api";
 
 
+
 const  Rectangle = () => {
 
      const subscribeMe =(e)=> {
@@ -11,7 +12,8 @@ const  Rectangle = () => {
      }
 
 
-    return     <div className="row rectangle section" >
+    return <div className={`${s.RectangleContainer} "row rectangle section"`}>
+
         <div className="container">
             <div className="row_title row_title_white">
                 <h3>Subscribe to the newsletter</h3>
@@ -26,5 +28,6 @@ const  Rectangle = () => {
             </div>
         </div>
     </div>
+
 }
 export default Rectangle

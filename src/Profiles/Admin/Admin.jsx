@@ -8,7 +8,8 @@ import "./Admin.css";
 import DashboardContainer from "./AdminPages/Dashboard/DashboardContainer";
 import PartnersContainer from "./AdminPages/Partners/PartnersContainer";
 import RegionContainer from "./AdminPages/Region/RegionContainer";
-import AvailableContainer from "./AdminPages/AdminUsers/MenuPages/AvailableContainer";
+import AvailableContainer from "./AdminPages/AdminUsers/MenuPages/AvailableUsersContainer";
+import AvailablePartnerContainer from "./AdminPages/Partners/PartnerPages/AvailablePartnerContainer";
 
 const Admin = (props) => {
     return <div className={"container"}>
@@ -21,10 +22,10 @@ const Admin = (props) => {
                                 <li className={s.menuColumnLeft_Item}>
                                     <NavLink to="dashboard">Dashboard</NavLink></li>
                                 <li className={s.menuColumnLeft_Item}>
-                                    <NavLink to="users">Users</NavLink>
+                                    <NavLink to="users/user_available">Users</NavLink>
                                 </li>
                                 <li className={s.menuColumnLeft_Item}>
-                                    <NavLink to="partners">Partners</NavLink>
+                                    <NavLink to="partners/partner_available">Partners</NavLink>
                                 </li>
                                 <li className={s.menuColumnLeft_Item}>
                                     <NavLink to="region_interests">Region/interests</NavLink>
@@ -72,8 +73,11 @@ const Admin = (props) => {
                                 <Route path="user_available"
                                        element={<AvailableContainer />}/>
                         </Route>
-                        <Route path="/partners"
-                               element={<PartnersContainer/>}/>
+                        <Route path="/partners/*"
+                               element={<PartnersContainer/>}>
+                            <Route path="partner_available"
+                                   element={<AvailablePartnerContainer/>}/>
+                        </Route>
                         <Route path="/region_interests"
                                element={<RegionContainer/>}/>
                     </Routes>

@@ -1,11 +1,18 @@
-import s from "../../Admin.module.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import s from "./Partners.module.css";
 import React from "react";
+import {Link, Outlet} from "react-router-dom";
 
 
 const Partners = (props) => {
-    return <div>
-        <h4>Partners</h4>
+    return  <div>
+        <nav className={s.partnerNavMenu}>
+            <ul>
+                <li><Link to="partner_available">Available Partners</Link></li>
+                <li><Link to="partner_add_change">Add/Change User</Link></li>
+                <li><Link to="partner_log">Log </Link></li>
+            </ul>
+        </nav>
+        <Outlet></Outlet>
     </div>
 }
 export default Partners

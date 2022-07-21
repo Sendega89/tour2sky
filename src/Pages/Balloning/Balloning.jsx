@@ -10,7 +10,7 @@ import "owl.carousel/dist/assets/owl.carousel.min.css";
 import ChatCarousel from "./ChatCarousel";
 import {Helmet} from "react-helmet-async";
 import {NavLink} from "react-router-dom";
-
+import s from "./Balloning.module.css"
 
 const Balloning = () => {
     return <>
@@ -24,7 +24,7 @@ const Balloning = () => {
                         <div className="row">
                             <h1>Find your best<br/> baloon tour now!</h1>
                             <div className="ht_content">
-                                <div className="row header_search">
+                                <div className={`${s.searchContainer} "row header_search"`}>
                                     <input type="text" className="input_search"
                                            placeholder="Enter city, region or country"/>
                                     <button>Search</button>
@@ -178,8 +178,8 @@ const Balloning = () => {
                     </div>
 
                 </div>
-                <div className="center">
-                    <NavLink to="/#" id="loadMore" className="btn">Load more</NavLink>{/*for mobile*/}
+                <div className={`${s.searchContainer} "center"`}>
+                    <NavLink to="/#" id="loadMore" className="btn">Load more </NavLink>{/*for mobile*/}
                     <NavLink to="/#" id="loadMoredesc" className="btn">Load more</NavLink>
                 </div>
             </div>

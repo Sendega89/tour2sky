@@ -1,10 +1,12 @@
-.HeaderTitleContainer button, input[type=submit], .btn {
+.searchContainer button,
+input[type=submit],
+.searchContainer .btn {
     max-height: 65px;
     height: 65px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 200px;
+    min-width: 170px;
     border: none;
     padding: 20px 40px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.34);
@@ -16,11 +18,11 @@
     object-fit: contain;
     font-family: 'Open Sans', sans-serif;
     border-top-right-radius: 16px;
-    border-top-bottom-radius: 16px;
+    border-bottom-right-radius: 16px;
     background-image: linear-gradient(288deg, #33cccc, #2980b9);
 }
 
-.HeaderTitleContainer button:hover, .btn:hover, input[type=submit] {
+.searchContainer button:hover, .btn:hover, input[type=submit] {
     background-image: linear-gradient(288deg, #2980b9, #33cccc);
     text-decoration: none !important;
     cursor: pointer;
@@ -28,7 +30,7 @@
 }
 
 
-.HeaderTitleContainer button, input[type="submit"], a, a img:hover, .owl-nav div, #back-to-top:hover, .soc .row a:hover svg, .the_best .tab_content .owl-item a span, .blog_item .post_big:before, .post_smoll_item a:hover:before {
+.searchContainer button, input[type="submit"], a, a img:hover, .owl-nav div, #back-to-top:hover, .soc .row a:hover svg, .the_best .tab_content .owl-item a span, .blog_item .post_big:before, .post_smoll_item a:hover:before {
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
